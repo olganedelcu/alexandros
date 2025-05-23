@@ -130,7 +130,7 @@ const About = () => {
                 className="relative rounded-2xl overflow-hidden max-w-[60%] mx-auto ml-24"
               >
                 <img
-                  src="/src/assets/about.png"
+                  src="/assets/about.png"
                   alt="Alexandros Tziranis"
                   className="w-full h-full object-cover"
                 />
