@@ -1,5 +1,6 @@
 
 import { useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Approach from "@/components/Approach";
@@ -29,14 +30,21 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen overflow-hidden">
-      <Hero />
-      <About />
-      <Approach />
-      <Testimonials />
-      <CTA />
-      <Footer />
-    </div>
+    <AnimatePresence>
+      <motion.div 
+        className="min-h-screen overflow-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
+        <Hero />
+        <About />
+        <Approach />
+        <Testimonials />
+        <CTA />
+        <Footer />
+      </motion.div>
+    </AnimatePresence>
   );
 };
 
