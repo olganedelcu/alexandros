@@ -121,7 +121,7 @@ const Navbar = () => {
                 className="flex items-center"
               >
                 <img 
-                  src="/lovable-uploads/2f91ecf5-0509-425f-8412-80cb318ab6c8.png" 
+                  src="/assets/logo1.png" 
                   alt="AKT Logo - Growing at the Speed of Trust" 
                   className="h-10 w-10 sm:h-14 sm:w-14"
                 />
