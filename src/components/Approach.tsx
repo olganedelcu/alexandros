@@ -123,7 +123,7 @@ const Approach = () => {
               >
                 <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden">
                   <motion.img
-                    src="/src/assets/pic.jpeg"
+                    src="/public/assets/pic.jpeg"
                     alt="Multi-Modal Perspective Matrix"
                     className="w-full h-auto object-cover filter brightness-105 contrast-105"
                     style={{
