@@ -156,17 +156,62 @@ const Hero = () => {
           </motion.h1>
           
           <motion.div 
-            className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 px-8 rounded-lg mb-8 inline-block shadow-lg"
+            className="relative mb-8"
             variants={itemVariants}
             transition={{ duration: 0.6, delay: 0.4 }}
-            whileHover={{ 
-              scale: 1.05,
-              boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-            }}
           >
-            <p className="text-xl font-medium">
-              Embrace your best self and unlock peak performance
-            </p>
+            <motion.div
+              className="text-xl md:text-2xl font-medium text-blue-800 py-4 px-6 relative z-10"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+            >
+              <motion.span
+                className="relative"
+                initial={{ y: 20 }}
+                animate={{ y: 0 }}
+                transition={{ delay: 0.6, duration: 0.5, type: "spring" }}
+              >
+                Embrace your best self and unlock peak performance
+              </motion.span>
+              <motion.div 
+                className="absolute inset-0 bg-gradient-to-r from-blue-200/40 via-indigo-200/40 to-blue-200/40 rounded-lg -z-10 blur-sm"
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.7, duration: 0.5 }}
+              />
+              <motion.div
+                className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 w-1/2 bg-gradient-to-r from-blue-400 to-indigo-500 rounded"
+                initial={{ width: "0%" }}
+                animate={{ width: "50%" }}
+                transition={{ delay: 0.9, duration: 0.7 }}
+              />
+            </motion.div>
+            <motion.div
+              className="absolute -right-10 -top-10 w-24 h-24 bg-blue-100 rounded-full blur-2xl opacity-60 z-0"
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.4, 0.6, 0.4],
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 5,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div
+              className="absolute -left-8 -bottom-8 w-20 h-20 bg-indigo-100 rounded-full blur-2xl opacity-60 z-0"
+              animate={{
+                scale: [1, 1.3, 1],
+                opacity: [0.3, 0.5, 0.3],
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 6,
+                delay: 1,
+                ease: "easeInOut"
+              }}
+            />
           </motion.div>
           
           <motion.div 
