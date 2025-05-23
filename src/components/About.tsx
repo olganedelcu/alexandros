@@ -74,57 +74,70 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="max-w-6xl mx-auto mt-16"
+          className="max-w-6xl mx-auto mt-4"
         >
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-blue-100 relative overflow-hidden">
-            <div className="absolute inset-0 bg-blue-100/30 blur-3xl"></div>
-            <div className="grid md:grid-cols-2 gap-12 items-center min-h-[400px] relative z-10">
-              <div className="space-y-8">
-                <div className="space-y-4">
-                  <div className="inline-block px-4 py-2 bg-blue-50 rounded-full text-blue-600 font-medium text-sm">
-                    Your Journey Matters
-                  </div>
+          <div className="grid md:grid-cols-2 gap-16 items-center min-h-[500px] relative z-10">
+            <div className="space-y-6">
+              <div className="space-y-4">
+                <motion.div 
+                  whileHover={{ scale: 1.05 }}
+                  className="inline-block px-6 py-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-full text-blue-600 font-medium text-sm shadow-sm"
+                >
+                  Your Journey Matters
+                </motion.div>
 
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-800">
-                    You're in the right place
-                  </h3>
-                </div>
-
-                <div className="space-y-6 text-gray-600">
-                  <div className="p-8">
-                    <p className="text-lg leading-relaxed mb-6">
-                      I've walked the path of entrepreneurship, faced the
-                      challenges, and discovered the keys to success. Now, I'm
-                      here to guide you through your journey.
-                    </p>
-
-                    <p className="text-lg leading-relaxed">
-                      With expertise in engineering, finance, and psychology, I
-                      bring a unique perspective to help you navigate the
-                      complexities of business growth.
-                    </p>
-                  </div>
-                </div>
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-800 leading-tight">
+                  You're in the right place
+                </h3>
               </div>
 
-              <div className="relative flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-200 to-indigo-200 rounded-full blur-2xl opacity-30"></div>
-              
-                <div className="relative rounded-lg overflow-hidden border-4 border-blue-200 shadow-lg max-w-[60%] mx-auto mt-8 ml-32">
-                  <img
-                    src="/src/assets/alexandros.png"
-                    alt="Alexandros Tziranis"
-                    className="w-full h-full object-cover"
-                  />
+              <div className="space-y-6 text-gray-600">
+                <div className="space-y-6">
+                  <motion.p 
+                    whileHover={{ x: 5 }}
+                    className="text-xl leading-relaxed"
+                  >
+                    I've walked the path of entrepreneurship, faced the
+                    challenges, and discovered the keys to success. Now, I'm
+                    here to guide you through your journey.
+                  </motion.p>
+
+                  <motion.p 
+                    whileHover={{ x: 5 }}
+                    className="text-xl leading-relaxed"
+                  >
+                    With expertise in engineering, finance, and psychology, I
+                    bring a unique perspective to help you navigate the
+                    complexities of business growth.
+                  </motion.p>
                 </div>
               </div>
             </div>
-            <div className="mt-8 text-center">
-              <p className="text-blue-600 font-semibold text-lg">
-                Growing at the Speed of Trust
-              </p>
+
+            <div className="relative flex items-center justify-start">
+              <motion.div 
+                whileHover={{ scale: 1.05 }}
+                className="relative rounded-2xl overflow-hidden max-w-[85%] mx-auto ml-24"
+              >
+                <img
+                  src="/src/assets/ale.png"
+                  alt="Alexandros Tziranis"
+                  className="w-full h-full object-cover opacity-70"
+                />
+              </motion.div>
             </div>
           </div>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            viewport={{ once: true }}
+            className="mt-12 text-center"
+          >
+            <p className="text-blue-600 font-semibold text-xl">
+              Growing at the Speed of Trust
+            </p>
+          </motion.div>
         </motion.div>
       </div>
     </section>
