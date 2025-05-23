@@ -105,7 +105,7 @@ const About = () => {
                     </div>
                     <div className="relative rounded-full overflow-hidden">
                       <img 
-                        src="/src/assets/alexandros.jpeg" 
+                        src="/src/assets/alexandros.png" 
                         alt="Alexandros Tziranis" 
                         className="w-full h-full object-cover"
                       />
