@@ -41,7 +41,7 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { name: "About", href: "#approach", onClick: () => scrollToSection('approach') },
+    { name: "About", href: "#about", onClick: () => scrollToSection('about') },
     { name: "Testimonials", href: "#testimonials", onClick: () => scrollToSection('testimonials') },
     { name: "FAQ", href: "#faq", onClick: () => scrollToSection('faq') },
   ];

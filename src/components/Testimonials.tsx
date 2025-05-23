@@ -30,7 +30,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
+    <section id="testimonials" className="py-20 bg-white relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-blue-100 opacity-40 animate-pulse"></div>
