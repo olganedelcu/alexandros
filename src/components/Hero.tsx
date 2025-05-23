@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
@@ -109,19 +108,6 @@ const Hero = () => {
           className="absolute left-1/3 bottom-1/4 w-48 h-48 rounded-full bg-blue-400 opacity-10 blur-2xl"
         ></motion.div>
       </div>
-      
-      <motion.div 
-        className="absolute top-8 left-8 z-10"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
-        <img 
-          src="/lovable-uploads/2f91ecf5-0509-425f-8412-80cb318ab6c8.png" 
-          alt="AKT Logo - Growing at the Speed of Trust" 
-          className="h-16 w-16"
-        />
-      </motion.div>
       
       <div className="container mx-auto px-6 text-center z-10">
         <motion.div 

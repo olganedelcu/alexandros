@@ -1,10 +1,11 @@
-
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Approach from "@/components/Approach";
 import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -37,12 +38,16 @@ const Index = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <Hero />
-        <About />
-        <Approach />
-        <Testimonials />
-        <CTA />
-        <Footer />
+        <Navbar />
+        <main className="pt-16 sm:pt-20"> {/* Add padding-top to account for fixed navbar */}
+          <Hero />
+          <About />
+          <Approach />
+          <Testimonials />
+          <FAQ />
+          <CTA />
+          <Footer />
+        </main>
       </motion.div>
     </AnimatePresence>
   );
