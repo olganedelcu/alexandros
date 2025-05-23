@@ -207,9 +207,9 @@ const Hero = () => {
           >
             <Button 
               className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-6 text-lg shadow-lg group"
-              onClick={() => window.open('https://intro.co/AlexandrosTziranis', '_blank')}
+              onClick={() => window.open('https://calendly.com/aktbusinesscoaching/', '_blank')}
             >
-              Begin Your Journey
+              Book a Call
               <motion.span
                 initial={{ x: 0 }}
                 whileHover={{ x: 5 }}

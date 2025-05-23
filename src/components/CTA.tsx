@@ -49,7 +49,7 @@ const CTA = () => {
             <p className="text-base font-medium opacity-90">I'm here to help you take that next step.</p>
             <Button 
               className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-6 text-lg font-semibold shadow-lg group"
-              onClick={() => window.open('https://calendly.com/alexandrostziranis', '_blank')}
+              onClick={() => window.open('https://calendly.com/aktbusinesscoaching/', '_blank')}
             >
               Begin Your Journey Now
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
