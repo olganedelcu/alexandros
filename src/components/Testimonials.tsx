@@ -1,4 +1,3 @@
-
 import { ArrowDown, Quote } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -41,19 +40,19 @@ const Testimonials = () => {
       {/* Journey connector element with enhanced animation */}
       <div className="absolute left-1/2 transform -translate-x-1/2 -top-10 z-10">
         <motion.div 
+          animate={{
+            y: [0, 5, 0],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
           className="w-1 h-20 bg-gradient-to-b from-blue-400 to-blue-600 rounded-full relative"
-          initial={{ height: 0 }}
-          animate={{ height: 80 }}
-          transition={{ duration: 1 }}
         >
-          <motion.div 
-            className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.8, type: "spring" }}
-          >
+          <div className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md">
             <ArrowDown className="text-blue-600" />
-          </motion.div>
+          </div>
         </motion.div>
       </div>
       

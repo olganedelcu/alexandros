@@ -1,16 +1,27 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 const CTA = () => {
   return (
     <section className="py-20 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-800 text-white relative">
       {/* Journey connector element */}
       <div className="absolute left-1/2 transform -translate-x-1/2 -top-10 z-10">
-        <div className="w-1 h-20 bg-gradient-to-b from-blue-400 to-blue-600 rounded-full relative">
+        <motion.div 
+          animate={{
+            y: [0, 5, 0],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="w-1 h-20 bg-gradient-to-b from-blue-400 to-blue-600 rounded-full relative"
+        >
           <div className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 w-10 h-10 flex items-center justify-center bg-blue-600 rounded-full shadow-md">
             <ArrowDown className="text-white" />
           </div>
-        </div>
+        </motion.div>
       </div>
       
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
