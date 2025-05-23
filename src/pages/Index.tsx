@@ -44,8 +44,8 @@ const Index = () => {
           <About />
           <Approach />
           <Testimonials />
-          <FAQ />
           <CTA />
+          <FAQ />
           <Footer />
         </main>
       </motion.div>

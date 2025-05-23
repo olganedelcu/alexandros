@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowDown, ArrowRight } from "lucide-react";
 
@@ -35,43 +34,23 @@ const CTA = () => {
             the greatness that's already inside you.
           </p>
           
-          <div className="bg-white/10 rounded-xl p-8 backdrop-blur-sm mb-10">
-            <p className="text-lg font-medium mb-6">Here's what you can do next:</p>
-            <ul className="text-left max-w-2xl mx-auto space-y-4">
-              <li className="flex items-start">
-                <span className="text-yellow-300 mr-3 mt-1">•</span>
-                <span>Book a call with me if you're ready to explore your path together.</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-yellow-300 mr-3 mt-1">•</span>
-                <span>Check my featured posts to see how I work with people like you.</span>
-              </li>
-            </ul>
-          </div>
-          
-          <div className="space-y-4 mb-8">
-            <p className="text-lg font-semibold">I'm here to help you take that next step.</p>
-            <p className="text-2xl font-bold">
+          <div className="space-y-8 mb-12">
+            <p className="text-base font-medium opacity-90">I'm here to help you take that next step.</p>
+            <Button 
+              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-6 text-lg font-semibold shadow-lg group"
+              onClick={() => window.open('https://calendly.com/alexandrostziranis', '_blank')}
+            >
+              Begin Your Journey Now
+              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            <p className="text-2xl font-bold mt-8">
               Because you are so close.<br />
               And you are meant for <span className="text-yellow-300">greatness</span>.
             </p>
           </div>
           
-          <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-6 text-lg font-semibold shadow-lg group"
-              onClick={() => window.open('https://intro.co/AlexandrosTziranis', '_blank')}
-            >
-              Begin Your Journey Now
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button 
-              variant="outline" 
-              className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg"
-              onClick={() => window.open('https://intro.co/AlexandrosTziranis', '_blank')}
-            >
-              Learn More
-            </Button>
+          <div className="mt-12 flex justify-center">
+            
           </div>
         </div>
       </div>
