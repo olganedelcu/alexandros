@@ -99,9 +99,23 @@ const About = () => {
               viewport={{ once: true }}
               className="text-center mt-24"
             >
-              <p className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent filter blur-[0.3px] font-semibold text-xl">
-                Growing at the Speed of Trust
-              </p>
+              <div className="relative inline-block">
+                <p className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent filter blur-[0.3px] font-semibold text-xl">
+                  Growing at the Speed of Trust
+                </p>
+                <motion.div 
+                  className="absolute -bottom-2 left-0 h-[2px] bg-gradient-to-r from-violet-200/50 via-violet-400 to-violet-600 rounded"
+                  initial={{ width: 0, opacity: 0 }}
+                  whileInView={{ width: "100%", opacity: 1 }}
+                  transition={{ duration: 1, delay: 0.8 }}
+                  style={{ 
+                    clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+                    transform: 'scaleX(1)',
+                    transformOrigin: 'left',
+                    width: '85%'
+                  }}
+                />
+              </div>
             </motion.div>
           </motion.div>
         </motion.div>
