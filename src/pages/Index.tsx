@@ -7,6 +7,7 @@ import Approach from "@/components/Approach";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
+import Packages from "@/components/Packages";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -45,6 +46,7 @@ const Index = () => {
           <Approach />
           <Testimonials />
           <CTA />
+          <Packages />
           <FAQ />
           <Footer />
         </main>

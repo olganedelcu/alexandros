@@ -10,19 +10,6 @@ const About = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           animate={{
-            opacity: [0.1, 0.2, 0.1],
-            scale: [1, 1.05, 1],
-          }}
-          transition={{
-            repeat: Infinity,
-            duration: 8,
-            ease: "easeInOut",
-          }}
-          className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-300 to-transparent opacity-30"
-        ></motion.div>
-
-        <motion.div
-          animate={{
             x: [0, 30, 0],
             y: [0, -20, 0],
             opacity: [0.1, 0.2, 0.1],
@@ -52,17 +39,15 @@ const About = () => {
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl font-bold text-gray-600 mb-8">
-            Transform Your{" "}
-            <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent filter blur-[0.3px]">Business Journey</span>
+            The Power of {" "}
+            <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent filter blur-[0.3px]">Purpose in Business</span>
           </h2>
 
           <motion.p 
             whileHover={{ x: 5 }}
-            className="text-xl leading-relaxed text-gray-600 mb-12"
+            className="text-lg leading-relaxed text-gray-600 mb-12"
           >
-            I've walked the path of entrepreneurship, faced the
-            challenges, and discovered the keys to success. Now, I'm
-            here to guide you through your journey.
+            Purpose is what turns resilience into a habit, not a chore. It's what keeps you creative when the road ahead looks uncertain.When your purpose is crystal clear, everything begins to align:
           </motion.p>
 
           <motion.div
@@ -72,17 +57,16 @@ const About = () => {
             viewport={{ once: true }}
             className="max-w-6xl mx-auto mt-4"
           >
-            <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
               {/* Card 1 */}
               <motion.div 
                 whileHover={{ y: -5 }}
                 className="bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-xl p-8 text-left border border-blue-200 shadow-sm"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center mr-auto mb-6 border border-blue-200">
-                  <span className="text-2xl">🎯</span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-4">Strategic Vision</h3>
-                <p className="text-gray-600">Develop a clear roadmap for your business growth and success</p>
+                <h3 className="text-2xl font-bold mb-6">
+                  <span className="bg-gradient-to-r from-indigo-400 via-blue-600 to-indigo-700 bg-clip-text text-transparent filter blur-[0.3px]">Consistency</span>
+                </h3>
+                <p className="text-lg text-gray-600 leading-relaxed">Consistency flows effortlessly. It's easier to stay committed when you're anchored to a mission that matters.</p>
               </motion.div>
 
               {/* Card 2 */}
@@ -90,11 +74,10 @@ const About = () => {
                 whileHover={{ y: -5 }}
                 className="bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-xl p-8 text-left border border-blue-200 shadow-sm"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center mr-auto mb-6 border border-blue-200">
-                  <span className="text-2xl">💡</span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-4">Innovation</h3>
-                <p className="text-gray-600">Embrace new ideas and approaches to stay ahead of the curve</p>
+                <h3 className="text-2xl font-bold mb-6">
+                  <span className="bg-gradient-to-r from-indigo-400 via-blue-600 to-indigo-700 bg-clip-text text-transparent filter blur-[0.3px]">Skills</span>
+                </h3>
+                <p className="text-lg text-gray-600 leading-relaxed">Skills sharpen with intention. You're motivated to grow because you know why the growth is necessary.</p>
               </motion.div>
 
               {/* Card 3 */}
@@ -102,11 +85,10 @@ const About = () => {
                 whileHover={{ y: -5 }}
                 className="bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-xl p-8 text-left border border-blue-200 shadow-sm"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center mr-auto mb-6 border border-blue-200">
-                  <span className="text-2xl">🚀</span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-4">Growth</h3>
-                <p className="text-gray-600">Scale your business with confidence and purpose</p>
+                <h3 className="text-2xl font-bold mb-6">
+                  <span className="bg-gradient-to-r from-indigo-400 via-blue-600 to-indigo-700 bg-clip-text text-transparent filter blur-[0.3px]">Strategies</span>
+                </h3>
+                <p className="text-lg text-gray-600 leading-relaxed">Strategies succeed with meaning. Every tactic is backed by something larger than just "getting ahead."</p>
               </motion.div>
             </div>
 
@@ -115,7 +97,7 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
-              className="text-center mb-4"
+              className="text-center mt-24"
             >
               <p className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent filter blur-[0.3px] font-semibold text-xl">
                 Growing at the Speed of Trust
