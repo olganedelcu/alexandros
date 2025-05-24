@@ -64,156 +64,186 @@ const Approach = () => {
             </motion.div>
 
             <h2 className="text-4xl md:text-5xl font-bold text-gray-600 mb-8">
-              The Power of {" "}
-              <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Purpose in Business</span>
+              The {" "}
+              <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Multi-Modal Perspective Matrix</span>
             </h2>
+
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-lg text-gray-600 mb-12"
+            >
+              A method that helps you tap into unknown resources, unlock hidden strengths, and see opportunities you didn't know were possible. For builders, dreamers, and explorers.
+            </motion.p>
           </motion.div>
 
-          {/* Top Section - Image and Title Card */}
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {/* Card 1 */}
             <motion.div 
-              whileHover={{ scale: 1.02 }}
-              className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-2xl p-12 shadow-[0_0_20px_rgba(79,70,229,0.3)] relative overflow-hidden h-full flex items-center backdrop-blur-sm"
-            >
-              <div className="relative z-10 space-y-6">
-                <motion.h2 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  className="text-3xl font-bold"
-                >
-                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Multi-Modal Perspective Matrix</span>
-                </motion.h2>
-                
-                <motion.p 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  className="text-lg text-gray-600 italic"
-                >
-                  It's a tool I've spent years refining, working with people like you: builders, 
-                  dreamers, and explorers who want more out of life and business.
-                </motion.p>
-
-                <motion.p 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                  className="text-lg text-gray-600"
-                >
-                  That's why I developed the Multi-Modal Perspective Matrix (MMPM)—a method that 
-                  helps you tap into unknown resources, unlock hidden strengths, and see opportunities 
-                  you didn't know were possible.
-                </motion.p>
-              </div>
-            </motion.div>
-
-            <div className="w-full max-w-[300px] sm:max-w-[400px] md:max-w-[450px] mx-auto">
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                animate={{
-                  y: [0, -5, 0],
-                }}
-                transition={{
-                  y: {
-                    duration: 8,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }
-                }}
-                className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-[0_0_20px_rgba(79,70,229,0.3)] border-[1px] sm:border-[2px] border-transparent bg-gradient-to-br from-violet-400 to-indigo-600 p-[1px] sm:p-[2px]"
-              >
-                <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden">
-                  <motion.img
-                    src="/assets/pic.jpeg"
-                    alt="Multi-Modal Perspective Matrix"
-                    className="w-full h-auto object-cover filter brightness-105 contrast-105"
-                    style={{
-                      maxWidth: "100%",
-                      maxHeight: "550px",
-                      objectFit: "cover",
-                      boxShadow: "inset 0 0 20px rgba(79,70,229,0.2)"
-                    }}
-                    whileHover={{
-                      scale: 1.05,
-                      transition: { duration: 0.3 }
-                    }}
-                  />
-                </div>
-              </motion.div>
-            </div>
-          </div>
-
-          {/* Steps Section */}
-          <div className="max-w-6xl mx-auto relative">
-            {/* Step 1 - Left */}
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-2xl p-16 shadow-[0_0_20px_rgba(79,70,229,0.3)] relative overflow-hidden w-[65%] ml-auto mr-0 mb-16 backdrop-blur-sm"
+              className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(79,70,229,0.3)] relative overflow-hidden backdrop-blur-sm"
             >
               <div className="relative z-10">
                 <motion.div 
                   whileHover={{ scale: 1.1 }}
-                  className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 rounded-full w-16 h-16 flex items-center justify-center shadow-md mx-auto mb-8"
+                  className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 rounded-full w-12 h-12 flex items-center justify-center shadow-md mx-auto mb-4"
                 >
-                  <span className="text-2xl font-bold text-white">1</span>
+                  <span className="text-xl font-bold text-white">1</span>
                 </motion.div>
-                <h3 className="font-bold text-xl text-gray-800 mb-4 text-center">
+                <h3 className="font-bold text-lg text-gray-800 mb-3 text-center">
                   <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Simplify Complexities</span>
                 </h3>
-                <p className="text-gray-600 text-center">
-                  Break down overwhelming challenges into manageable, actionable steps that create clarity and direction.
+                <p className="text-gray-600 text-center text-sm">
+                  Break down overwhelming challenges into manageable, actionable steps.
                 </p>
               </div>
             </motion.div>
 
-            {/* Step 2 - Right */}
+            {/* Card 2 */}
             <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-2xl p-16 shadow-[0_0_20px_rgba(79,70,229,0.3)] relative overflow-hidden w-[65%] mr-auto ml-0 mb-16 backdrop-blur-sm"
+              className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(79,70,229,0.3)] relative overflow-hidden backdrop-blur-sm"
             >
               <div className="relative z-10">
                 <motion.div 
                   whileHover={{ scale: 1.1 }}
-                  className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 rounded-full w-16 h-16 flex items-center justify-center shadow-md mx-auto mb-8"
+                  className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 rounded-full w-12 h-12 flex items-center justify-center shadow-md mx-auto mb-4"
                 >
-                  <span className="text-2xl font-bold text-white">2</span>
+                  <span className="text-xl font-bold text-white">2</span>
                 </motion.div>
-                <h3 className="font-bold text-xl text-gray-800 mb-4 text-center">
+                <h3 className="font-bold text-lg text-gray-800 mb-3 text-center">
                   <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Drive Impact</span>
                 </h3>
-                <p className="text-gray-600 text-center">
-                  Create meaningful changes that transform your business and mindset, leading to tangible outcomes.
+                <p className="text-gray-600 text-center text-sm">
+                  Create meaningful changes that transform your business and mindset.
                 </p>
               </div>
             </motion.div>
 
-            {/* Step 3 - Left */}
+            {/* Card 3 */}
             <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-2xl p-16 shadow-[0_0_20px_rgba(79,70,229,0.3)] relative overflow-hidden w-[65%] ml-auto mr-0 backdrop-blur-sm"
+              className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(79,70,229,0.3)] relative overflow-hidden backdrop-blur-sm"
             >
               <div className="relative z-10">
                 <motion.div 
                   whileHover={{ scale: 1.1 }}
-                  className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 rounded-full w-16 h-16 flex items-center justify-center shadow-md mx-auto mb-8"
+                  className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 rounded-full w-12 h-12 flex items-center justify-center shadow-md mx-auto mb-4"
                 >
-                  <span className="text-2xl font-bold text-white">3</span>
+                  <span className="text-xl font-bold text-white">3</span>
                 </motion.div>
-                <h3 className="font-bold text-xl text-gray-800 mb-4 text-center">
+                <h3 className="font-bold text-lg text-gray-800 mb-3 text-center">
                   <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Craft Success</span>
                 </h3>
-                <p className="text-gray-600 text-center">
-                  Develop strategies that lead to sustainable business success and personal fulfillment.
+                <p className="text-gray-600 text-center text-sm">
+                  Develop strategies for sustainable business success.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Card 4 */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              whileHover={{ scale: 1.02 }}
+              className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(79,70,229,0.3)] relative overflow-hidden backdrop-blur-sm"
+            >
+              <div className="relative z-10">
+                <motion.div 
+                  whileHover={{ scale: 1.1 }}
+                  className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 rounded-full w-12 h-12 flex items-center justify-center shadow-md mx-auto mb-4"
+                >
+                  <span className="text-xl font-bold text-white">4</span>
+                </motion.div>
+                <h3 className="font-bold text-lg text-gray-800 mb-3 text-center">
+                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Build Resilience</span>
+                </h3>
+                <p className="text-gray-600 text-center text-sm">
+                  Strengthen your ability to adapt and overcome challenges.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Card 5 */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              whileHover={{ scale: 1.02 }}
+              className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(79,70,229,0.3)] relative overflow-hidden backdrop-blur-sm"
+            >
+              <div className="relative z-10">
+                <motion.div 
+                  whileHover={{ scale: 1.1 }}
+                  className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 rounded-full w-12 h-12 flex items-center justify-center shadow-md mx-auto mb-4"
+                >
+                  <span className="text-xl font-bold text-white">5</span>
+                </motion.div>
+                <h3 className="font-bold text-lg text-gray-800 mb-3 text-center">
+                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Foster Growth</span>
+                </h3>
+                <p className="text-gray-600 text-center text-sm">
+                  Create an environment that nurtures continuous improvement.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Card 6 */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              whileHover={{ scale: 1.02 }}
+              className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(79,70,229,0.3)] relative overflow-hidden backdrop-blur-sm"
+            >
+              <div className="relative z-10">
+                <motion.div 
+                  whileHover={{ scale: 1.1 }}
+                  className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 rounded-full w-12 h-12 flex items-center justify-center shadow-md mx-auto mb-4"
+                >
+                  <span className="text-xl font-bold text-white">6</span>
+                </motion.div>
+                <h3 className="font-bold text-lg text-gray-800 mb-3 text-center">
+                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Innovate</span>
+                </h3>
+                <p className="text-gray-600 text-center text-sm">
+                  Discover new approaches and creative solutions.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Card 7 */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              whileHover={{ scale: 1.02 }}
+              className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(79,70,229,0.3)] relative overflow-hidden backdrop-blur-sm"
+            >
+              <div className="relative z-10">
+                <motion.div 
+                  whileHover={{ scale: 1.1 }}
+                  className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 rounded-full w-12 h-12 flex items-center justify-center shadow-md mx-auto mb-4"
+                >
+                  <span className="text-xl font-bold text-white">7</span>
+                </motion.div>
+                <h3 className="font-bold text-lg text-gray-800 mb-3 text-center">
+                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Achieve Balance</span>
+                </h3>
+                <p className="text-gray-600 text-center text-sm">
+                  Find harmony between business success and personal fulfillment.
                 </p>
               </div>
             </motion.div>
