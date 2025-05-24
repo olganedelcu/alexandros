@@ -74,7 +74,7 @@ const Approach = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg text-gray-600 mb-12"
             >
-              A method that helps you tap into unknown resources, unlock hidden strengths, and see opportunities you didn't know were possible. For builders, dreamers, and explorers.
+              A 7 steps process that helps you tap into unknown resources, unlock hidden strengths, and see opportunities you didn't know were possible. For builders, dreamers, and explorers.
             </motion.p>
           </motion.div>
 
@@ -96,7 +96,7 @@ const Approach = () => {
                   <span className="text-xl font-bold text-white">1</span>
                 </motion.div>
                 <h3 className="font-bold text-lg text-gray-800 mb-3 text-center">
-                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Simplify Complexities</span>
+                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Defining the Problem</span>
                 </h3>
                 <p className="text-gray-600 text-center text-sm">
                   Break down overwhelming challenges into manageable, actionable steps.
@@ -120,7 +120,7 @@ const Approach = () => {
                   <span className="text-xl font-bold text-white">2</span>
                 </motion.div>
                 <h3 className="font-bold text-lg text-gray-800 mb-3 text-center">
-                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Drive Impact</span>
+                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Identifying Available Resources</span>
                 </h3>
                 <p className="text-gray-600 text-center text-sm">
                   Create meaningful changes that transform your business and mindset.
@@ -144,7 +144,7 @@ const Approach = () => {
                   <span className="text-xl font-bold text-white">3</span>
                 </motion.div>
                 <h3 className="font-bold text-lg text-gray-800 mb-3 text-center">
-                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Craft Success</span>
+                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Sizing the Chunks</span>
                 </h3>
                 <p className="text-gray-600 text-center text-sm">
                   Develop strategies for sustainable business success.
@@ -168,7 +168,7 @@ const Approach = () => {
                   <span className="text-xl font-bold text-white">4</span>
                 </motion.div>
                 <h3 className="font-bold text-lg text-gray-800 mb-3 text-center">
-                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Build Resilience</span>
+                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Allocating suitable Resources</span>
                 </h3>
                 <p className="text-gray-600 text-center text-sm">
                   Strengthen your ability to adapt and overcome challenges.
@@ -192,7 +192,7 @@ const Approach = () => {
                   <span className="text-xl font-bold text-white">5</span>
                 </motion.div>
                 <h3 className="font-bold text-lg text-gray-800 mb-3 text-center">
-                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Foster Growth</span>
+                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Looking at the Timeline</span>
                 </h3>
                 <p className="text-gray-600 text-center text-sm">
                   Create an environment that nurtures continuous improvement.
@@ -216,7 +216,7 @@ const Approach = () => {
                   <span className="text-xl font-bold text-white">6</span>
                 </motion.div>
                 <h3 className="font-bold text-lg text-gray-800 mb-3 text-center">
-                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Innovate</span>
+                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Exploring the MultiModal Perspective Matrix</span>
                 </h3>
                 <p className="text-gray-600 text-center text-sm">
                   Discover new approaches and creative solutions.
@@ -240,7 +240,7 @@ const Approach = () => {
                   <span className="text-xl font-bold text-white">7</span>
                 </motion.div>
                 <h3 className="font-bold text-lg text-gray-800 mb-3 text-center">
-                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Achieve Balance</span>
+                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Future Pacing your Growth Path</span>
                 </h3>
                 <p className="text-gray-600 text-center text-sm">
                   Find harmony between business success and personal fulfillment.

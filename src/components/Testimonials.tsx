@@ -37,25 +37,6 @@ const Testimonials = () => {
         <div className="absolute bottom-20 right-10 w-40 h-40 rounded-full bg-indigo-100 opacity-40 animate-pulse delay-700"></div>
       </div>
       
-      {/* Journey connector element with enhanced animation */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 -top-10 z-10">
-        <motion.div 
-          animate={{
-            y: [0, 5, 0],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="w-1 h-32 bg-gradient-to-b from-blue-400 to-blue-600 rounded-full relative"
-        >
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md">
-            <ArrowDown className="text-blue-600" />
-          </div>
-        </motion.div>
-      </div>
-      
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <motion.h2 
