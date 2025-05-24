@@ -35,53 +35,6 @@ const About = () => {
           }}
           className="absolute -left-10 top-1/3 w-40 h-40 rounded-full bg-blue-300 opacity-10 blur-2xl"
         ></motion.div>
-
-        {/* Persistent Thunder Effect */}
-        <div className="absolute right-0 top-0 w-full h-full">
-          <svg
-            className="w-full h-full"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-          >
-            <motion.path
-              initial={{ opacity: 0.3 }}
-              animate={{ opacity: [0.3, 0.5, 0.3] }}
-              transition={{
-                repeat: Infinity,
-                duration: 3,
-                ease: "easeInOut",
-              }}
-              d="M50 0 L60 40 L80 20 L70 60 L90 50 L60 80 L70 100 L50 70 L30 100 L40 80 L10 50 L30 60 L20 20 L40 40 Z"
-              fill="none"
-              stroke="rgba(79,70,229,0.4)"
-              strokeWidth="1"
-              className="filter blur-[2px]"
-            />
-          </svg>
-        </div>
-
-        <div className="absolute left-0 bottom-0 w-full h-full">
-          <svg
-            className="w-full h-full"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-          >
-            <motion.path
-              initial={{ opacity: 0.2 }}
-              animate={{ opacity: [0.2, 0.4, 0.2] }}
-              transition={{
-                repeat: Infinity,
-                duration: 4,
-                ease: "easeInOut",
-              }}
-              d="M30 0 L40 30 L60 10 L50 50 L70 40 L40 70 L50 90 L30 60 L10 90 L20 70 L0 40 L20 50 L10 10 L30 30 Z"
-              fill="none"
-              stroke="rgba(79,70,229,0.3)"
-              strokeWidth="1"
-              className="filter blur-[2px]"
-            />
-          </svg>
-        </div>
       </div>
 
       <div className="container mx-auto px-6 relative">
@@ -120,7 +73,7 @@ const About = () => {
             viewport={{ once: true }}
             className="max-w-6xl mx-auto mt-4"
           >
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="grid md:grid-cols-3 gap-8 mb-8">
               {/* Card 1 */}
               <motion.div 
                 whileHover={{ y: -5 }}
@@ -163,7 +116,7 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
-              className="text-center"
+              className="text-center mb-4"
             >
               <p className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent filter blur-[0.3px] font-semibold text-xl">
                 Growing at the Speed of Trust
