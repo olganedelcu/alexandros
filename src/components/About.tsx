@@ -61,10 +61,10 @@ const About = () => {
               {/* Card 1 */}
               <motion.div 
                 whileHover={{ y: -5 }}
-                className="bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-xl p-8 text-left border border-blue-200 shadow-sm"
+                className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-xl p-12 text-left border border-violet-200 shadow-sm backdrop-blur-sm"
               >
                 <h3 className="text-2xl font-bold mb-6">
-                  <span className="bg-gradient-to-r from-indigo-400 via-blue-600 to-indigo-700 bg-clip-text text-transparent filter blur-[0.3px]">Consistency</span>
+                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Consistency</span>
                 </h3>
                 <p className="text-lg text-gray-600 leading-relaxed">Consistency flows effortlessly. It's easier to stay committed when you're anchored to a mission that matters.</p>
               </motion.div>
@@ -72,10 +72,10 @@ const About = () => {
               {/* Card 2 */}
               <motion.div 
                 whileHover={{ y: -5 }}
-                className="bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-xl p-8 text-left border border-blue-200 shadow-sm"
+                className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-xl p-12 text-left border border-violet-200 shadow-sm backdrop-blur-sm"
               >
                 <h3 className="text-2xl font-bold mb-6">
-                  <span className="bg-gradient-to-r from-indigo-400 via-blue-600 to-indigo-700 bg-clip-text text-transparent filter blur-[0.3px]">Skills</span>
+                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Skills</span>
                 </h3>
                 <p className="text-lg text-gray-600 leading-relaxed">Skills sharpen with intention. You're motivated to grow because you know why the growth is necessary.</p>
               </motion.div>
@@ -83,10 +83,10 @@ const About = () => {
               {/* Card 3 */}
               <motion.div 
                 whileHover={{ y: -5 }}
-                className="bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-xl p-8 text-left border border-blue-200 shadow-sm"
+                className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-xl p-12 text-left border border-violet-200 shadow-sm backdrop-blur-sm"
               >
                 <h3 className="text-2xl font-bold mb-6">
-                  <span className="bg-gradient-to-r from-indigo-400 via-blue-600 to-indigo-700 bg-clip-text text-transparent filter blur-[0.3px]">Strategies</span>
+                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Strategies</span>
                 </h3>
                 <p className="text-lg text-gray-600 leading-relaxed">Strategies succeed with meaning. Every tactic is backed by something larger than just "getting ahead."</p>
               </motion.div>
