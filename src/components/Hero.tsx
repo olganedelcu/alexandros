@@ -19,7 +19,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-start justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 overflow-hidden pt-20">
+    <section className="relative min-h-screen flex items-start justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 overflow-hidden pt-12">
       {/* Enhanced animated path elements in background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div 
@@ -117,11 +117,11 @@ const Hero = () => {
           animate="visible"
         >
           <motion.div 
-            className="inline-block mb-3 text-blue-600 font-medium px-12 py-1.5 bg-blue-50 rounded-full shadow-sm border border-blue-200 text-sm min-w-[400px]"
+            className="inline-block mb-3 text-blue-600 font-medium px-4 py-2.5 bg-blue-50 rounded-full shadow-sm border border-blue-200 text-xs min-w-[200px]"
             variants={itemVariants}
             transition={{ duration: 0.6 }}
           >
-            ✨ Begin Your Transformational Journey
+            <span className="mr-2">✨</span>Begin Your Transformational Journey
           </motion.div>
           
           <motion.h1 
@@ -149,12 +149,12 @@ const Hero = () => {
           </motion.h1>
           
           <motion.div 
-            className="relative mb-8"
+            className="relative mb-12"
             variants={itemVariants}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <motion.div
-              className="text-xl md:text-2xl font-medium text-blue-800 py-4 px-6 relative z-10"
+              className="text-lg md:text-xl font-medium text-blue-800 py-4 px-6 relative z-10"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
@@ -180,35 +180,10 @@ const Hero = () => {
                 transition={{ delay: 0.9, duration: 0.7 }}
               />
             </motion.div>
-            <motion.div
-              className="absolute -right-10 -top-10 w-24 h-24 bg-blue-100 rounded-full blur-2xl opacity-60 z-0"
-              animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.4, 0.6, 0.4],
-              }}
-              transition={{
-                repeat: Infinity,
-                duration: 5,
-                ease: "easeInOut"
-              }}
-            />
-            <motion.div
-              className="absolute -left-8 -bottom-8 w-20 h-20 bg-indigo-100 rounded-full blur-2xl opacity-60 z-0"
-              animate={{
-                scale: [1, 1.3, 1],
-                opacity: [0.3, 0.5, 0.3],
-              }}
-              transition={{
-                repeat: Infinity,
-                duration: 6,
-                delay: 1,
-                ease: "easeInOut"
-              }}
-            />
           </motion.div>
           
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
             variants={itemVariants}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
@@ -231,6 +206,26 @@ const Hero = () => {
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </motion.span>
             </Button>
+          </motion.div>
+
+          {/* Stats Section */}
+          <motion.div 
+            className="flex justify-center items-center gap-20"
+            variants={itemVariants}
+            transition={{ duration: 0.6, delay: 0.8 }}
+          >
+            <div className="text-center px-6 py-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-lg shadow-sm border border-blue-200 w-36">
+              <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent mb-2">60+</div>
+              <div className="text-sm text-gray-600">Founders</div>
+            </div>
+            <div className="text-center px-6 py-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-lg shadow-sm border border-blue-200 w-36">
+              <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent mb-2">20+</div>
+              <div className="text-sm text-gray-600">Countries</div>
+            </div>
+            <div className="text-center px-6 py-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-lg shadow-sm border border-blue-200 w-40">
+              <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent mb-2">1,000+</div>
+              <div className="text-sm text-gray-600">Hours</div>
+            </div>
           </motion.div>
         </motion.div>
       </div>
