@@ -21,7 +21,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-start justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 overflow-hidden pt-8">
       {/* Enhanced animated path elements in background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
         <motion.div 
           animate={{ 
             opacity: [0.2, 0.4, 0.2],
@@ -32,7 +32,7 @@ const Hero = () => {
             duration: 12,
             ease: "easeInOut"
           }}
-          className="absolute top-[15%] left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-300 to-transparent opacity-30"
+          className="absolute top-[85%] left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-300 to-transparent opacity-30"
         ></motion.div>
         
         <motion.div 
@@ -46,7 +46,7 @@ const Hero = () => {
             delay: 1,
             ease: "easeInOut"
           }}
-          className="absolute top-2/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent opacity-30"
+          className="absolute top-[90%] left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent opacity-30"
         ></motion.div>
         
         <motion.div 
@@ -60,7 +60,7 @@ const Hero = () => {
             delay: 2,
             ease: "easeInOut"
           }}
-          className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-300 to-transparent opacity-30"
+          className="absolute top-[95%] left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-300 to-transparent opacity-30"
         ></motion.div>
         
         {/* Floating elements with more dynamic animations */}
@@ -188,10 +188,11 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <Button 
-              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-6 text-lg shadow-lg"
+              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-6 text-lg shadow-lg relative overflow-hidden"
               onClick={() => window.open('https://calendly.com/aktbusinesscoaching/', '_blank')}
             >
-              Book a Call
+              <span className="relative z-10">Book a Call</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shine"></div>
             </Button>
             <Button 
               variant="ghost" 
@@ -214,17 +215,20 @@ const Hero = () => {
             variants={itemVariants}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <div className="text-center px-6 py-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-lg shadow-sm border border-blue-200 w-36">
+            <div className="text-center px-6 py-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-lg shadow-sm border border-blue-200 w-44 relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
               <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent mb-2">60+</div>
-              <div className="text-sm text-gray-600">Founders</div>
+              <div className="text-xs text-gray-500">Founders Helped</div>
             </div>
-            <div className="text-center px-6 py-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-lg shadow-sm border border-blue-200 w-36">
+            <div className="text-center px-6 py-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-lg shadow-sm border border-blue-200 w-44 relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
               <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent mb-2">20+</div>
-              <div className="text-sm text-gray-600">Countries</div>
+              <div className="text-xs text-gray-500">Countries Impacted</div>
             </div>
-            <div className="text-center px-6 py-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-lg shadow-sm border border-blue-200 w-40">
+            <div className="text-center px-6 py-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-lg shadow-sm border border-blue-200 w-44 relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
               <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent mb-2">1,000+</div>
-              <div className="text-sm text-gray-600">Hours</div>
+              <div className="text-xs text-gray-500">Hours Coached</div>
             </div>
           </motion.div>
         </motion.div>
