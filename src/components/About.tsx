@@ -84,25 +84,6 @@ const About = () => {
         </div>
       </div>
 
-      {/* Journey connector element */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 -top-10 z-10">
-        <motion.div 
-          animate={{
-            y: [0, 5, 0],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="w-1 h-20 bg-gradient-to-b from-blue-400 to-blue-600 rounded-full relative"
-        >
-          <div className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md">
-            <ArrowDown className="text-blue-600" />
-          </div>
-        </motion.div>
-      </div>
-
       <div className="container mx-auto px-6 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -111,89 +92,83 @@ const About = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-8">
+          <motion.div 
+            whileHover={{ scale: 1.05 }}
+            className="inline-block px-4 py-2.5 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-full text-blue-600 font-medium text-xs shadow-sm mb-8 border border-blue-200 min-w-[200px]"
+          >
+            <span className="mr-2">💡</span>Your Journey Matters
+          </motion.div>
+
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-600 mb-8">
             Transform Your{" "}
-            <span className="text-blue-600">Business Journey</span>
+            <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent filter blur-[0.3px]">Business Journey</span>
           </h2>
 
-          <div className="text-lg text-gray-600 space-y-6 mb-12">
-            <p className="relative inline-block">
-              30+ years of entrepreneurial success,
-              <span className="block text-blue-600 font-semibold mt-2">
-                Now helping founders unlock their greatness
-              </span>
-            </p>
-          </div>
-        </motion.div>
+          <motion.p 
+            whileHover={{ x: 5 }}
+            className="text-xl leading-relaxed text-gray-600 mb-12"
+          >
+            I've walked the path of entrepreneurship, faced the
+            challenges, and discovered the keys to success. Now, I'm
+            here to guide you through your journey.
+          </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="max-w-6xl mx-auto mt-4"
-        >
-          <div className="grid md:grid-cols-2 gap-16 items-center min-h-[500px] relative z-10">
-            <div className="relative flex items-center justify-start">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="max-w-6xl mx-auto mt-4"
+          >
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
+              {/* Card 1 */}
               <motion.div 
-                whileHover={{ scale: 1.05 }}
-                className="relative rounded-2xl overflow-hidden max-w-[60%] mx-auto ml-24"
+                whileHover={{ y: -5 }}
+                className="bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-xl p-8 text-left border border-blue-200 shadow-sm"
               >
-                <img
-                  src="/public/assets/about.png"
-                  alt="Alexandros Tziranis"
-                  className="w-full h-full object-cover"
-                />
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center mr-auto mb-6 border border-blue-200">
+                  <span className="text-2xl">🎯</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-4">Strategic Vision</h3>
+                <p className="text-gray-600">Develop a clear roadmap for your business growth and success</p>
+              </motion.div>
+
+              {/* Card 2 */}
+              <motion.div 
+                whileHover={{ y: -5 }}
+                className="bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-xl p-8 text-left border border-blue-200 shadow-sm"
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center mr-auto mb-6 border border-blue-200">
+                  <span className="text-2xl">💡</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-4">Innovation</h3>
+                <p className="text-gray-600">Embrace new ideas and approaches to stay ahead of the curve</p>
+              </motion.div>
+
+              {/* Card 3 */}
+              <motion.div 
+                whileHover={{ y: -5 }}
+                className="bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-xl p-8 text-left border border-blue-200 shadow-sm"
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center mr-auto mb-6 border border-blue-200">
+                  <span className="text-2xl">🚀</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-4">Growth</h3>
+                <p className="text-gray-600">Scale your business with confidence and purpose</p>
               </motion.div>
             </div>
 
-            <div className="space-y-6">
-              <div className="space-y-4">
-                <motion.div 
-                  whileHover={{ scale: 1.05 }}
-                  className="inline-block px-6 py-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-full text-blue-600 font-medium text-sm shadow-sm"
-                >
-                  Your Journey Matters
-                </motion.div>
-
-                <h3 className="text-3xl md:text-4xl font-bold text-gray-800 leading-tight">
-                  You're in the right place
-                </h3>
-              </div>
-
-              <div className="space-y-6 text-gray-600">
-                <div className="space-y-6">
-                  <motion.p 
-                    whileHover={{ x: 5 }}
-                    className="text-xl leading-relaxed"
-                  >
-                    I've walked the path of entrepreneurship, faced the
-                    challenges, and discovered the keys to success. Now, I'm
-                    here to guide you through your journey.
-                  </motion.p>
-
-                  <motion.p 
-                    whileHover={{ x: 5 }}
-                    className="text-xl leading-relaxed"
-                  >
-                    With expertise in engineering, finance, and psychology, I
-                    bring a unique perspective to help you navigate the
-                    complexities of business growth.
-                  </motion.p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            viewport={{ once: true }}
-            className="mt-12 text-center"
-          >
-            <p className="text-blue-600 font-semibold text-xl">
-              Growing at the Speed of Trust
-            </p>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <p className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent filter blur-[0.3px] font-semibold text-xl">
+                Growing at the Speed of Trust
+              </p>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>

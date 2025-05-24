@@ -239,36 +239,6 @@ const Hero = () => {
       <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-r from-blue-100 via-indigo-100 to-blue-100" style={{
         clipPath: 'ellipse(50% 200% at 50% 100%)'
       }}></div>
-      
-      <motion.div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.8, duration: 0.8 }}
-      >
-        <motion.div 
-          animate={{ y: [0, 8, 0] }}
-          transition={{ 
-            repeat: Infinity, 
-            duration: 2.5,
-            ease: "easeInOut" 
-          }}
-          className="cursor-pointer"
-          onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-        >
-          <div className="w-8 h-12 border-2 border-blue-500 rounded-full p-1 flex items-center justify-center">
-            <motion.div 
-              animate={{ opacity: [0.4, 1, 0.4], y: [0, 8, 0] }}
-              transition={{ 
-                repeat: Infinity, 
-                duration: 2.5,
-                ease: "easeInOut" 
-              }}
-              className="w-1 h-3 bg-blue-500 rounded-full mx-auto"
-            ></motion.div>
-          </div>
-        </motion.div>
-      </motion.div>
     </section>
   );
 };
