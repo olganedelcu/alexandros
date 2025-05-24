@@ -19,7 +19,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 overflow-hidden">
+    <section className="relative min-h-screen flex items-start justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 overflow-hidden pt-20">
       {/* Enhanced animated path elements in background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div 
@@ -29,10 +29,10 @@ const Hero = () => {
           }}
           transition={{
             repeat: Infinity,
-            duration: 8,
+            duration: 12,
             ease: "easeInOut"
           }}
-          className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-300 to-transparent opacity-30"
+          className="absolute top-[15%] left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-300 to-transparent opacity-30"
         ></motion.div>
         
         <motion.div 
@@ -42,11 +42,11 @@ const Hero = () => {
           }}
           transition={{
             repeat: Infinity,
-            duration: 10,
+            duration: 15,
             delay: 1,
             ease: "easeInOut"
           }}
-          className="absolute top-2/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent opacity-30"
+          className="absolute top-2/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent opacity-30"
         ></motion.div>
         
         <motion.div 
@@ -56,11 +56,11 @@ const Hero = () => {
           }}
           transition={{
             repeat: Infinity,
-            duration: 7,
+            duration: 20,
             delay: 2,
             ease: "easeInOut"
           }}
-          className="absolute top-3/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-300 to-transparent opacity-30"
+          className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-300 to-transparent opacity-30"
         ></motion.div>
         
         {/* Floating elements with more dynamic animations */}
@@ -72,10 +72,10 @@ const Hero = () => {
           }}
           transition={{
             repeat: Infinity,
-            duration: 15,
+            duration: 20,
             ease: "easeInOut"
           }}
-          className="absolute -left-10 top-1/3 w-40 h-40 rounded-full bg-blue-300 opacity-10 blur-2xl"
+          className="absolute -left-10 top-1/4 w-40 h-40 rounded-full bg-blue-300 opacity-10 blur-2xl"
         ></motion.div>
         
         <motion.div 
@@ -86,7 +86,7 @@ const Hero = () => {
           }}
           transition={{
             repeat: Infinity,
-            duration: 18,
+            duration: 25,
             delay: 2,
             ease: "easeInOut"
           }}
@@ -101,11 +101,11 @@ const Hero = () => {
           }}
           transition={{
             repeat: Infinity,
-            duration: 12,
+            duration: 18,
             delay: 1,
             ease: "easeInOut"
           }}
-          className="absolute left-1/3 bottom-1/4 w-48 h-48 rounded-full bg-blue-400 opacity-10 blur-2xl"
+          className="absolute left-1/3 bottom-1/3 w-48 h-48 rounded-full bg-blue-400 opacity-10 blur-2xl"
         ></motion.div>
       </div>
       
@@ -117,28 +117,35 @@ const Hero = () => {
           animate="visible"
         >
           <motion.div 
-            className="inline-block mb-3 text-blue-600 font-medium px-4 py-1 bg-blue-50 rounded-full shadow-sm"
+            className="inline-block mb-3 text-blue-600 font-medium px-12 py-1.5 bg-blue-50 rounded-full shadow-sm border border-blue-200 text-sm min-w-[400px]"
             variants={itemVariants}
             transition={{ duration: 0.6 }}
           >
-            Begin Your Transformational Journey
+            ✨ Begin Your Transformational Journey
           </motion.div>
           
           <motion.h1 
-            className="text-5xl md:text-7xl font-bold text-gray-800 mb-6"
+            className="text-5xl md:text-7xl font-bold text-gray-600 mb-6 leading-[2]"
             variants={itemVariants}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            I help founders reconnect with{" "}
-            <span className="relative inline-block">
-              <span>their greatness</span>
-              <motion.div 
-                className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-400 via-blue-600 to-indigo-600 rounded"
-                initial={{ width: 0 }}
-                animate={{ width: "100%" }}
-                transition={{ delay: 1.2, duration: 0.8 }}
-              ></motion.div>
-            </span>
+            <div className="mb-8">
+              I help{" "}
+              <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent filter blur-[0.3px]">founders</span>
+              {" "}reconnect {" "}
+            </div>
+            <div>
+            with{" "}
+              <span className="relative inline-block">
+                <span className="bg-gradient-to-r from-indigo-400 via-blue-600 to-indigo-700 bg-clip-text text-transparent filter blur-[0.3px]">their greatness</span>
+                <motion.div 
+                  className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-400 via-indigo-500 to-violet-500 rounded"
+                  initial={{ width: 0 }}
+                  animate={{ width: "100%" }}
+                  transition={{ delay: 1.2, duration: 0.8 }}
+                ></motion.div>
+              </span>
+            </div>
           </motion.h1>
           
           <motion.div 
@@ -206,23 +213,23 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <Button 
-              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-6 text-lg shadow-lg group"
+              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-6 text-lg shadow-lg"
               onClick={() => window.open('https://calendly.com/aktbusinesscoaching/', '_blank')}
             >
               Book a Call
+            </Button>
+            <Button 
+              variant="ghost" 
+              className="text-gray-600 hover:text-gray-800 hover:bg-transparent px-8 py-6 text-lg group"
+              onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Learn More
               <motion.span
                 initial={{ x: 0 }}
                 whileHover={{ x: 5 }}
               >
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </motion.span>
-            </Button>
-            <Button 
-              variant="outline" 
-              className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg"
-              onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Learn More
             </Button>
           </motion.div>
         </motion.div>

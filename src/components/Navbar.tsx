@@ -48,69 +48,10 @@ const Navbar = () => {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
-      <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent blur-sm transition-opacity duration-1000 ${visible ? 'opacity-0' : 'opacity-100'}`}></div>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-1000 ease-in-out ${visible ? 'translate-y-0 opacity-100' : '-translate-y-16 opacity-0'}`}>
-        {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none bg-gradient-to-br from-blue-50/90 via-indigo-50/90 to-blue-100/90">
-          <motion.div 
-            animate={{ 
-              opacity: [0.1, 0.2, 0.1],
-              scale: [1, 1.05, 1]
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 8,
-              ease: "easeInOut"
-            }}
-            className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent opacity-30"
-          ></motion.div>
-          
-          <motion.div 
-            animate={{ 
-              opacity: [0.1, 0.15, 0.1],
-              scale: [1, 1.08, 1]
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 10,
-              delay: 1,
-              ease: "easeInOut"
-            }}
-            className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-300 to-transparent opacity-30"
-          ></motion.div>
-          
-          <motion.div 
-            animate={{ 
-              x: [0, 20, 0],
-              y: [0, -10, 0],
-              opacity: [0.05, 0.1, 0.05] 
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 15,
-              ease: "easeInOut"
-            }}
-            className="absolute -left-10 top-1/2 w-40 h-40 rounded-full bg-blue-200 opacity-10 blur-2xl"
-          ></motion.div>
-          
-          <motion.div 
-            animate={{ 
-              x: [0, -20, 0],
-              y: [0, 10, 0],
-              opacity: [0.05, 0.1, 0.05] 
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 18,
-              delay: 2,
-              ease: "easeInOut"
-            }}
-            className="absolute right-1/4 top-1/2 w-56 h-56 rounded-full bg-indigo-200 opacity-10 blur-2xl"
-          ></motion.div>
-        </div>
-
-        {/* Main navbar content with backdrop blur */}
-        <div className="relative bg-gradient-to-br from-blue-50/30 via-indigo-50/30 to-blue-100/30 backdrop-blur-md">
+      <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent blur-sm transition-opacity duration-2000 ${visible ? 'opacity-0' : 'opacity-100'}`}></div>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-2000 ease-in-out ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
+        {/* Main navbar content */}
+        <div className="relative backdrop-blur-sm bg-blue-50/80">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16 sm:h-20">
               {/* Logo/Brand */}
