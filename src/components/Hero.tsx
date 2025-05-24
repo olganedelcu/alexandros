@@ -19,7 +19,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-start justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 overflow-hidden pt-12">
+    <section className="relative min-h-screen flex items-start justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 overflow-hidden pt-8">
       {/* Enhanced animated path elements in background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div 
