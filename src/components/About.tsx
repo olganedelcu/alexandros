@@ -1,4 +1,3 @@
-import { ArrowDown } from "lucide-react";
 import { motion } from "framer-motion";
 
 const About = () => {
