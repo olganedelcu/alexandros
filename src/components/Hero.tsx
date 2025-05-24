@@ -230,6 +230,11 @@ const Hero = () => {
         </motion.div>
       </div>
       
+      {/* Curved bottom edge */}
+      <div className="absolute bottom-0 left-0 right-0 h-32" style={{
+        clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 90% 100%, 80% 90%, 70% 100%, 60% 90%, 50% 100%, 40% 90%, 30% 100%, 20% 90%, 10% 100%, 0% 100%)'
+      }}></div>
+      
       <motion.div 
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
         initial={{ opacity: 0 }}

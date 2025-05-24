@@ -52,14 +52,14 @@ const Navbar = () => {
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-2000 ease-in-out ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
         {/* Main navbar content */}
         <div className="relative backdrop-blur-sm bg-blue-50/80">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto px-3 sm:px-4 lg:px-6">
             <div className="flex items-center justify-between h-16 sm:h-20">
               {/* Logo/Brand */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
-                className="flex items-center"
+                className="flex items-center absolute left-16 sm:left-24"
               >
                 <img 
                   src="/assets/logo1.png" 
@@ -69,7 +69,7 @@ const Navbar = () => {
               </motion.div>
 
               {/* Desktop Navigation */}
-              <div className="hidden md:flex items-center space-x-8">
+              <div className="hidden md:flex items-center space-x-8 mx-auto">
                 {navLinks.map((link) => (
                   <motion.a
                     key={link.name}
@@ -88,7 +88,7 @@ const Navbar = () => {
               </div>
 
               {/* Desktop Button */}
-              <div className="hidden md:block">
+              <div className="hidden md:block absolute right-16 sm:right-24">
                 <Button
                   asChild
                   className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 sm:px-8 py-2.5 sm:py-3 rounded-md font-bold text-sm sm:text-base shadow-lg transform transition duration-300 hover:scale-105 relative overflow-hidden"
@@ -103,7 +103,7 @@ const Navbar = () => {
               {/* Mobile Menu Button */}
               <button
                 onClick={toggleMenu}
-                className="md:hidden p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted focus:outline-none"
+                className="md:hidden p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted focus:outline-none absolute right-16 sm:right-24"
               >
                 {isMenuOpen ? (
                   <X className="h-6 w-6" />
