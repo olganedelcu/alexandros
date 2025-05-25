@@ -6,6 +6,7 @@ import katerian from "../assets/katerian.jpg";
 import roland from "../assets/rolandlo.jpeg";
 import savvas from "../assets/savvas.jpg";
 import whatsapp1 from "../assets/whatsapp1.jpg";
+import jobsties from "../assets/jobsties.png";
 
 
 interface TestimonialProps {
@@ -135,7 +136,7 @@ const Testimonials = () => {
       role: "Career Coach",
       quote: "If I were a new entrepreneur and had this problem, with no idea how to solve it, I would contact you.",
       imageUrl: ana,
-      companyLogo: ana
+      companyLogo: jobsties
     },
     {
       name: "Κaterina B.",
