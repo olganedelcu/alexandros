@@ -159,17 +159,17 @@ const Testimonials = () => {
       imageUrl: savvas,
     },
     {
+      name: "Ailyn",
+      role: "Director Investor Relations",
+      quote: "I love the methodology in your process. Trully brilliant!",
+      imageUrl: ailyn
+    },
+    {
       name: "X",
       role: "CEO Founder",
       quote: "",
       type: "whatsapp",
       whatsappScreenshot: whatsapp1
-    },
-    {
-      name: "Ailyn",
-      role: "Director Investor Relations",
-      quote: "I love the methodology in your process. Trully brilliant!",
-      imageUrl: ailyn
     },
     {
       name: "Peter A.",
