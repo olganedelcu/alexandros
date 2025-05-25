@@ -19,7 +19,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-[90vh] md:min-h-screen flex items-start justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 overflow-hidden pt-16 md:pt-8 px-4 sm:px-6">
+    <section className="relative min-h-screen flex items-start justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 overflow-hidden pt-4 sm:pt-8">
       {/* Enhanced animated path elements in background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
         <motion.div 
@@ -75,7 +75,7 @@ const Hero = () => {
             duration: 20,
             ease: "easeInOut"
           }}
-          className="absolute -left-10 top-1/4 w-20 md:w-40 h-20 md:h-40 rounded-full bg-blue-300 opacity-10 blur-2xl"
+          className="absolute -left-10 top-1/4 w-40 h-40 rounded-full bg-blue-300 opacity-10 blur-2xl"
         ></motion.div>
         
         <motion.div 
@@ -90,7 +90,7 @@ const Hero = () => {
             delay: 2,
             ease: "easeInOut"
           }}
-          className="absolute right-1/4 top-1/2 w-32 md:w-56 h-32 md:h-56 rounded-full bg-indigo-300 opacity-10 blur-2xl"
+          className="absolute right-1/4 top-1/2 w-56 h-56 rounded-full bg-indigo-300 opacity-10 blur-2xl"
         ></motion.div>
         
         <motion.div 
@@ -105,11 +105,11 @@ const Hero = () => {
             delay: 1,
             ease: "easeInOut"
           }}
-          className="absolute left-1/3 bottom-1/3 w-24 md:w-48 h-24 md:h-48 rounded-full bg-blue-400 opacity-10 blur-2xl"
+          className="absolute left-1/3 bottom-1/3 w-48 h-48 rounded-full bg-blue-400 opacity-10 blur-2xl"
         ></motion.div>
       </div>
       
-      <div className="container mx-auto text-center z-10">
+      <div className="container mx-auto px-4 sm:px-6 text-center z-10">
         <motion.div 
           className="max-w-4xl mx-auto"
           variants={containerVariants}
@@ -117,7 +117,7 @@ const Hero = () => {
           animate="visible"
         >
           <motion.div 
-            className="inline-block mb-3 text-blue-600 font-medium px-3 md:px-4 py-2 md:py-2.5 bg-blue-50 rounded-full shadow-sm border border-blue-200 text-xs md:text-sm min-w-[180px] md:min-w-[200px]"
+            className="inline-block mb-2 sm:mb-3 text-blue-600 font-medium px-3 sm:px-4 py-2 sm:py-2.5 bg-blue-50 rounded-full shadow-sm border border-blue-200 text-xs min-w-[160px] sm:min-w-[200px]"
             variants={itemVariants}
             transition={{ duration: 0.6 }}
           >
@@ -125,11 +125,11 @@ const Hero = () => {
           </motion.div>
           
           <motion.h1 
-            className="text-4xl sm:text-5xl md:text-7xl font-bold text-gray-600 mb-4 md:mb-6 leading-tight md:leading-[2]"
+            className="text-4xl sm:text-5xl md:text-7xl font-bold text-gray-600 mb-4 sm:mb-6 leading-[1.5] sm:leading-[2]"
             variants={itemVariants}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <div className="mb-4 md:mb-8">
+            <div className="mb-4 sm:mb-8">
               I help{" "}
               <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent filter blur-[0.3px]">founders</span>
               {" "}reconnect {" "}
@@ -149,12 +149,12 @@ const Hero = () => {
           </motion.h1>
           
           <motion.div 
-            className="relative mb-8 md:mb-12"
+            className="relative mb-8 sm:mb-12"
             variants={itemVariants}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <motion.div
-              className="text-base md:text-xl font-medium text-blue-800 py-3 md:py-4 px-4 md:px-6 relative z-10"
+              className="text-base sm:text-lg md:text-xl font-medium text-blue-800 py-3 sm:py-4 px-4 sm:px-6 relative z-10"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
@@ -183,19 +183,20 @@ const Hero = () => {
           </motion.div>
           
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-12 md:mb-16"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-12 sm:mb-16"
             variants={itemVariants}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <Button 
-              className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 md:px-8 py-4 md:py-6 text-base md:text-lg shadow-lg relative overflow-hidden"
+              className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg shadow-lg relative overflow-hidden"
               onClick={() => window.open('https://calendly.com/aktbusinesscoaching/', '_blank')}
             >
               <span className="relative z-10">Book a Call</span>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shine"></div>
             </Button>
             <Button 
-              className="w-full sm:w-auto text-gray-600 hover:text-gray-800 px-6 md:px-8 py-4 md:py-6 text-base md:text-lg group bg-transparent"
+              variant="ghost" 
+              className="w-full sm:w-auto text-gray-600 hover:text-gray-800 hover:bg-transparent px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg group"
               onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Learn More
@@ -210,23 +211,23 @@ const Hero = () => {
 
           {/* Stats Section */}
           <motion.div 
-            className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8 justify-center items-center"
+            className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8"
             variants={itemVariants}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <div className="text-center px-4 md:px-6 py-3 md:py-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-lg shadow-sm border border-blue-200 w-full relative overflow-hidden group">
+            <div className="text-center px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-lg shadow-sm border border-blue-200 w-full sm:w-44 relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-              <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent mb-1 md:mb-2">60+</div>
+              <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent mb-2">60+</div>
               <div className="text-xs text-gray-500">Founders Helped</div>
             </div>
-            <div className="text-center px-4 md:px-6 py-3 md:py-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-lg shadow-sm border border-blue-200 w-full relative overflow-hidden group">
+            <div className="text-center px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-lg shadow-sm border border-blue-200 w-full sm:w-44 relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-              <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent mb-1 md:mb-2">20+</div>
+              <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent mb-2">20+</div>
               <div className="text-xs text-gray-500">Countries Impacted</div>
             </div>
-            <div className="text-center px-4 md:px-6 py-3 md:py-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-lg shadow-sm border border-blue-200 w-full relative overflow-hidden group">
+            <div className="text-center px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-lg shadow-sm border border-blue-200 w-full sm:w-44 relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-              <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent mb-1 md:mb-2">1,000+</div>
+              <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent mb-2">1,000+</div>
               <div className="text-xs text-gray-500">Hours Coached</div>
             </div>
           </motion.div>
@@ -234,12 +235,12 @@ const Hero = () => {
       </div>
       
       {/* Curved bottom edge */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 md:h-32" style={{
+      <div className="absolute bottom-0 left-0 right-0 h-24 sm:h-32" style={{
         clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 90% 100%, 80% 90%, 70% 100%, 60% 90%, 50% 100%, 40% 90%, 30% 100%, 20% 90%, 10% 100%, 0% 100%)'
       }}></div>
 
       {/* Thin curved divider */}
-      <div className="absolute bottom-0 left-0 right-0 h-4 md:h-6 bg-gradient-to-r from-blue-100 via-indigo-100 to-blue-100" style={{
+      <div className="absolute bottom-0 left-0 right-0 h-4 sm:h-6 bg-gradient-to-r from-blue-100 via-indigo-100 to-blue-100" style={{
         clipPath: 'ellipse(50% 200% at 50% 100%)'
       }}></div>
     </section>

@@ -48,9 +48,9 @@ const Footer = () => {
             <motion.div 
               whileHover={{ scale: 1.05 }}
               className="inline-block -ml-4"
-            >
+          >
               <img src="/assets/logo1.png" alt="AkT Logo" className="h-14 md:h-16 w-auto" />
-            </motion.div>
+          </motion.div>
             <div className="mt-4 mb-6">
               <div className="relative inline-block">
                 <p className="text-sm md:text-base text-gray-600">
@@ -70,24 +70,24 @@ const Footer = () => {
                     />
                   </span>
                   {" "}with expert guidance with proven strategies to transform your business
-                </p>
+          </p>
               </div>
             </div>
             <div className="flex justify-start space-x-4">
-              <motion.a 
-                whileHover={{ scale: 1.1 }}
-                href="https://www.linkedin.com/in/alexandrostziranis/" 
+            <motion.a 
+              whileHover={{ scale: 1.1 }}
+              href="https://www.linkedin.com/in/alexandrostziranis/" 
                 className="text-gray-500 hover:text-blue-600 transition-colors bg-white/80 rounded-full p-2 shadow-sm hover:shadow-md"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              target="_blank"
+              rel="noopener noreferrer"
+            >
                 <Linkedin size={18} />
-              </motion.a>
-            </div>
+            </motion.a>
+          </div>
           </motion.div>
-          
-          <div className="hidden md:block"></div>
-          
+        
+        <div className="hidden md:block"></div>
+        
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -96,22 +96,22 @@ const Footer = () => {
             className="md:col-start-3 text-left"
           >
             <h3 className="text-lg md:text-xl font-bold mb-4 text-gray-800">Contact Info</h3>
-            <ul className="space-y-4">
-              <motion.li 
-                whileHover={{ x: 5 }}
+          <ul className="space-y-4">
+            <motion.li 
+              whileHover={{ x: 5 }}
                 className="flex items-center justify-start group"
-              >
+            >
                 <div className="w-8 h-8 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center mr-3">
                   <Mail className="text-blue-600" size={16} />
                 </div>
                 <a href="mailto:aktbusinesscoaching@gmail.com" className="text-sm md:text-base text-gray-600 hover:text-blue-600 transition-colors">
                   aktbusinesscoaching@gmail.com
-                </a>
-              </motion.li>
-              <motion.li 
-                whileHover={{ x: 5 }}
+              </a>
+            </motion.li>
+            <motion.li 
+              whileHover={{ x: 5 }}
                 className="flex items-start justify-start group"
-              >
+            >
                 <div className="w-8 h-8 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center mr-3 mt-1">
                   <MapPin className="text-blue-600" size={16} />
                 </div>
@@ -119,9 +119,9 @@ const Footer = () => {
                   3rd Floor Suite<br />
                   207 Regent Street<br />
                   London, UK
-                </span>
-              </motion.li>
-            </ul>
+              </span>
+            </motion.li>
+          </ul>
           </motion.div>
         </div>
 
