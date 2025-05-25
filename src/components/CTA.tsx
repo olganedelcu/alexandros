@@ -4,8 +4,10 @@ import { motion } from "framer-motion";
 import ana from "../assets/ana.jpeg";
 import donald from "../assets/donald.jpg";
 import katerian from "../assets/katerian.jpg";
-import roland from "../assets/rolandlo.jpeg";
+import ailyn from "../assets/ailyn.jpeg";
 import savvas from "../assets/savvas.jpg";
+import miruna from "../assets/miruna.jpeg";
+
 
 const CTA = () => {
   return (
@@ -81,16 +83,18 @@ const CTA = () => {
                 Join our exclusive beta program today and be among the first coaches to leverage AI.
               </p>
 
-              <div className="flex items-center justify-center gap-2 mb-8">
-                <div className="flex -space-x-2">
-                  <img src={ana} alt="User" className="w-8 h-8 rounded-full border-2 border-blue-400" />
-                  <img src={donald} alt="User" className="w-8 h-8 rounded-full border-2 border-blue-500" />
-                  <img src={katerian} alt="User" className="w-8 h-8 rounded-full border-2 border-blue-600" />
-                  <img src={roland} alt="User" className="w-8 h-8 rounded-full border-2 border-indigo-500" />
-                  <img src={savvas} alt="User" className="w-8 h-8 rounded-full border-2 border-indigo-600" />
+              <div className="flex items-center justify-center gap-1 sm:gap-2 mb-8">
+                <div className="flex -space-x-1 sm:-space-x-2">
+                  <img src={donald} alt="User" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border sm:border-2 border-blue-400" />
+                  <img src={ana} alt="User" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border sm:border-2 border-blue-400" />
+                  <img src={savvas} alt="User" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border sm:border-2 border-blue-400" />
+                  <img src={katerian} alt="User" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border sm:border-2 border-blue-400" />
+                  <img src={ailyn} alt="User" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border sm:border-2 border-blue-400" />
+                  <img src={miruna} alt="User" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border sm:border-2 border-blue-400" />
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-sm">
-                  Trusted by 60+ Founders
+                <div className="bg-white/10 backdrop-blur-sm px-1.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-sm">
+                  <span className="sm:hidden">Trusted by 60+ Founders</span>
+                  <span className="hidden sm:inline">Trusted by 60+ Founders</span>
                 </div>
               </div>
               
