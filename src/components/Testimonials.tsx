@@ -27,7 +27,7 @@ const StarRating = () => {
       {[...Array(5)].map((_, i) => (
         <Star
           key={i}
-          className="h-4 w-4 fill-blue-400 text-blue-400"
+          className="h-4 w-4 fill-amber-400 text-amber-400"
         />
       ))}
     </div>
