@@ -4,6 +4,7 @@ import ana from "../assets/ana.jpeg";
 import donald from "../assets/donald.jpg";
 import katerian from "../assets/katerian.jpg";
 import roland from "../assets/rolandlo.jpeg";
+import savvas from "../assets/savvas.jpg";
 
 interface TestimonialProps {
   name: string;
