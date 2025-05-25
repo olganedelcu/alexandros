@@ -1,139 +1,244 @@
 import React from 'react';
-import { Clock, Zap, Star } from 'lucide-react';
+import { Rocket, Zap, Trophy } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 
 const Packages = () => {
   return (
-    <section id="packages" className="relative min-h-screen flex items-start justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 overflow-hidden py-16">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
-        <motion.div 
-          animate={{ 
-            opacity: [0.2, 0.4, 0.2],
-            scale: [1, 1.05, 1]
+    <section id="packages" className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <motion.div
+          animate={{
+            x: [0, 30, 0],
+            y: [0, -20, 0],
+            opacity: [0.1, 0.2, 0.1],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 15,
+            ease: "easeInOut",
+          }}
+          className="absolute -left-10 top-1/3 w-40 h-40 rounded-full bg-violet-300 opacity-10 blur-2xl"
+        />
+        <motion.div
+          animate={{
+            x: [0, -30, 0],
+            y: [0, 20, 0],
+            opacity: [0.1, 0.2, 0.1],
           }}
           transition={{
             repeat: Infinity,
             duration: 12,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
-          className="absolute top-[85%] left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-300 to-transparent opacity-30"
-        ></motion.div>
+          className="absolute -right-10 top-2/3 w-40 h-40 rounded-full bg-indigo-300 opacity-10 blur-2xl"
+        />
       </div>
 
-      <div className="container mx-auto px-6 text-center z-10">
-        <motion.div 
-          className="max-w-4xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            My Offer
-          </h2>
-          <p className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
-            No off-the-shelf programs. Fully customized for you and your case coaching, based on my 35+ years business experience and MMPM methodology™.
-          </p>
-          <p className="text-xl font-medium text-blue-600 mb-16">
-            Just raw clarity, fast shifts, and high-impact results.
-          </p>
+      <div className="container mx-auto px-6">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <motion.div 
+              whileHover={{ scale: 1.05 }}
+              className="inline-block px-4 py-2.5 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-full text-blue-600 font-medium text-xs shadow-sm mb-8 border border-blue-200 min-w-[200px]"
+            >
+              <span className="mr-2">✨</span>Packages
+            </motion.div>
 
-          <h3 className="text-2xl font-bold text-gray-800 mb-12">
-            Choose the depth you're ready for:
-          </h3>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-600 mb-4">
+              My <span className="bg-gradient-to-r from-blue-400 via-blue-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Offer</span>
+            </h2>
+            <p className="text-base text-gray-600 mb-8">
+              No off-the-shelf programs. Fully customized for you and your case coaching, based on my 35+ years business experience and MMPM methodology™.
+            </p>
+          </motion.div>
 
           {/* Packages Grid */}
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {/* Tier 1 */}
             <motion.div 
-              className="bg-white rounded-2xl p-8 shadow-sm border border-blue-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-              whileHover={{ scale: 1.02 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl p-8 shadow-sm border border-blue-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-105 relative overflow-hidden group flex flex-col"
             >
-              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                <Clock className="w-8 h-8 text-blue-600" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Tier 1 — The Tactical Hit
-              </h3>
-              <div className="space-y-4 text-left">
-                <p className="text-gray-600 font-medium">1:1 Power Session (90 min)</p>
-                <p className="text-gray-500 text-sm">Perfect for: Founders who are stuck, scaling, or spiraling and need a direct hit of clarity and options.</p>
-                <ul className="text-gray-600 text-sm space-y-2">
-                  <li>• A focused 90-minute deep dive</li>
-                  <li>• Bring the chaos, get options</li>
-                  <li>• Rapid-fire insight, reframing, and direction</li>
-                  <li>• Immediate action points and clarity</li>
-                  <li>• Optional: Recording + written summary</li>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-full -mr-16 -mt-16 opacity-50 group-hover:opacity-70 transition-opacity"></div>
+              <div className="relative flex flex-col flex-grow">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-xl flex items-center justify-center mb-6">
+                  <Rocket className="w-6 h-6 text-blue-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  The Tactical Hit
+                </h3>
+                <p className="text-gray-500 text-sm mb-6">Perfect for: Founders who are stuck, scaling, or spiraling and need a direct hit of clarity and options.</p>
+                <div className="flex items-baseline mb-6">
+                  <span className="text-3xl font-bold text-gray-900">€450</span>
+                  <span className="text-gray-500 ml-2">/ session</span>
+                </div>
+                <ul className="text-gray-600 text-sm space-y-3 mb-8">
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">•</span>
+                    <span>A focused 90-minute deep dive</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">•</span>
+                    <span>Bring the chaos, get options</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">•</span>
+                    <span>Rapid-fire insight, reframing, and direction</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">•</span>
+                    <span>Immediate action points and clarity</span>
+                  </li>
                 </ul>
-                <p className="text-blue-600 font-bold text-xl mt-6">€450 / session</p>
+                <div className="mt-auto">
+                  <Button 
+                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white py-6 text-base font-medium shadow-sm relative overflow-hidden group mb-4"
+                    onClick={() => window.open('https://calendly.com/aktbusinesscoaching/', '_blank')}
+                  >
+                    <span className="relative z-10">Get Started</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shine"></div>
+                  </Button>
+                  <p className="text-gray-500 text-xs italic text-center">Optional: Recording + written summary</p>
+                </div>
               </div>
             </motion.div>
 
             {/* Tier 2 */}
             <motion.div 
-              className="bg-white rounded-2xl p-8 shadow-sm border border-blue-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-              whileHover={{ scale: 1.02 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl p-8 shadow-sm border border-blue-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-105 relative overflow-hidden group flex flex-col"
             >
-              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                <Zap className="w-8 h-8 text-blue-600" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Tier 2 — The Founder Sprint
-              </h3>
-              <div className="space-y-4 text-left">
-                <p className="text-gray-600 font-medium">1-Month Intensive (4 sessions + chat support)</p>
-                <p className="text-gray-500 text-sm">Perfect for: Founders ready to make serious moves, quickly.</p>
-                <ul className="text-gray-600 text-sm space-y-2">
-                  <li>• 4 x 60-min weekly strategy & clarity sessions</li>
-                  <li>• Personalized integration of the MMPM method</li>
-                  <li>• Voice/Chat support between calls for momentum</li>
-                  <li>• Clear roadmap, creative options, and sharp decisions</li>
-                  <li>• Identify blind spots. Build confidence. Move forward.</li>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-full -mr-16 -mt-16 opacity-50 group-hover:opacity-70 transition-opacity"></div>
+              <div className="relative flex flex-col flex-grow">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-xl flex items-center justify-center mb-6">
+                  <Zap className="w-6 h-6 text-blue-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  The Founder Sprint
+                </h3>
+                <p className="text-gray-500 text-sm mb-6">Perfect for: Founders ready to make serious moves, quickly.</p>
+                <div className="flex items-baseline mb-6">
+                  <span className="text-3xl font-bold text-gray-900">€1,500</span>
+                  <span className="text-gray-500 ml-2">/ month</span>
+                </div>
+                <ul className="text-gray-600 text-sm space-y-3 mb-8">
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">•</span>
+                    <span>4 x 60-min weekly strategy & clarity sessions</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">•</span>
+                    <span>Personalized integration of the MMPM method</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">•</span>
+                    <span>Voice/Chat support between calls for momentum</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">•</span>
+                    <span>Clear roadmap, creative options, and sharp decisions</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">•</span>
+                    <span>Identify blind spots. Build confidence. Move forward.</span>
+                  </li>
                 </ul>
-                <p className="text-blue-600 font-bold text-xl mt-6">€1,500 / month</p>
-                <p className="text-gray-500 text-sm italic">Optional: Includes diagnostic assessment + custom founder map.</p>
+                <div className="mt-auto">
+                  <Button 
+                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white py-6 text-base font-medium shadow-sm relative overflow-hidden group mb-4"
+                    onClick={() => window.open('https://calendly.com/aktbusinesscoaching/', '_blank')}
+                  >
+                    <span className="relative z-10">Get Started</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shine"></div>
+                  </Button>
+                  <p className="text-gray-500 text-xs italic text-center">Optional: Includes diagnostic assessment + custom founder map.</p>
+                </div>
               </div>
             </motion.div>
 
             {/* Tier 3 */}
             <motion.div 
-              className="bg-white rounded-2xl p-8 shadow-sm border border-blue-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-              whileHover={{ scale: 1.02 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl p-8 shadow-sm border border-blue-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-105 relative overflow-hidden group flex flex-col"
             >
-              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                <Star className="w-8 h-8 text-blue-600" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Tier 3 — The Full Partner
-              </h3>
-              <div className="space-y-4 text-left">
-                <p className="text-gray-600 font-medium">High-Stakes Advisory Retainer (3–6 months)</p>
-                <p className="text-gray-500 text-sm">Perfect for: Founders who want a thinking partner and strategic guide in their corner for long-term.</p>
-                <ul className="text-gray-600 text-sm space-y-2">
-                  <li>• Bi-weekly 90-min sessions (custom cadence available)</li>
-                  <li>• Personalized voice & chat support</li>
-                  <li>• Participation in high-level negotiations or team strategy sessions</li>
-                  <li>• Revenue, brand, and positioning insight</li>
-                  <li>• Ongoing transformation, execution & recalibration</li>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-full -mr-16 -mt-16 opacity-50 group-hover:opacity-70 transition-opacity"></div>
+              <div className="relative flex flex-col flex-grow">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-xl flex items-center justify-center mb-6">
+                  <Trophy className="w-6 h-6 text-blue-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  The Full Partner
+                </h3>
+                <p className="text-gray-500 text-sm mb-6">Perfect for: Founders who want a thinking partner and strategic guide in their corner for long-term.</p>
+                <div className="flex items-baseline mb-6">
+                  <span className="text-3xl font-bold text-gray-900">€5,000</span>
+                  <span className="text-gray-500 ml-2">/ month</span>
+                </div>
+                <ul className="text-gray-600 text-sm space-y-3 mb-8">
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">•</span>
+                    <span>Bi-weekly 90-min sessions (custom cadence available)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">•</span>
+                    <span>Personalized voice & chat support</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">•</span>
+                    <span>Participation in high-level negotiations or team strategy sessions</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">•</span>
+                    <span>Revenue, brand, and positioning insight</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">•</span>
+                    <span>Ongoing transformation, execution & recalibration</span>
+                  </li>
                 </ul>
-                <p className="text-blue-600 font-bold text-xl mt-6">Starting at €5,000 / month</p>
-                <p className="text-gray-500 text-sm italic">Bonus: Includes full access to proprietary tools, deck/offer reviews, and on-demand perspective when stakes are high.</p>
+                <div className="mt-auto">
+                  <Button 
+                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white py-6 text-base font-medium shadow-sm relative overflow-hidden group mb-4"
+                    onClick={() => window.open('https://calendly.com/aktbusinesscoaching/', '_blank')}
+                  >
+                    <span className="relative z-10">Get Started</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shine"></div>
+                  </Button>
+                  <p className="text-gray-500 text-xs italic text-center">Bonus: Includes full access to proprietary tools, deck/offer reviews, and on-demand perspective when stakes are high.</p>
+                </div>
               </div>
             </motion.div>
           </div>
 
-          {/* CTA Section */}
-          <div className="text-center">
-            <Button 
-              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-6 text-lg shadow-lg relative overflow-hidden"
-              onClick={() => window.open('https://calendly.com/aktbusinesscoaching/', '_blank')}
-            >
-              <span className="relative z-10">Book a Call</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shine"></div>
-            </Button>
-          </div>
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <p className="text-xl font-medium text-blue-600">
+              Just raw clarity, fast shifts, and high-impact results.
+            </p>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
