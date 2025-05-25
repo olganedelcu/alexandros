@@ -195,8 +195,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shine"></div>
             </Button>
             <Button 
-              variant="ghost" 
-              className="text-gray-600 hover:text-gray-800 hover:bg-transparent px-8 py-6 text-lg group"
+              className="text-gray-600 hover:text-gray-800 px-8 py-6 text-lg group bg-transparent"
               onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Learn More
