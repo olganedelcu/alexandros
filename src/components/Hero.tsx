@@ -139,7 +139,7 @@ const Hero = () => {
               <span className="relative inline-block">
                 <span className="bg-gradient-to-r from-indigo-400 via-blue-600 to-indigo-700 bg-clip-text text-transparent filter blur-[0.3px]">their greatness</span>
                 <motion.div 
-                  className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-400 via-indigo-500 to-violet-500 rounded"
+                  className="absolute -bottom-2 left-0 w-full h-2 bg-gradient-to-r from-blue-400 via-indigo-500 to-violet-500 rounded"
                   initial={{ width: 0 }}
                   animate={{ width: "100%" }}
                   transition={{ delay: 1.2, duration: 0.8 }}
@@ -172,12 +172,6 @@ const Hero = () => {
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.7, duration: 0.5 }}
-              />
-              <motion.div
-                className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 w-1/2 bg-gradient-to-r from-blue-400 to-indigo-500 rounded"
-                initial={{ width: "0%" }}
-                animate={{ width: "50%" }}
-                transition={{ delay: 0.9, duration: 0.7 }}
               />
             </motion.div>
           </motion.div>
