@@ -125,7 +125,7 @@ const Hero = () => {
           </motion.div>
           
           <motion.h1 
-            className="text-4xl sm:text-5xl md:text-7xl font-bold text-gray-600 mb-4 sm:mb-6 leading-[1.5] sm:leading-[2]"
+            className="text-4xl sm:text-5xl md:text-7xl font-bold text-gray-600 mb-8 sm:mb-12 leading-[1.5] sm:leading-[2]"
             variants={itemVariants}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
