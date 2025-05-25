@@ -133,7 +133,7 @@ const Testimonials = () => {
     },
     {
       name: "Ana N.",
-      role: "Career Coach",
+      role: "Founder",
       quote: "If I were a new entrepreneur and had this problem, with no idea how to solve it, I would contact you.",
       imageUrl: ana,
       companyLogo: jobsties
