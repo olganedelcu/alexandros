@@ -16,7 +16,7 @@ interface TestimonialProps {
   name: string;
   role: string;
   company?: string;
-  quote: string;
+  quote?: string;
   imageUrl?: string;
   companyLogo?: string;
   whatsappScreenshot?: string;
@@ -55,20 +55,45 @@ const TestimonialCard = ({
         viewport={{ once: true }}
         whileHover={{ scale: 1.02 }}
       >
+        <div className="flex items-center justify-between mb-6">
+          {imageUrl && (
+            <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-blue-200 shadow-md">
+              <img
+                src={imageUrl}
+                alt={name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          )}
+          {companyLogo && (
+            <div className="w-20 h-20 rounded-lg overflow-hidden border-2 border-blue-200 shadow-md bg-white">
+              <img
+                src={companyLogo}
+                alt={`${company} logo`}
+                className="w-full h-full object-contain p-2"
+              />
+            </div>
+          )}
+        </div>
+        
+        <div className="text-center mb-4">
+          <p className="font-bold text-gray-800 text-lg">{name}</p>
+          <p className="text-blue-600 text-sm mb-2">{role}</p>
+        </div>
+
         <img
           src={whatsappScreenshot}
           alt="WhatsApp testimonial"
-          className="w-full h-auto rounded-lg shadow-md"
+          className="w-full h-auto rounded-lg shadow-md mb-4"
         />
-        {companyLogo && (
-          <div className="mt-4 flex justify-center">
-            <img
-              src={companyLogo}
-              alt={`${company} logo`}
-              className="h-8 w-auto object-contain"
-            />
-          </div>
-        )}
+
+        <div className="h-[1px] bg-gradient-to-r from-blue-400 via-blue-600 to-blue-700 opacity-50 mb-4"></div>
+
+        <div className="flex justify-center mb-4">
+          <StarRating />
+        </div>
+
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-700 opacity-70"></div>
       </motion.div>
     );
   }
@@ -177,7 +202,8 @@ const Testimonials = () => {
       name: "Peter A.",
       role: "Business Owner",
       quote: "Totally exceeded my ecxpectations! Alexandros is a very good listener, uplifts my confidence and has gives valuable advice to action immediately. He was so knowledgeable about my industry and I value his input highly. Extremely helpful. 10/10!"    
-    },{
+    },
+    {
       name: "Olga",
       role: "CTO",
       type: "whatsapp",
