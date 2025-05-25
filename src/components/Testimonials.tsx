@@ -8,6 +8,8 @@ import savvas from "../assets/savvas.jpg";
 import whatsapp1 from "../assets/whatsapp1.jpg";
 import jobsties from "../assets/jobsties.png";
 import ailyn from "../assets/ailyn.jpeg";
+import olga from "../assets/olga.png";
+import whatolgitis from "../assets/whatolgitis.png";
 
 
 interface TestimonialProps {
@@ -174,7 +176,14 @@ const Testimonials = () => {
     {
       name: "Peter A.",
       role: "Business Owner",
-      quote: "Totally exceeded my ecxpectations! Alexandros is a very good listener, uplifts my confidence and has gives valuable advice to action immediately. He was so knowledgeable about my industry and I value his input highly. Extremely helpful. 10/10!"    }
+      quote: "Totally exceeded my ecxpectations! Alexandros is a very good listener, uplifts my confidence and has gives valuable advice to action immediately. He was so knowledgeable about my industry and I value his input highly. Extremely helpful. 10/10!"    
+    },{
+      name: "Olga",
+      role: "CTO",
+      type: "whatsapp",
+      whatsappScreenshot: whatolgitis,
+      imageUrl: olga,
+    }
   ];
 
   const fadeInUp = {
