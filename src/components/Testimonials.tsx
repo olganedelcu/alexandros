@@ -5,6 +5,8 @@ import donald from "../assets/donald.jpg";
 import katerian from "../assets/katerian.jpg";
 import roland from "../assets/rolandlo.jpeg";
 import savvas from "../assets/savvas.jpg";
+import whatsapp1 from "../assets/whatsapp1.jpg";
+
 
 interface TestimonialProps {
   name: string;
@@ -86,11 +88,11 @@ const TestimonialCard = ({
           </div>
         )}
         {companyLogo && (
-          <div>
+          <div className="w-20 h-20 rounded-lg overflow-hidden border-2 border-blue-200 shadow-md bg-white">
             <img
               src={companyLogo}
               alt={`${company} logo`}
-              className="h-8 w-auto object-contain"
+              className="w-full h-full object-contain p-2"
             />
           </div>
         )}
@@ -121,16 +123,12 @@ const Testimonials = () => {
     {
       name: "Jilian",
       role: "Trade Exporter",
-      quote: "You are a magician!",
-      imageUrl: ana,
-      companyLogo: ana
-    },
+      quote: "You are a magician!"
+        },
     {
       name: "Alla",
       role: "Food Industry Owner",
-      quote: "Your out-of-the-box thinking provided a fresh perspective on my challenges.",
-      imageUrl: ana,
-      companyLogo: ana
+      quote: "Your out-of-the-box thinking provided a fresh perspective on my challenges."
     },
     {
       name: "Ana N.",
@@ -159,12 +157,11 @@ const Testimonials = () => {
       imageUrl: savvas,
     },
     {
-      name: "WhatsApp Client",
-      role: "Tech Founder",
+      name: "X",
+      role: "CEO Founder",
       quote: "",
       type: "whatsapp",
-      whatsappScreenshot: ana,
-      companyLogo: ana
+      whatsappScreenshot: whatsapp1
     }
   ];
 
