@@ -1,103 +1,128 @@
-import React, { useState } from 'react';
-import { Plus, Minus } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+import { useState } from "react";
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const faqs = [
+  const faqs: FAQItem[] = [
     {
       question: "What makes your business coaching different?",
-      answer: "Unlike traditional coaching that focuses solely on business metrics, I help founders reconnect with their greatness and unlock their full potential. My approach combines strategic business guidance with personal development, ensuring you not only grow your business but also evolve as a leader. We don't just work on what you do, but who you are becoming."
+      answer: "I don't do fluff. I don't sell you frameworks from a textbook. I listen deep, challenge hard, and unlock what's already inside you, fast. My MMPM method is based on tested, real, and built for high-stakes clarity and bold results. This isn't about more information. It's about transformation."
     },
     {
       question: "How long does the coaching process take?",
-      answer: "The coaching journey is unique to each founder. While some see significant shifts in 3-6 months, others prefer longer-term engagement for sustained growth. We work at your pace, focusing on meaningful progress rather than arbitrary timelines. The goal is to create lasting transformation, not quick fixes."
+      answer: "Long enough to break patterns. Short enough to make change real. Some founders get what they need in a few powerful sessions. Others stay for months because the growth doesn't stop. There's no one-size-fits-all. You come in when you're ready, you stay if it's working."
     },
     {
       question: "What results can I expect from coaching?",
-      answer: "You can expect to see improvements in both your business performance and personal leadership. This includes clearer vision and strategy, better decision-making, improved team dynamics, increased revenue, and most importantly, a stronger connection to your purpose and potential. Many clients report feeling more confident, focused, and aligned with their goals."
+      answer: "You'll get clarity. You'll get options you couldn't see before. You'll gain access to resources you thought you never had. You'll move faster, make bolder decisions, and break through blocks that held you back for years. You'll stop overthinking and start doing. And if we're a good fit, the shift will feel undeniable."
     },
     {
       question: "How do we work together?",
-      answer: "We begin with a deep dive into your current situation, challenges, and aspirations. Our sessions combine strategic planning, mindset work, and practical implementation. You'll receive personalized guidance, accountability, and support between sessions. The process is collaborative, with you driving the agenda and me providing the framework and expertise."
+      answer: "We talk. We go deep. We don't waste time. You bring the truth, I bring the mirror. We meet online or in person, 1:1 or with your core team — and we work through your biggest questions and roadblocks. You get personalized, actionable guidance. And I follow up. I stay close. Because your results matter to me."
     },
     {
       question: "Is this coaching suitable for my business stage?",
-      answer: "Yes, my coaching is designed for founders at various stages - from early-stage startups to established businesses. Whether you're looking to launch, scale, or transform your business, we can adapt the approach to your specific needs and challenges. The focus is always on helping you achieve your next level of success."
+      answer: "If you're just looking for tips, tricks, or someone to agree with you — probably not. But if you're building, scaling, stuck, or on the edge of something bigger, then this is the right time. I work with early-stage founders and seasoned entrepreneurs alike. Stage doesn't matter. Readiness does."
     }
   ];
 
   return (
-    <div id="faq" className="py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-12 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 w-full">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Left Column - Header Content */}
-          <div className="flex flex-col items-start">
-            <p className="text-xs md:text-sm bg-blue-100 border border-blue-300 rounded-md pl-2 pr-3 md:pl-2 md:pr-4 py-1.5 md:py-2 text-black mb-4">
-              <span className="inline-block w-6 h-6 bg-primary rounded-sm mr-4 align-middle"></span>
-              <span className="text-black">FAQ</span>
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-lg text-gray-600">
-              Have questions about business coaching? Find quick answers to common questions about my approach and how we can work together.
-            </p>
-          </div>
+    <section id="faq" className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <motion.div
+          animate={{
+            x: [0, 30, 0],
+            y: [0, -20, 0],
+            opacity: [0.1, 0.2, 0.1],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 15,
+            ease: "easeInOut",
+          }}
+          className="absolute -left-10 top-1/3 w-40 h-40 rounded-full bg-violet-300 opacity-10 blur-2xl"
+        />
+        <motion.div
+          animate={{
+            x: [0, -30, 0],
+            y: [0, 20, 0],
+            opacity: [0.1, 0.2, 0.1],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 12,
+            ease: "easeInOut",
+          }}
+          className="absolute -right-10 top-2/3 w-40 h-40 rounded-full bg-indigo-300 opacity-10 blur-2xl"
+        />
+      </div>
 
-          {/* Right Column - Questions */}
+      <div className="container mx-auto px-6">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <motion.div 
+              whileHover={{ scale: 1.05 }}
+              className="inline-block px-4 py-2.5 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-full text-blue-600 font-medium text-xs shadow-sm mb-8 border border-blue-200 min-w-[200px]"
+            >
+              <span className="mr-2">🎩</span>FAQ
+            </motion.div>
+
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-600 mb-4">
+              Got Questions? <span className="bg-gradient-to-r from-blue-400 via-blue-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">I've Got Answers</span>
+            </h2>
+            <p className="text-base text-gray-600 mb-8">
+              Everything you need to know about working with me, no pitch just raw, authentic answers.
+            </p>
+          </motion.div>
+
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="bg-white/80 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg"
-                style={{
-                  border: '1px solid rgba(59, 130, 246, 0.2)',
-                }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-xl shadow-sm border border-blue-100 overflow-hidden"
               >
                 <button
-                  className="w-full p-6 text-left flex items-center justify-between"
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-blue-50 transition-colors"
                 >
-                  <span className="text-lg font-medium text-gray-800 pr-8">
-                    {faq.question}
-                  </span>
-                  <div className="flex-shrink-0">
-                    <motion.div
-                      animate={{ rotate: openIndex === index ? 45 : 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      {openIndex === index ? (
-                        <Minus className="w-6 h-6 text-primary" />
-                      ) : (
-                        <Plus className="w-6 h-6 text-primary" />
-                      )}
-                    </motion.div>
-                  </div>
+                  <span className="text-lg font-medium text-gray-800">{faq.question}</span>
+                  <ChevronDown 
+                    className={`w-5 h-5 text-blue-600 transition-transform duration-200 ${
+                      openIndex === index ? 'transform rotate-180' : ''
+                    }`}
+                  />
                 </button>
-                
-                <AnimatePresence>
-                  {openIndex === index && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="p-6 pt-0 text-gray-600 whitespace-pre-line">
-                        {faq.answer}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+                <div
+                  className={`px-6 transition-all duration-200 ease-in-out ${
+                    openIndex === index ? 'max-h-96 py-4' : 'max-h-0'
+                  }`}
+                >
+                  <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
