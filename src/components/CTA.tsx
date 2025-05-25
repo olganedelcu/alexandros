@@ -106,10 +106,11 @@ const CTA = () => {
                   Request A Call
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <p className="text-sm text-white/80">
-                  Limited spots available
-                </p>
+                
               </div>
+              <p className="text-sm text-white/80">
+              Limited spots available
+                </p>
             </div>
           </motion.div>
         </div>
