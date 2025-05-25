@@ -13,8 +13,8 @@ import whatolgitis from "../assets/whatolgitis.png";
 
 
 interface TestimonialProps {
-  name: string;
-  role: string;
+  name?: string;
+  role?: string;
   company?: string;
   quote?: string;
   imageUrl?: string;
@@ -55,36 +55,40 @@ const TestimonialCard = ({
         viewport={{ once: true }}
         whileHover={{ scale: 1.02 }}
       >
-        <div className="flex items-center justify-between mb-6">
-          {imageUrl && (
-            <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-blue-200 shadow-md">
-              <img
-                src={imageUrl}
-                alt={name}
-                className="w-full h-full object-cover"
-              />
+        {name && (
+          <>
+            <div className="flex items-center justify-between mb-6">
+              {imageUrl && (
+                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-blue-200 shadow-md">
+                  <img
+                    src={imageUrl}
+                    alt={name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
+              {companyLogo && (
+                <div className="w-20 h-20 rounded-lg overflow-hidden border-2 border-blue-200 shadow-md bg-white">
+                  <img
+                    src={companyLogo}
+                    alt={`${company} logo`}
+                    className="w-full h-full object-contain p-2"
+                  />
+                </div>
+              )}
             </div>
-          )}
-          {companyLogo && (
-            <div className="w-20 h-20 rounded-lg overflow-hidden border-2 border-blue-200 shadow-md bg-white">
-              <img
-                src={companyLogo}
-                alt={`${company} logo`}
-                className="w-full h-full object-contain p-2"
-              />
+            
+            <div className="text-center mb-4">
+              <p className="font-bold text-gray-800 text-lg">{name}</p>
+              {role && <p className="text-blue-600 text-sm mb-2">{role}</p>}
             </div>
-          )}
-        </div>
-        
-        <div className="text-center mb-4">
-          <p className="font-bold text-gray-800 text-lg">{name}</p>
-          <p className="text-blue-600 text-sm mb-2">{role}</p>
-        </div>
+          </>
+        )}
 
         <img
           src={whatsappScreenshot}
           alt="WhatsApp testimonial"
-          className="w-full h-auto rounded-lg shadow-md mb-4"
+          className={`w-full h-auto rounded-lg shadow-md mb-4 ${name === "Olga" ? "max-w-[280px] mx-auto" : ""}`}
         />
 
         <div className="h-[1px] bg-gradient-to-r from-blue-400 via-blue-600 to-blue-700 opacity-50 mb-4"></div>
@@ -161,7 +165,7 @@ const Testimonials = () => {
     },
     {
       name: "Ana N.",
-      role: "Founder",
+      role: "Founder & Career Coach",
       quote: "If I were a new entrepreneur and had this problem, with no idea how to solve it, I would contact you.",
       imageUrl: ana,
       companyLogo: jobsties
@@ -192,8 +196,6 @@ const Testimonials = () => {
       imageUrl: ailyn
     },
     {
-      name: "X",
-      role: "CEO Founder",
       quote: "",
       type: "whatsapp",
       whatsappScreenshot: whatsapp1
@@ -205,7 +207,7 @@ const Testimonials = () => {
     },
     {
       name: "Olga",
-      role: "CTO",
+      role: "Co-Founder & Operations",
       type: "whatsapp",
       whatsappScreenshot: whatolgitis,
       imageUrl: olga,
