@@ -1,6 +1,9 @@
 import { Quote, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import ana from "../assets/ana.jpeg";
+import donald from "../assets/donald.jpg";
+import katerian from "../assets/katerian.jpg";
+import roland from "../assets/roland.jpeg";
 
 interface TestimonialProps {
   name: string;
@@ -129,11 +132,30 @@ const Testimonials = () => {
       companyLogo: ana
     },
     {
-      name: "Ana",
+      name: "Ana N.",
       role: "Career Coach",
       quote: "If I were a new entrepreneur and had this problem, with no idea how to solve it, I would contact you.",
       imageUrl: ana,
       companyLogo: ana
+    },
+    {
+      name: "Κaterina B.",
+      role: "Founder",
+      quote: "I am grateful I have the opportunity to collaborate with you, as you are such a strong spirit reinforcing humans to align with what is needed for  accomplishment, in natural and practical way.",
+      imageUrl: katerian
+    },
+    {
+      name: "Donald C.",
+      role: "Real Estate Agent",
+      quote: "The biggest lesson I learned was the power of simplicity—communicating clearly without overthinking, creating a more significant impact. His wealth of knowledge is unmatched, and I emerged a stronger business leader because of his guidance.",
+      imageUrl: donald,
+      companyLogo: roland
+    },
+    {
+      name: "Savvas A.",
+      role: "CEO/Founder",
+      quote: "All I can say about Alexandros is that he is brilliant. He has taken great interest in the project I have taken on. I highly recommend him for any coaching.",
+      imageUrl: savvas,
     },
     {
       name: "WhatsApp Client",
