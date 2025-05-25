@@ -1,22 +1,147 @@
-import { Quote } from "lucide-react";
+import { Quote, Star } from "lucide-react";
 import { motion } from "framer-motion";
+import ana from "../assets/ana.jpeg";
+
+interface TestimonialProps {
+  name: string;
+  role: string;
+  company?: string;
+  quote: string;
+  imageUrl?: string;
+  companyLogo?: string;
+  whatsappScreenshot?: string;
+  type?: "standard" | "whatsapp";
+}
+
+const StarRating = () => {
+  return (
+    <div className="flex gap-0.5">
+      {[...Array(5)].map((_, i) => (
+        <Star
+          key={i}
+          className="h-4 w-4 fill-blue-400 text-blue-400"
+        />
+      ))}
+    </div>
+  );
+};
+
+const TestimonialCard = ({
+  name,
+  role,
+  company,
+  quote,
+  imageUrl,
+  companyLogo,
+  whatsappScreenshot,
+  type = "standard"
+}: TestimonialProps) => {
+  if (type === "whatsapp") {
+    return (
+      <motion.div 
+        className="bg-gradient-to-br from-blue-50 via-blue-50 to-blue-100 rounded-xl p-8 text-center shadow-[0_0_20px_rgba(59,130,246,0.3)] relative overflow-hidden backdrop-blur-sm"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        whileHover={{ scale: 1.02 }}
+      >
+        <img
+          src={whatsappScreenshot}
+          alt="WhatsApp testimonial"
+          className="w-full h-auto rounded-lg shadow-md"
+        />
+        {companyLogo && (
+          <div className="mt-4 flex justify-center">
+            <img
+              src={companyLogo}
+              alt={`${company} logo`}
+              className="h-8 w-auto object-contain"
+            />
+          </div>
+        )}
+      </motion.div>
+    );
+  }
+
+  return (
+    <motion.div 
+      className="bg-gradient-to-br from-blue-50 via-blue-50 to-blue-100 rounded-xl p-8 text-center shadow-[0_0_20px_rgba(59,130,246,0.3)] relative overflow-hidden backdrop-blur-sm"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      whileHover={{ scale: 1.02 }}
+    >
+      <div className="flex items-center justify-between mb-6">
+        {imageUrl && (
+          <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-blue-200 shadow-md">
+            <img
+              src={imageUrl}
+              alt={name}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        )}
+        {companyLogo && (
+          <div>
+            <img
+              src={companyLogo}
+              alt={`${company} logo`}
+              className="h-8 w-auto object-contain"
+            />
+          </div>
+        )}
+      </div>
+      
+      <div className="text-center mb-4">
+        <p className="font-bold text-gray-800 text-lg">{name}</p>
+        <p className="text-blue-600 text-sm mb-2">{role}</p>
+      </div>
+
+      <p className="text-lg text-gray-700 mb-6 italic relative">
+        {quote}
+      </p>
+
+      <div className="h-[1px] bg-gradient-to-r from-blue-400 via-blue-600 to-blue-700 opacity-50 mb-4"></div>
+
+      <div className="flex justify-center mb-4">
+        <StarRating />
+      </div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-700 opacity-70"></div>
+    </motion.div>
+  );
+};
 
 const Testimonials = () => {
-  const testimonials = [
+  const testimonials: TestimonialProps[] = [
     {
+      name: "Jilian",
+      role: "Trade Exporter",
       quote: "You are a magician!",
-      author: "Jilian",
-      role: "Trade Exporter"
+      imageUrl: ana,
+      companyLogo: ana
     },
     {
+      name: "Alla",
+      role: "Food Industry Owner",
       quote: "Your out-of-the-box thinking provided a fresh perspective on my challenges.",
-      author: "Alla",
-      role: "Food Industry Owner"
+      imageUrl: ana,
+      companyLogo: ana
     },
     {
+      name: "Ana",
+      role: "Career Coach",
       quote: "If I were a new entrepreneur and had this problem, with no idea how to solve it, I would contact you.",
-      author: "Ana",
-      role: "Career Coach"
+      imageUrl: ana,
+      companyLogo: ana
+    },
+    {
+      name: "WhatsApp Client",
+      role: "Tech Founder",
+      quote: "",
+      type: "whatsapp",
+      whatsappScreenshot: ana,
+      companyLogo: ana
     }
   ];
 
@@ -87,37 +212,7 @@ const Testimonials = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <motion.div 
-                key={index} 
-                className="bg-gradient-to-br from-blue-50 via-blue-50 to-blue-100 rounded-xl p-8 text-center shadow-[0_0_20px_rgba(59,130,246,0.3)] relative overflow-hidden backdrop-blur-sm"
-                variants={fadeInUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ delay: index * 0.2 }}
-                whileHover={{ scale: 1.02 }}
-              >
-                <div className="flex justify-center mb-4">
-                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-r from-blue-400 via-blue-600 to-blue-700">
-                    <Quote className="text-white w-6 h-6" />
-                  </div>
-                </div>
-                <p className="text-lg text-gray-700 mb-6 italic relative">
-                  <span className="font-serif text-5xl text-blue-400 absolute -top-4 -left-1 opacity-20">"</span>
-                  {testimonial.quote}
-                  <span className="font-serif text-5xl text-blue-400 absolute -bottom-10 -right-1 opacity-20">"</span>
-                </p>
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-700 opacity-70"></div>
-                <motion.div 
-                  className="border-t border-blue-200 pt-4 mt-auto"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ delay: 0.5 + index * 0.2 }}
-                >
-                  <p className="font-bold text-gray-800">{testimonial.author}</p>
-                  <p className="text-blue-600 text-sm">{testimonial.role}</p>
-                </motion.div>
-              </motion.div>
+              <TestimonialCard key={index} {...testimonial} />
             ))}
           </div>
         </div>
