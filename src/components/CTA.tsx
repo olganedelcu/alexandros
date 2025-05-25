@@ -83,7 +83,7 @@ const CTA = () => {
                 Join our exclusive beta program today and be among the first coaches to leverage AI.
               </p>
 
-              <div className="flex items-center justify-center gap-1 sm:gap-2 mb-8">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
                 <div className="flex -space-x-1 sm:-space-x-2">
                   <img src={donald} alt="User" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border sm:border-2 border-blue-400" />
                   <img src={ana} alt="User" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border sm:border-2 border-blue-400" />
@@ -92,7 +92,7 @@ const CTA = () => {
                   <img src={ailyn} alt="User" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border sm:border-2 border-blue-400" />
                   <img src={miruna} alt="User" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border sm:border-2 border-blue-400" />
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm px-1.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-sm">
+                <div className="bg-white/10 backdrop-blur-sm px-2 sm:px-3 py-1 sm:py-1 rounded-full text-xs sm:text-sm">
                   <span className="sm:hidden">Trusted by 60+ Founders</span>
                   <span className="hidden sm:inline">Trusted by 60+ Founders</span>
                 </div>
