@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import ana from "../assets/ana.jpeg";
 import donald from "../assets/donald.jpg";
 import katerian from "../assets/katerian.jpg";
-import roland from "../assets/roland.jpeg";
+import roland from "../assets/rolandlo.jpeg";
 
 interface TestimonialProps {
   name: string;
