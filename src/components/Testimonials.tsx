@@ -211,6 +211,7 @@ const Testimonials = () => {
       type: "whatsapp",
       whatsappScreenshot: whatolgitis,
       imageUrl: olga,
+      companyLogo: jobsties
     }
   ];
 
