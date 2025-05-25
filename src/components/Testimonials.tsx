@@ -229,7 +229,7 @@ const Testimonials = () => {
           >
             <motion.div 
               whileHover={{ scale: 1.05 }}
-              className="inline-block px-4 py-2.5 bg-gradient-to-r from-violet-50 to-indigo-50 rounded-full text-violet-600 font-medium text-xs shadow-sm mb-8 border border-violet-200 min-w-[200px]"
+              className="inline-block px-4 py-2.5 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-full text-blue-600 font-medium text-xs shadow-sm mb-8 border border-blue-200 min-w-[200px]"
             >
               <span className="mr-2">💫</span>Client Stories
             </motion.div>
