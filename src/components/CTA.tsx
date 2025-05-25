@@ -90,7 +90,7 @@ const CTA = () => {
                   <img src={savvas} alt="User" className="w-8 h-8 rounded-full border-2 border-indigo-600" />
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-sm">
-                  5 new members today
+                  Trusted by 60+ Founders
                 </div>
               </div>
               
