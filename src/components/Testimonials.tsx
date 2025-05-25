@@ -7,6 +7,7 @@ import roland from "../assets/rolandlo.jpeg";
 import savvas from "../assets/savvas.jpg";
 import whatsapp1 from "../assets/whatsapp1.jpg";
 import jobsties from "../assets/jobsties.png";
+import ailyn from "../assets/ailyn.jpeg";
 
 
 interface TestimonialProps {
@@ -163,6 +164,12 @@ const Testimonials = () => {
       quote: "",
       type: "whatsapp",
       whatsappScreenshot: whatsapp1
+    },
+    {
+      name: "Ailyn",
+      role: "Director Investor Relations",
+      quote: "I love the methodology in your process. Trully brilliant!",
+      imageUrl: ailyn
     }
   ];
 
