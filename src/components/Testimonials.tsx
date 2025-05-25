@@ -170,7 +170,11 @@ const Testimonials = () => {
       role: "Director Investor Relations",
       quote: "I love the methodology in your process. Trully brilliant!",
       imageUrl: ailyn
-    }
+    },
+    {
+      name: "Peter A.",
+      role: "Business Owner",
+      quote: "Totally exceeded my ecxpectations! Alexandros is a very good listener, uplifts my confidence and has gives valuable advice to action immediately. He was so knowledgeable about my industry and I value his input highly. Extremely helpful. 10/10!"    }
   ];
 
   const fadeInUp = {
