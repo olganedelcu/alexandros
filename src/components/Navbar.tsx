@@ -41,9 +41,10 @@ const Navbar = () => {
   };
 
   const navLinks = [
+    { name: "MMPM", href: "#mmpm", onClick: () => scrollToSection('mmpm') },
     { name: "About", href: "#about", onClick: () => scrollToSection('about') },
-    { name: "Packages", href: "#packages", onClick: () => scrollToSection('packages') },
     { name: "Testimonials", href: "#testimonials", onClick: () => scrollToSection('testimonials') },
+    { name: "Packages", href: "#packages", onClick: () => scrollToSection('packages') },
     { name: "FAQ", href: "#faq", onClick: () => scrollToSection('faq') },
   ];
 

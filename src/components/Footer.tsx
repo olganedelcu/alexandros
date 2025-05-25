@@ -51,22 +51,27 @@ const Footer = () => {
             >
               <img src="/assets/logo1.png" alt="AkT Logo" className="h-14 md:h-16 w-auto" />
             </motion.div>
-            <div className="relative inline-block mt-4 mb-6">
-              <p className="text-sm md:text-base text-gray-600">
-                A revolutionary way with expert guidance with proven strategies to transform your business
-              </p>
-              <motion.div 
-                className="absolute -bottom-2 left-0 h-[2px] bg-gradient-to-r from-blue-200/50 via-blue-400 to-blue-600 rounded"
-                initial={{ width: 0, opacity: 0 }}
-                whileInView={{ width: "100%", opacity: 1 }}
-                transition={{ duration: 1, delay: 0.8 }}
-                style={{ 
-                  clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
-                  transform: 'scaleX(1)',
-                  transformOrigin: 'left',
-                  width: '85%'
-                }}
-              />
+            <div className="mt-4 mb-6">
+              <div className="relative inline-block">
+                <p className="text-sm md:text-base text-gray-600">
+                  <span className="relative">
+                    A revolutionary way
+                    <motion.div 
+                      className="absolute -bottom-2 left-0 h-[2px] bg-gradient-to-r from-blue-200/50 via-blue-400 to-blue-600 rounded"
+                      initial={{ width: 0, opacity: 0 }}
+                      whileInView={{ width: "100%", opacity: 1 }}
+                      transition={{ duration: 1, delay: 0.8 }}
+                      style={{ 
+                        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+                        transform: 'scaleX(1)',
+                        transformOrigin: 'left',
+                        width: '100%'
+                      }}
+                    />
+                  </span>
+                  {" "}with expert guidance with proven strategies to transform your business
+                </p>
+              </div>
             </div>
             <div className="flex justify-start space-x-4">
               <motion.a 
