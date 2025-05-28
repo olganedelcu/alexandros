@@ -70,17 +70,20 @@ const CTA = () => {
             <div className="relative z-10 text-center text-white">
               <motion.div 
                 whileHover={{ scale: 1.05 }}
-                className="inline-block px-4 py-2.5 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-full text-blue-600 font-medium text-xs shadow-sm mb-8 border border-blue-200 min-w-[200px]"
+                className="inline-block px-4 py-2.5 bg-gradient-to-r from-blue-100/90 to-indigo-100/90 rounded-full text-blue-600 font-medium text-xs shadow-sm mb-8 border border-blue-200/50 min-w-[200px]"
               >
-                <span className="mr-2">⚡</span>Limited Time Opportunity
+                <span className="mr-2">📚</span>Stay Connected
               </motion.div>
 
               <h2 className="text-4xl font-bold mb-6">
-                Ready for the next step in your journey?
+                Join Our Community
               </h2>
               
+              <p className="text-xl mb-3 opacity-90">
+                Get early access to upcoming workshops, courses, and exclusive content.
+              </p>
               <p className="text-xl mb-6 opacity-90">
-                Join our exclusive beta program today and be among the first coaches to leverage AI.
+                Be the first to know about new opportunities.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -93,24 +96,24 @@ const CTA = () => {
                   <img src={miruna} alt="User" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border sm:border-2 border-blue-400" />
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm px-2 sm:px-3 py-1 sm:py-1 rounded-full text-xs sm:text-sm">
-                  <span className="sm:hidden">Trusted by 60+ Founders</span>
-                  <span className="hidden sm:inline">Trusted by 60+ Founders</span>
+                  <span className="sm:hidden">Join 60+ Founders</span>
+                  <span className="hidden sm:inline">Join 60+ Founders</span>
                 </div>
               </div>
               
               <div className="space-y-8 mb-12">
                 <Button 
-                  className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-6 text-lg font-semibold shadow-lg group"
+                  className="bg-gradient-to-r from-violet-400/90 to-indigo-400/90 hover:from-violet-500/90 hover:to-indigo-500/90 text-white px-8 py-6 text-lg font-semibold shadow-lg relative overflow-hidden group"
                   onClick={() => window.open('https://calendly.com/aktbusinesscoaching/', '_blank')}
                 >
-                  Request A Call
-                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                  <span className="relative z-10">Stay Alert</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shine"></div>
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform relative z-10" />
                 </Button>
-                
               </div>
               <p className="text-sm text-white/80">
-              Limited spots available
-                </p>
+                Get exclusive updates on upcoming workshops, courses, and events
+              </p>
             </div>
           </motion.div>
         </div>
