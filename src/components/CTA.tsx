@@ -27,24 +27,21 @@ const CTA = () => {
     }
 
     try {
-      // Replace this URL with your Google Apps Script Web App URL
       const response = await fetch('https://script.google.com/macros/s/AKfycbxJJoKnu1VEddMQcPSMJkJzgKe3wN6BhHZNm47jd_Phx6XmN8T2oCLdn1md_FOZAPB61w/exec', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ email }),
+        mode: 'no-cors'
       });
-
-      if (!response.ok) {
-        throw new Error('Failed to submit');
-      }
 
       setStatus("success");
       setEmail("");
     } catch (error) {
+      console.error('Submission error:', error);
       setStatus("error");
-      setErrorMessage("Something went wrong. Please try again.");
+      setErrorMessage("Failed to submit. Please try again later.");
     }
   };
 
