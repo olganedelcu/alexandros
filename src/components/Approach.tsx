@@ -60,7 +60,7 @@ const Approach = () => {
               whileHover={{ scale: 1.05 }}
               className="inline-block px-4 py-2.5 bg-gradient-to-r from-violet-50 to-indigo-50 rounded-full text-violet-600 font-medium text-xs shadow-sm mb-8 border border-violet-200 min-w-[200px]"
             >
-              <span className="mr-2">💡</span>The New Way
+              <span className="mr-2">💡</span>Your Journey Matters
             </motion.div>
 
             <h2 className="text-4xl md:text-5xl font-bold text-gray-600 mb-8">
