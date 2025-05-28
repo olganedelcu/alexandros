@@ -1,5 +1,5 @@
 import React from 'react';
-import { Rocket, Zap, Trophy } from 'lucide-react';
+import { Rocket, Zap, Trophy, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 
@@ -49,7 +49,7 @@ const Packages = () => {
               whileHover={{ scale: 1.05 }}
               className="inline-block px-3 md:px-4 py-2 md:py-2.5 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-full text-blue-600 font-medium text-xs shadow-sm mb-6 md:mb-8 border border-blue-200 min-w-[160px] md:min-w-[200px]"
             >
-              <span className="mr-2">✨</span>Packages
+              <span className="mr-2">✨</span>Choose Your Path
             </motion.div>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-600 mb-3 md:mb-4">
@@ -61,12 +61,56 @@ const Packages = () => {
           </motion.div>
 
           {/* Packages Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
-            {/* Tier 1 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12 md:mb-16">
+            {/* Pro Bono Card */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-blue-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-105 relative overflow-hidden group flex flex-col"
+            >
+              <div className="absolute top-0 right-0 w-24 md:w-32 h-24 md:h-32 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-full -mr-12 md:-mr-16 -mt-12 md:-mt-16 opacity-50 group-hover:opacity-70 transition-opacity"></div>
+              <div className="relative flex flex-col flex-grow">
+                <div className="w-10 md:w-12 h-10 md:h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-xl flex items-center justify-center mb-4 md:mb-6">
+                  <Heart className="w-5 md:w-6 h-5 md:h-6 text-blue-600" />
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-1 md:mb-2">
+                  Flexible Arrangement
+                </h3>
+                <p className="text-xs md:text-sm text-gray-500 mb-4 md:mb-6">For founders with exceptional potential but limited resources.</p>
+                <ul className="text-xs md:text-sm text-gray-600 space-y-2 md:space-y-3 mb-6 md:mb-8">
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">•</span>
+                    <span>Custom arrangement based on your needs</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">•</span>
+                    <span>Limited availability</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">•</span>
+                    <span>Focus on high-impact outcomes</span>
+                  </li>
+                </ul>
+                <div className="mt-auto">
+                  <Button 
+                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white py-4 md:py-6 text-sm md:text-base font-medium shadow-sm relative overflow-hidden group mb-3 md:mb-4"
+                    onClick={() => window.open('https://calendly.com/aktbusinesscoaching/', '_blank')}
+                  >
+                    <span className="relative z-10">Make an Offer</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shine"></div>
+                  </Button>
+                  <p className="text-[10px] md:text-xs italic text-center">Tell me your story and vision</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Tier 1 */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
               className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-blue-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-105 relative overflow-hidden group flex flex-col"
             >
@@ -79,10 +123,6 @@ const Packages = () => {
                   The Tactical Hit
                 </h3>
                 <p className="text-xs md:text-sm text-gray-500 mb-4 md:mb-6">Perfect for: Founders who are stuck, scaling, or spiraling and need a direct hit of clarity and options.</p>
-                <div className="flex items-baseline mb-4 md:mb-6">
-                  <span className="text-2xl md:text-3xl font-bold text-gray-900">€450</span>
-                  <span className="text-gray-500 ml-2 text-sm">/ session</span>
-                </div>
                 <ul className="text-xs md:text-sm text-gray-600 space-y-2 md:space-y-3 mb-6 md:mb-8">
                   <li className="flex items-start">
                     <span className="text-blue-500 mr-2">•</span>
@@ -102,6 +142,10 @@ const Packages = () => {
                   </li>
                 </ul>
                 <div className="mt-auto">
+                  <div className="text-center mb-4">
+                    <span className="text-lg md:text-xl font-bold text-gray-900">€450</span>
+                    <span className="text-gray-500 ml-2 text-sm">/ session</span>
+                  </div>
                   <Button 
                     className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white py-4 md:py-6 text-sm md:text-base font-medium shadow-sm relative overflow-hidden group mb-3 md:mb-4"
                     onClick={() => window.open('https://calendly.com/aktbusinesscoaching/', '_blank')}
@@ -118,7 +162,7 @@ const Packages = () => {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
               className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-blue-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-105 relative overflow-hidden group flex flex-col"
             >
@@ -131,10 +175,6 @@ const Packages = () => {
                   The Founder Sprint
                 </h3>
                 <p className="text-xs md:text-sm text-gray-500 mb-4 md:mb-6">Perfect for: Founders ready to make serious moves, quickly.</p>
-                <div className="flex items-baseline mb-4 md:mb-6">
-                  <span className="text-2xl md:text-3xl font-bold text-gray-900">€1,500</span>
-                  <span className="text-gray-500 ml-2 text-sm">/ month</span>
-                </div>
                 <ul className="text-xs md:text-sm text-gray-600 space-y-2 md:space-y-3 mb-6 md:mb-8">
                   <li className="flex items-start">
                     <span className="text-blue-500 mr-2">•</span>
@@ -158,6 +198,10 @@ const Packages = () => {
                   </li>
                 </ul>
                 <div className="mt-auto">
+                  <div className="text-center mb-4">
+                    <span className="text-lg md:text-xl font-bold text-gray-900">€1,500</span>
+                    <span className="text-gray-500 ml-2 text-sm">/ month</span>
+                  </div>
                   <Button 
                     className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white py-4 md:py-6 text-sm md:text-base font-medium shadow-sm relative overflow-hidden group mb-3 md:mb-4"
                     onClick={() => window.open('https://calendly.com/aktbusinesscoaching/', '_blank')}
@@ -174,9 +218,9 @@ const Packages = () => {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-blue-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-105 relative overflow-hidden group flex flex-col md:col-span-2 lg:col-span-1"
+              className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-blue-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-105 relative overflow-hidden group flex flex-col"
             >
               <div className="absolute top-0 right-0 w-24 md:w-32 h-24 md:h-32 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-full -mr-12 md:-mr-16 -mt-12 md:-mt-16 opacity-50 group-hover:opacity-70 transition-opacity"></div>
               <div className="relative flex flex-col flex-grow">
@@ -187,10 +231,6 @@ const Packages = () => {
                   The Full Partner
                 </h3>
                 <p className="text-xs md:text-sm text-gray-500 mb-4 md:mb-6">Perfect for: Founders who want a thinking partner and strategic guide in their corner for long-term.</p>
-                <div className="flex items-baseline mb-4 md:mb-6">
-                  <span className="text-2xl md:text-3xl font-bold text-gray-900">€5,000</span>
-                  <span className="text-gray-500 ml-2 text-sm">/ month</span>
-                </div>
                 <ul className="text-xs md:text-sm text-gray-600 space-y-2 md:space-y-3 mb-6 md:mb-8">
                   <li className="flex items-start">
                     <span className="text-blue-500 mr-2">•</span>
@@ -214,6 +254,10 @@ const Packages = () => {
                   </li>
                 </ul>
                 <div className="mt-auto">
+                  <div className="text-center mb-4">
+                    <span className="text-lg md:text-xl font-bold text-gray-900">€5,000</span>
+                    <span className="text-gray-500 ml-2 text-sm">/ month</span>
+                  </div>
                   <Button 
                     className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white py-4 md:py-6 text-sm md:text-base font-medium shadow-sm relative overflow-hidden group mb-3 md:mb-4"
                     onClick={() => window.open('https://calendly.com/aktbusinesscoaching/', '_blank')}
