@@ -7,9 +7,37 @@ import katerian from "../assets/katerian.jpg";
 import ailyn from "../assets/ailyn.jpeg";
 import savvas from "../assets/savvas.jpg";
 import miruna from "../assets/miruna.jpeg";
-
+import { useState } from "react";
 
 const CTA = () => {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    setErrorMessage("");
+
+    // Basic email validation
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setStatus("error");
+      setErrorMessage("Please enter a valid email address");
+      return;
+    }
+
+    try {
+      // Here you would typically send the email to your backend
+      // For now, we'll simulate a successful submission
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      setStatus("success");
+      setEmail("");
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage("Something went wrong. Please try again.");
+    }
+  };
+
   return (
     <section className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 relative">
       <div className="container mx-auto px-6">
@@ -101,16 +129,41 @@ const CTA = () => {
                 </div>
               </div>
               
-              <div className="space-y-8 mb-12">
-                <Button 
-                  className="bg-gradient-to-r from-violet-400/90 to-indigo-400/90 hover:from-violet-500/90 hover:to-indigo-500/90 text-white px-8 py-6 text-lg font-semibold shadow-lg relative overflow-hidden group"
-                  onClick={() => window.open('https://calendly.com/aktbusinesscoaching/', '_blank')}
-                >
-                  <span className="relative z-10">Stay Alert</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shine"></div>
-                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform relative z-10" />
-                </Button>
-              </div>
+              <form onSubmit={handleSubmit} className="space-y-4 mb-8">
+                <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    className="flex-1 px-4 py-1 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/30"
+                    disabled={status === "loading"}
+                  />
+                  <Button 
+                    type="submit"
+                    className="bg-gradient-to-r from-violet-400/90 to-indigo-400/90 hover:from-violet-500/90 hover:to-indigo-500/90 text-white px-8 py-3 text-base font-semibold shadow-lg relative overflow-hidden group whitespace-nowrap"
+                    disabled={status === "loading"}
+                  >
+                    {status === "loading" ? (
+                      "Subscribing..."
+                    ) : status === "success" ? (
+                      "Subscribed!"
+                    ) : (
+                      <>
+                        Stay Alert
+                        <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform relative z-10" />
+                      </>
+                    )}
+                  </Button>
+                </div>
+                {errorMessage && (
+                  <p className="text-red-300 text-sm mt-2">{errorMessage}</p>
+                )}
+                {status === "success" && (
+                  <p className="text-green-300 text-sm mt-2">Thanks for subscribing! We'll keep you updated.</p>
+                )}
+              </form>
+
               <p className="text-sm text-white/80">
                 Get exclusive updates on upcoming workshops, courses, and events
               </p>
