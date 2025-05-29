@@ -22,21 +22,32 @@ async function connectToDatabase() {
     
     if (!client) {
       console.log('Creating new MongoDB connection...');
-      client = new MongoClient(MONGODB_URI, {
+      const options = {
         serverSelectionTimeoutMS: 5000,
         connectTimeoutMS: 10000,
         ssl: true,
         tls: true,
-        tlsAllowInvalidCertificates: true, // Only use this in development
-        tlsAllowInvalidHostnames: true, // Only use this in development
-      });
+        tlsInsecure: true, // This is more permissive than tlsAllowInvalidCertificates
+        directConnection: true,
+        retryWrites: true,
+        retryReads: true,
+        maxPoolSize: 10,
+        minPoolSize: 1,
+        maxIdleTimeMS: 60000,
+        socketTimeoutMS: 45000,
+      };
+
+      console.log('MongoDB connection options:', JSON.stringify(options, null, 2));
+      
+      client = new MongoClient(MONGODB_URI, options);
       
       try {
         await client.connect();
         console.log('Successfully connected to MongoDB');
-      } catch (connectError) {
+      } catch (error) {
+        const connectError = error as Error;
         console.error('Failed to connect to MongoDB:', connectError);
-        throw new Error('Failed to connect to database');
+        throw new Error(`Failed to connect to database: ${connectError.message}`);
       }
     }
     
@@ -46,13 +57,15 @@ async function connectToDatabase() {
       await db.command({ ping: 1 });
       console.log('Database connection is healthy');
       return db;
-    } catch (pingError) {
+    } catch (error) {
+      const pingError = error as Error;
       console.error('Database ping failed:', pingError);
-      throw new Error('Database connection is not healthy');
+      throw new Error(`Database connection is not healthy: ${pingError.message}`);
     }
   } catch (error) {
-    console.error('MongoDB connection error:', error);
-    throw new Error('Failed to connect to database');
+    const dbError = error as Error;
+    console.error('MongoDB connection error:', dbError);
+    throw new Error(`Failed to connect to database: ${dbError.message}`);
   }
 }
 
