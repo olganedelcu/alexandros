@@ -1,4 +1,4 @@
-import { Quote, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import { motion } from "framer-motion";
 import ana from "../assets/ana.jpeg";
 import donald from "../assets/donald.jpg";
@@ -214,15 +214,6 @@ const Testimonials = () => {
       companyLogo: jobsties
     }
   ];
-
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.6 }
-    }
-  };
 
   return (
     <section id="testimonials" className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 relative overflow-hidden">
