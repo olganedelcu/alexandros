@@ -1,18 +1,14 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     {
       "source": "/(.*)",
       "destination": "/index.html"
     }
   ],
-  "routes": [
-    {
-      "src": "/blog",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+  "functions": {
+    "api/users/**/*.js": {
+      "maxDuration": 30
     }
-  ]
+  }
 } 
