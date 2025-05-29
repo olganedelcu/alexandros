@@ -1,38 +1,16 @@
 import express from 'express';
-import type { Request, Response, RequestHandler } from 'express';
+import type { RequestHandler } from 'express';
 import { MongoClient } from 'mongodb';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import OpenAI from 'openai';
+import path from 'path';
 
-dotenv.config();
+// Load environment variables from both server and root directories
+dotenv.config({ path: path.resolve(__dirname, '.env') });
+dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 const app = express();
 const port = parseInt(process.env.PORT || '3001', 10);
-
-// Initialize OpenAI
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
-// Simple coaching responses
-const coachingResponses: string[] = [
-  "What's your main goal right now?",
-  "How can I help you achieve that?",
-  "What's the first step you'd like to take?",
-  "What's holding you back?",
-  "What would success look like for you?",
-  "How do you feel about this situation?",
-  "What have you tried so far?",
-  "What resources do you need?",
-  "What's your timeline for this?",
-  "How can we break this down into smaller steps?",
-  "What's most important to you?",
-  "What would you like to focus on first?",
-  "How can I support you in this?",
-  "What's your ideal outcome?",
-  "What's one thing you could do today?"
-];
 
 // Middleware
 app.use(cors());
@@ -71,6 +49,9 @@ async function connectToDatabase() {
   }
 }
 
+// Default welcome message
+const welcomeMessage = "Hi! I'm your AI coach. Ask me anything about your goals, challenges, or anything you'd like to discuss. I'm here to help you grow and achieve your potential.";
+
 // Subscribe endpoint
 app.post('/api/subscribe', (async (req, res) => {
   try {
@@ -102,18 +83,15 @@ app.post('/api/subscribe', (async (req, res) => {
       ip: req.headers['x-forwarded-for'] || req.socket.remoteAddress,
     });
 
-    res.status(200).json({ message: 'Successfully subscribed' });
+    return res.status(200).json({ message: 'Successfully subscribed' });
   } catch (error) {
     console.error('Subscription error:', error);
-    res.status(500).json({ 
+    return res.status(500).json({ 
       error: 'Internal server error',
       details: error instanceof Error ? error.message : 'Unknown error'
     });
   }
 }) as RequestHandler);
-
-// Default welcome message
-const welcomeMessage = "Hi! I'm your AI coach. Ask me anything about your goals, challenges, or anything you'd like to discuss. I'm here to help you grow and achieve your potential.";
 
 // Training endpoint
 app.post('/api/train', (async (req, res) => {
@@ -134,10 +112,10 @@ app.post('/api/train', (async (req, res) => {
       usageCount: 0
     });
 
-    res.status(200).json({ message: 'Training data added successfully' });
+    return res.status(200).json({ message: 'Training data added successfully' });
   } catch (error) {
     console.error('Training error:', error);
-    res.status(500).json({ 
+    return res.status(500).json({ 
       error: 'Internal server error',
       details: error instanceof Error ? error.message : 'Unknown error'
     });
@@ -226,16 +204,27 @@ app.post('/api/chat', (async (req, res) => {
       expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
     });
 
-    res.status(200).json({ response });
+    return res.status(200).json({ response });
   } catch (error) {
     console.error('Chat error:', error);
-    res.status(500).json({ 
+    return res.status(500).json({ 
       error: 'Internal server error',
       details: error instanceof Error ? error.message : 'Unknown error'
     });
   }
 }) as RequestHandler);
 
-app.listen(port, '0.0.0.0', () => {
-  console.log(`Server running at http://0.0.0.0:${port}`);
-}); 
+const startServer = (retryPort: number) => {
+  app.listen(retryPort, '0.0.0.0', () => {
+    console.log(`Server running at http://0.0.0.0:${retryPort}`);
+  }).on('error', (err: NodeJS.ErrnoException) => {
+    if (err.code === 'EADDRINUSE') {
+      console.log(`Port ${retryPort} is busy, trying ${retryPort + 1}...`);
+      startServer(retryPort + 1);
+    } else {
+      console.error('Server error:', err);
+    }
+  });
+};
+
+startServer(port); 

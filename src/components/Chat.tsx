@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Card } from '@/components/ui/card';
 import { MessageCircle, X, Calendar } from 'lucide-react';
+import { API_URL } from '@/config';
 
 interface Message {
   id: string;
@@ -45,7 +46,7 @@ export function Chat() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://192.168.0.123:3001/api/chat', {
+      const response = await fetch(`${API_URL}/api/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

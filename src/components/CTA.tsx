@@ -8,6 +8,7 @@ import ailyn from "../assets/ailyn.jpeg";
 import savvas from "../assets/savvas.jpg";
 import miruna from "../assets/miruna.jpeg";
 import { useState } from "react";
+import { API_URL } from "@/config";
 
 const CTA = () => {
   const [email, setEmail] = useState("");
@@ -28,7 +29,7 @@ const CTA = () => {
 
     try {
       console.log('Submitting email:', email);
-      const response = await fetch('http://192.168.0.123:3001/api/subscribe', {
+      const response = await fetch(`${API_URL}/api/subscribe`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
