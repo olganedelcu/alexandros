@@ -90,8 +90,6 @@ export function Chat() {
 
     setIsSubmitting(true);
     try {
-      // Here you would typically send the email to your backend
-      // For now, we'll just simulate a successful submission
       await new Promise(resolve => setTimeout(resolve, 1000));
       setShowCTA(false);
       setMessages(prev => [...prev, {
@@ -101,7 +99,6 @@ export function Chat() {
         timestamp: new Date(),
       }]);
       
-      // Redirect to Calendly after a short delay
       setTimeout(() => {
         window.open('https://calendly.com/aktbusinesscoaching/', '_blank');
       }, 1500);
@@ -116,30 +113,30 @@ export function Chat() {
     return (
       <Button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-4 md:bottom-6 right-4 md:right-6 h-12 md:h-14 w-12 md:w-14 rounded-full shadow-lg hover:shadow-xl transition-all"
+        className="fixed bottom-4 right-4 h-12 w-12 rounded-full shadow-lg hover:shadow-xl transition-all z-50 sm:h-14 sm:w-14"
       >
-        <MessageCircle className="h-5 w-5 md:h-6 md:w-6" />
+        <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6" />
       </Button>
     );
   }
 
   return (
-    <Card className="fixed bottom-4 md:bottom-6 right-4 md:right-6 w-[calc(100%-2rem)] md:w-80 max-w-[400px] shadow-xl bg-gradient-to-br from-blue-100 via-blue-50 to-indigo-50">
-      <div className="flex flex-col h-[calc(100vh-8rem)] md:h-[400px]">
-        <div className="flex items-center justify-between p-2 md:p-3 border-b bg-gradient-to-r from-blue-200/50 to-indigo-200/50 backdrop-blur-sm">
-          <h3 className="font-semibold text-sm md:text-base">Ask Me Anything</h3>
+    <Card className="fixed inset-0 sm:inset-auto sm:bottom-4 sm:right-4 sm:w-80 sm:max-w-[400px] sm:h-[500px] shadow-xl bg-gradient-to-br from-blue-100 via-blue-50 to-indigo-50 z-50">
+      <div className="flex flex-col h-full">
+        <div className="flex items-center justify-between p-3 border-b bg-gradient-to-r from-blue-200/50 to-indigo-200/50 backdrop-blur-sm">
+          <h3 className="font-semibold text-base">Ask Me Anything</h3>
           <Button
             variant="ghost"
             size="icon"
             onClick={() => setIsOpen(false)}
-            className="h-7 w-7 md:h-8 md:w-8"
+            className="h-8 w-8"
           >
-            <X className="h-3 w-3 md:h-4 md:w-4" />
+            <X className="h-4 w-4" />
           </Button>
         </div>
         
-        <ScrollArea className="flex-1 p-2 md:p-3 bg-gradient-to-b from-blue-50/50 to-indigo-50/50" ref={scrollRef}>
-          <div className="space-y-2 md:space-y-3">
+        <ScrollArea className="flex-1 p-3 bg-gradient-to-b from-blue-50/50 to-indigo-50/50" ref={scrollRef}>
+          <div className="space-y-3">
             {messages.map((message) => (
               <div
                 key={message.id}
@@ -148,7 +145,7 @@ export function Chat() {
                 }`}
               >
                 <div
-                  className={`max-w-[85%] rounded-lg p-2 text-xs md:text-sm ${
+                  className={`max-w-[85%] rounded-lg p-3 text-sm ${
                     message.role === 'user'
                       ? 'bg-primary text-primary-foreground'
                       : 'bg-white/80 backdrop-blur-sm'
@@ -161,24 +158,24 @@ export function Chat() {
           </div>
           
           {showCTA && (
-            <div className="mt-3 md:mt-4 p-2 md:p-3 bg-white/90 rounded-lg shadow-sm">
-              <h4 className="font-medium text-xs md:text-sm mb-2">Ready to take the next step?</h4>
+            <div className="mt-4 p-3 bg-white/90 rounded-lg shadow-sm">
+              <h4 className="font-medium text-sm mb-2">Ready to take the next step?</h4>
               <form onSubmit={handleCTASubmit} className="space-y-2">
                 <Input
                   type="email"
                   value={ctaEmail}
                   onChange={(e) => setCtaEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className="h-7 md:h-8 text-xs md:text-sm bg-white/80"
+                  className="h-9 text-sm bg-white/80"
                   disabled={isSubmitting}
                 />
                 <Button 
                   type="submit" 
                   size="sm" 
-                  className="w-full h-7 md:h-8 text-xs md:text-sm bg-gradient-to-r from-violet-500 to-indigo-500 hover:from-violet-600 hover:to-indigo-600"
+                  className="w-full h-9 text-sm bg-gradient-to-r from-violet-500 to-indigo-500 hover:from-violet-600 hover:to-indigo-600"
                   disabled={isSubmitting}
                 >
-                  <Calendar className="h-3 w-3 md:h-4 md:w-4 mr-1 md:mr-2" />
+                  <Calendar className="h-4 w-4 mr-2" />
                   {isSubmitting ? 'Sending...' : 'Book a Call'}
                 </Button>
               </form>
@@ -186,16 +183,16 @@ export function Chat() {
           )}
         </ScrollArea>
         
-        <form onSubmit={handleSubmit} className="p-2 md:p-3 border-t bg-gradient-to-r from-blue-200/50 to-indigo-200/50 backdrop-blur-sm">
+        <form onSubmit={handleSubmit} className="p-3 border-t bg-gradient-to-r from-blue-200/50 to-indigo-200/50 backdrop-blur-sm">
           <div className="flex gap-2">
             <Input
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Type your message..."
               disabled={isLoading}
-              className="flex-1 h-8 md:h-9 text-xs md:text-sm bg-white/80"
+              className="flex-1 h-9 text-sm bg-white/80"
             />
-            <Button type="submit" disabled={isLoading} size="sm" className="h-8 md:h-9 text-xs md:text-sm">
+            <Button type="submit" disabled={isLoading} size="sm" className="h-9 text-sm">
               {isLoading ? '...' : 'Send'}
             </Button>
           </div>
