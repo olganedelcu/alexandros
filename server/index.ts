@@ -12,8 +12,16 @@ dotenv.config({ path: path.resolve(__dirname, '../.env') });
 const app = express();
 const port = parseInt(process.env.PORT || '3001', 10);
 
+// CORS configuration
+const corsOptions = {
+  origin: ['http://localhost:5173', 'http://localhost:3000', 'https://aktbusinesscoach.com'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+};
+
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // MongoDB connection
