@@ -10,11 +10,6 @@ if (!MONGODB_URI) {
   throw new Error('Please define the MONGODB_URI environment variable');
 }
 
-// Rate limiting
-const RATE_LIMIT = 5; // requests
-const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
-const ipRequests = new Map<string, { count: number; timestamp: number }>();
-
 // MongoDB connection
 let client: MongoClient | null = null;
 
