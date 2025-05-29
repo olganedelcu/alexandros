@@ -17,18 +17,18 @@
   ],
   "rewrites": [
     {
-      "source": "/api/:path*",
-      "destination": "/api/:path*"
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
     },
     {
-      "source": "/(.*)",
+      "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
   ],
   "redirects": [
     {
-      "source": "https://aktbusinesscoach.com/:path*",
-      "destination": "https://www.aktbusinesscoach.com/:path*",
+      "source": "https://aktbusinesscoach.com/(.*)",
+      "destination": "https://www.aktbusinesscoach.com/$1",
       "permanent": true
     }
   ],
