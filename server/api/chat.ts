@@ -14,7 +14,7 @@ async function connectToDatabase() {
   return { client, db };
 }
 
-const defaultWelcomeMessage = "Hello! I'm your AI business coach. How can I help you today?";
+const defaultWelcomeMessage = "Hi! I'm your AI coach. Ask me anything about your goals, challenges, or anything you'd like to discuss. I'm here to help you grow and achieve your potential.";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
@@ -29,59 +29,86 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     // Store user message
     await db.collection('chat_messages').insertOne({
+      message,
       role: 'user',
-      content: message,
       timestamp: new Date(),
-      metadata: {
-        source: 'web',
-        ip: req.headers['x-forwarded-for'] || req.socket.remoteAddress
-      }
+      ip: req.headers['x-forwarded-for'] || req.socket.remoteAddress,
+      consentGiven: true,
+      retentionPeriod: 30,
+      expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
+    });
+
+    // If it's a greeting, return welcome message
+    if (message.toLowerCase().includes('hi') || message.toLowerCase().includes('hello') || message.toLowerCase().includes('hey')) {
+      const response = defaultWelcomeMessage;
+      
+      await db.collection('chat_messages').insertOne({
+        message: response,
+        role: 'assistant',
+        timestamp: new Date(),
+        ip: req.headers['x-forwarded-for'] || req.socket.remoteAddress,
+        consentGiven: true,
+        retentionPeriod: 30,
+        expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
+      });
+
+      await client.close();
+      return res.status(200).json({ response });
+    }
+
+    // Try to find a matching trained response
+    const trainedResponse = await db.collection('training_data').findOne({
+      question: { $regex: new RegExp(message.toLowerCase(), 'i') }
     });
 
     let response;
-
-    // Check if it's a greeting
-    if (message.toLowerCase().match(/^(hi|hello|hey|greetings)/)) {
-      response = defaultWelcomeMessage;
+    if (trainedResponse) {
+      response = trainedResponse.response;
+      // Update usage count
+      await db.collection('training_data').updateOne(
+        { _id: trainedResponse._id },
+        { $inc: { usageCount: 1 } }
+      );
     } else {
-      // Try to find a trained response
-      const trainedResponse = await db.collection('training_data').findOne({
-        $or: [
-          { question: { $regex: message, $options: 'i' } },
-          { keywords: { $in: [new RegExp(message, 'i')] } }
-        ]
-      });
-
-      if (trainedResponse) {
-        response = trainedResponse.answer;
-      } else {
-        // Fallback to default coaching responses
-        const defaultResponses = [
-          "That's an interesting point. Could you tell me more about that?",
-          "I understand your concern. What steps have you considered so far?",
-          "Let's break this down together. What's the main challenge you're facing?",
-          "I hear you. What would success look like in this situation?",
-          "That's a common challenge. What resources do you currently have available?"
-        ];
-        response = defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
-      }
+      // Fallback to default coaching responses
+      const defaultResponses = [
+        "What's your main goal right now?",
+        "How can I help you achieve that?",
+        "What's the first step you'd like to take?",
+        "What's holding you back?",
+        "What would success look like for you?",
+        "How do you feel about this situation?",
+        "What have you tried so far?",
+        "What resources do you need?",
+        "What's your timeline for this?",
+        "How can we break this down into smaller steps?",
+        "What's most important to you?",
+        "What would you like to focus on first?",
+        "How can I support you in this?",
+        "What's your ideal outcome?",
+        "What's one thing you could do today?"
+      ];
+      response = defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
     }
 
-    // Store assistant response
+    // Store the assistant's response
     await db.collection('chat_messages').insertOne({
+      message: response,
       role: 'assistant',
-      content: response,
       timestamp: new Date(),
-      metadata: {
-        source: 'web',
-        ip: req.headers['x-forwarded-for'] || req.socket.remoteAddress
-      }
+      ip: req.headers['x-forwarded-for'] || req.socket.remoteAddress,
+      consentGiven: true,
+      retentionPeriod: 30,
+      expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
     });
 
     await client.close();
     return res.status(200).json({ response });
   } catch (error) {
-    console.error('Error:', error);
-    return res.status(500).json({ error: 'Internal server error' });
+    console.error('Chat error:', error);
+    return res.status(500).json({ 
+      error: 'Internal server error',
+      details: error instanceof Error ? error.message : 'Unknown error'
+    });
   }
 } 
