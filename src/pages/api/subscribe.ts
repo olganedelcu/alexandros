@@ -23,8 +23,12 @@ async function connectToDatabase() {
     if (!client) {
       console.log('Creating new MongoDB connection...');
       client = new MongoClient(MONGODB_URI, {
-        serverSelectionTimeoutMS: 5000, // Timeout after 5s instead of 30s
-        connectTimeoutMS: 10000, // Give up initial connection after 10s
+        serverSelectionTimeoutMS: 5000,
+        connectTimeoutMS: 10000,
+        ssl: true,
+        tls: true,
+        tlsAllowInvalidCertificates: true, // Only use this in development
+        tlsAllowInvalidHostnames: true, // Only use this in development
       });
       
       try {
@@ -56,8 +60,20 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  // Set response headers
-  res.setHeader('Content-Type', 'application/json');
+  // Set CORS headers
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  );
+
+  // Handle preflight request
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
 
   // Only allow POST requests
   if (req.method !== 'POST') {
