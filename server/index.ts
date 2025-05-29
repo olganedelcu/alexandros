@@ -8,7 +8,7 @@ import OpenAI from 'openai';
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = parseInt(process.env.PORT || '3001', 10);
 
 // Initialize OpenAI
 const openai = new OpenAI({
@@ -236,6 +236,6 @@ app.post('/api/chat', (async (req, res) => {
   }
 }) as RequestHandler);
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server running at http://0.0.0.0:${port}`);
 }); 

@@ -28,7 +28,7 @@ const CTA = () => {
 
     try {
       console.log('Submitting email:', email);
-      const response = await fetch('http://localhost:3001/api/subscribe', {
+      const response = await fetch('http://192.168.0.123:3001/api/subscribe', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

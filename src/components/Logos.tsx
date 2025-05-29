@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import jobstiesLogo from '@/assets/logojobsties.png';
 import rolandLogo from '@/assets/arbol.png';
