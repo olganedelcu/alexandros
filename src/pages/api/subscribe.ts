@@ -4,40 +4,43 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 const MONGODB_URI = process.env.MONGODB_URI!;
 const MONGODB_DB = process.env.MONGODB_DB || 'newsletter';
 
-let client: MongoClient | null = null;
+// Create a cached connection variable
+let cachedClient: MongoClient | null = null;
+let cachedDb: any = null;
 
 async function connectToDatabase() {
-  if (!client) {
-    const options = {
-      maxPoolSize: 10,
-      minPoolSize: 5,
-      maxIdleTimeMS: 60000,
-      connectTimeoutMS: 10000,
-      socketTimeoutMS: 45000,
-      family: 4, // Force IPv4
-      retryWrites: true,
-      retryReads: true,
-    };
-
-    console.log('Connecting to MongoDB...');
-    client = new MongoClient(MONGODB_URI, options);
-    
-    try {
-      await client.connect();
-      console.log('Successfully connected to MongoDB');
-      
-      // Test the connection
-      const db = client.db(MONGODB_DB);
-      await db.command({ ping: 1 });
-      console.log('Database ping successful');
-      
-      return db;
-    } catch (error) {
-      console.error('MongoDB connection error:', error);
-      throw error;
-    }
+  // If the database connection is cached, use it instead of creating a new connection
+  if (cachedClient && cachedDb) {
+    return { client: cachedClient, db: cachedDb };
   }
-  return client.db(MONGODB_DB);
+
+  // If no connection is cached, create a new one
+  const client = new MongoClient(MONGODB_URI, {
+    maxPoolSize: 10,
+    minPoolSize: 5,
+    maxIdleTimeMS: 60000,
+    connectTimeoutMS: 10000,
+    socketTimeoutMS: 45000,
+    family: 4,
+    retryWrites: true,
+    retryReads: true,
+  });
+
+  try {
+    await client.connect();
+    console.log('Successfully connected to MongoDB');
+    
+    const db = client.db(MONGODB_DB);
+    
+    // Cache the database connection
+    cachedClient = client;
+    cachedDb = db;
+    
+    return { client, db };
+  } catch (error) {
+    console.error('MongoDB connection error:', error);
+    throw error;
+  }
 }
 
 export default async function handler(
@@ -83,7 +86,8 @@ export default async function handler(
     console.log('Attempting to connect to database...');
     let db;
     try {
-      db = await connectToDatabase();
+      const { db: database } = await connectToDatabase();
+      db = database;
       console.log('Successfully connected to database');
     } catch (dbError) {
       console.error('Database connection error:', dbError);

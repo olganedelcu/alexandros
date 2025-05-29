@@ -3,10 +3,21 @@ import { MongoClient } from 'mongodb';
 const uri = "mongodb+srv://olganedelcuam:deXayJyZF1ifS0Lu@cluster0.1eufq6q.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 async function testConnection() {
-  const client = new MongoClient(uri);
+  const options = {
+    maxPoolSize: 10,
+    minPoolSize: 5,
+    maxIdleTimeMS: 60000,
+    connectTimeoutMS: 10000,
+    socketTimeoutMS: 45000,
+    family: 4, // Force IPv4
+    retryWrites: true,
+    retryReads: true,
+  };
+
+  console.log('Connecting to MongoDB...');
+  const client = new MongoClient(uri, options);
   
   try {
-    console.log('Connecting to MongoDB...');
     await client.connect();
     console.log('Successfully connected to MongoDB');
     
