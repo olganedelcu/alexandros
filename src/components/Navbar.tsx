@@ -3,11 +3,14 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
+  const location = useLocation();
+  const isBlogPage = location.pathname === '/blog';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,6 +30,11 @@ const Navbar = () => {
   };
 
   const scrollToSection = (sectionId: string) => {
+    if (isBlogPage) {
+      window.location.href = `/#${sectionId}`;
+      return;
+    }
+    
     const element = document.getElementById(sectionId);
     if (element) {
       const offset = 80;
@@ -42,12 +50,36 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { name: "MMPM", href: "#approach", onClick: () => scrollToSection('approach') },
-    { name: "About", href: "#about", onClick: () => scrollToSection('about') },
-    { name: "Blog", href: "/blog", onClick: () => window.location.href = '/blog' },
-    { name: "Testimonials", href: "#testimonials", onClick: () => scrollToSection('testimonials') },
-    { name: "Packages", href: "#packages", onClick: () => scrollToSection('packages') },
-    { name: "FAQ", href: "#faq", onClick: () => scrollToSection('faq') },
+    { 
+      name: "MMPM", 
+      href: isBlogPage ? "/#approach" : "#approach", 
+      onClick: () => scrollToSection('approach') 
+    },
+    { 
+      name: "About", 
+      href: isBlogPage ? "/#about" : "#about", 
+      onClick: () => scrollToSection('about') 
+    },
+    { 
+      name: "Testimonials", 
+      href: isBlogPage ? "/#testimonials" : "#testimonials", 
+      onClick: () => scrollToSection('testimonials') 
+    },
+    { 
+      name: "Packages", 
+      href: isBlogPage ? "/#packages" : "#packages", 
+      onClick: () => scrollToSection('packages') 
+    },
+    { 
+      name: "FAQ", 
+      href: isBlogPage ? "/#faq" : "#faq", 
+      onClick: () => scrollToSection('faq') 
+    },
+    { 
+      name: "Blog", 
+      href: "/blog", 
+      onClick: () => window.location.href = '/blog' 
+    },
   ];
 
   return (
