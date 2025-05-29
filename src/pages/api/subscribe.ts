@@ -1,4 +1,4 @@
-import { MongoClient } from 'mongodb';
+import { MongoClient, AuthMechanism } from 'mongodb';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 // MongoDB connection string - you'll need to replace this with your actual connection string
@@ -27,7 +27,7 @@ async function connectToDatabase() {
         connectTimeoutMS: 10000,
         ssl: true,
         tls: true,
-        tlsInsecure: true, // This is more permissive than tlsAllowInvalidCertificates
+        tlsInsecure: true,
         directConnection: true,
         retryWrites: true,
         retryReads: true,
@@ -35,11 +35,19 @@ async function connectToDatabase() {
         minPoolSize: 1,
         maxIdleTimeMS: 60000,
         socketTimeoutMS: 45000,
+        authSource: 'admin',
+        authMechanism: 'SCRAM-SHA-1' as AuthMechanism,
       };
 
+      // Add query parameters to the connection string
+      const connectionString = MONGODB_URI.includes('?') 
+        ? `${MONGODB_URI}&ssl=true&tls=true&tlsAllowInvalidCertificates=true&directConnection=true`
+        : `${MONGODB_URI}?ssl=true&tls=true&tlsAllowInvalidCertificates=true&directConnection=true`;
+
       console.log('MongoDB connection options:', JSON.stringify(options, null, 2));
+      console.log('Using connection string:', connectionString.replace(/\/\/[^:]+:[^@]+@/, '//****:****@')); // Hide credentials
       
-      client = new MongoClient(MONGODB_URI, options);
+      client = new MongoClient(connectionString, options);
       
       try {
         await client.connect();
