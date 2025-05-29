@@ -1,7 +1,8 @@
 import { MongoClient } from 'mongodb';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-const MONGODB_URI = process.env.MONGODB_URI!;
+// Modify the connection string to use a different format
+const MONGODB_URI = process.env.MONGODB_URI!.replace('mongodb+srv://', 'mongodb://');
 const MONGODB_DB = process.env.MONGODB_DB || 'newsletter';
 
 // Create a cached connection variable
@@ -24,9 +25,13 @@ async function connectToDatabase() {
     family: 4,
     retryWrites: true,
     retryReads: true,
+    ssl: true,
+    tls: true,
+    tlsAllowInvalidCertificates: true,
   });
 
   try {
+    console.log('Connecting to MongoDB...');
     await client.connect();
     console.log('Successfully connected to MongoDB');
     
