@@ -23,15 +23,14 @@ const Blog = () => {
           </motion.div>
 
           <h1 className="text-4xl md:text-5xl font-bold text-gray-600 mb-6">
-            Building {" "}
+            Sharing {" "}
             <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent filter blur-[0.3px]">
-              Digital Stories
+              My Journey With You
             </span>
           </h1>
 
           <p className="text-lg text-gray-600">
-            Thoughts on Software Engineering, Documentation, and Community
-          </p>
+          I am Alexandros and it is my passion to reconnect you with your greatness I built many businesses in my 35+ years career & I am dedicated to share my learning          </p>
         </motion.div>
 
         <Feed />
