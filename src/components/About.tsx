@@ -7,31 +7,31 @@ const pyramidLevels = [
     level: 1,
     title: "Environment",
     description: "Where you operate - geography or space",
-    color: "from-violet-600 to-indigo-600",
+    color: "from-violet-50 via-indigo-50 to-blue-100",
   },
   {
     level: 2,
     title: "Behavior",
     description: "Actions you take - how you behave",
-    color: "from-violet-700 to-indigo-700",
+    color: "from-violet-50 via-indigo-50 to-blue-100",
   },
   {
     level: 3,
     title: "Skills and Abilities",
     description: "What you can do - what you are good at",
-    color: "from-violet-600 to-indigo-600",
+    color: "from-violet-50 via-indigo-50 to-blue-100",
   },
   {
     level: 4,
     title: "Beliefs and Values",
     description: "What you stand for - your principles",
-    color: "from-violet-700 to-indigo-700",
+    color: "from-violet-50 via-indigo-50 to-blue-100",
   },
   {
     level: 5,
     title: "Identity",
     description: "Who you truly are - what makes YOU",
-    color: "from-violet-800 to-indigo-800",
+    color: "from-violet-50 via-indigo-50 to-blue-100",
   },
 ];
 
@@ -39,7 +39,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="py-20 bg-gradient-to-br from-violet-100 via-violet-200 to-violet-300 relative overflow-hidden"
+      className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 relative overflow-hidden"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -54,7 +54,7 @@ const About = () => {
             duration: 15,
             ease: "easeInOut",
           }}
-          className="absolute -left-10 top-1/3 w-40 h-40 rounded-full bg-violet-500 opacity-10 blur-2xl"
+          className="absolute -left-10 top-1/3 w-40 h-40 rounded-full bg-blue-300 opacity-10 blur-2xl"
         ></motion.div>
       </div>
 
@@ -68,20 +68,22 @@ const About = () => {
         >
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="inline-block px-4 py-2.5 bg-violet-200 rounded-full text-violet-900 font-medium text-xs shadow-sm mb-8 border border-violet-300 min-w-[200px]"
+            className="inline-block px-4 py-2.5 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-full text-blue-600 font-medium text-xs shadow-sm mb-8 border border-blue-200 min-w-[200px]"
           >
             <span className="mr-2">💡</span>Your Identity is the Secret
           </motion.div>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-            The {" "}
-            <span className="bg-gradient-to-r from-violet-800 via-indigo-800 to-violet-900 bg-clip-text text-transparent">Identity Pyramid</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-600 mb-8">
+            The Power of {" "}
+            <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent filter blur-[0.3px]">Purpose in Business</span>
           </h2>
 
-          <p className="text-lg text-gray-800 mb-12">
-            True growth requires working deeper—not just increasing sales calls or chasing revenue.
-            Money and growth follow when founders have a solid sense of identity and purpose.
-          </p>
+          <motion.p 
+            whileHover={{ x: 5 }}
+            className="text-lg leading-relaxed text-gray-600 mb-12"
+          >
+            Purpose is what turns resilience into a habit, not a chore. It's what keeps you creative when the road ahead looks uncertain. When your purpose is crystal clear, everything begins to align:
+          </motion.p>
         </motion.div>
 
         {/* Pyramid Visualization */}
@@ -96,21 +98,23 @@ const About = () => {
                 viewport={{ once: true }}
                 className="relative"
               >
-                <div className={`bg-gradient-to-r ${level.color} rounded-lg p-6 shadow-lg transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl`}>
+                <div className={`bg-gradient-to-br ${level.color} rounded-xl p-6 shadow-sm border border-violet-200 backdrop-blur-sm transform transition-all duration-300 hover:scale-[1.02] hover:shadow-lg`}>
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="text-xl font-bold text-white mb-2">
-                        Level {level.level}: {level.title}
+                      <h3 className="text-xl font-bold mb-2">
+                        <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">
+                          Level {level.level}: {level.title}
+                        </span>
                       </h3>
-                      <p className="text-white/90">{level.description}</p>
+                      <p className="text-gray-600">{level.description}</p>
                     </div>
-                    <div className="text-white text-2xl font-bold">
+                    <div className="text-blue-600 text-2xl font-bold">
                       {level.level}
                     </div>
                   </div>
                 </div>
                 {index < pyramidLevels.length - 1 && (
-                  <div className="absolute left-1/2 -bottom-4 w-0.5 h-4 bg-gradient-to-b from-violet-700 to-transparent" />
+                  <div className="absolute left-1/2 -bottom-4 w-0.5 h-4 bg-gradient-to-b from-violet-200/50 to-transparent" />
                 )}
               </motion.div>
             ))}
@@ -130,7 +134,7 @@ const About = () => {
                 Growing at the Speed of Trust
               </p>
                 <motion.div 
-                  className="absolute -bottom-2 left-0 h-[2px] bg-gradient-to-r from-violet-200/50 via-violet-400 to-violet-600 rounded"
+                  className="absolute -bottom-2 left-0 h-[2px] bg-gradient-to-r from-blue-200/50 via-blue-400 to-blue-600 rounded"
                   initial={{ width: 0, opacity: 0 }}
                   whileInView={{ width: "100%", opacity: 1 }}
                   transition={{ duration: 1, delay: 0.8 }}
