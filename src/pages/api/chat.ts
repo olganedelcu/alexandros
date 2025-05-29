@@ -1,8 +1,7 @@
 import { MongoClient } from 'mongodb';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-// Ensure the connection string has the correct SSL parameters
-const MONGODB_URI = process.env.MONGODB_URI!.replace('mongodb+srv://', 'mongodb+srv://') + '&ssl=true&tls=true';
+const MONGODB_URI = process.env.MONGODB_URI!;
 const MONGODB_DB = process.env.MONGODB_DB || 'chat';
 
 let client: MongoClient | null = null;
@@ -10,22 +9,29 @@ let client: MongoClient | null = null;
 async function connectToDatabase() {
   if (!client) {
     const options = {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
       maxPoolSize: 10,
-      serverSelectionTimeoutMS: 5000,
+      minPoolSize: 5,
+      maxIdleTimeMS: 60000,
+      connectTimeoutMS: 10000,
       socketTimeoutMS: 45000,
-      ssl: true,
-      tls: true,
-      tlsAllowInvalidCertificates: true,
+      family: 4, // Force IPv4
+      retryWrites: true,
+      retryReads: true,
     };
 
-    console.log('Connecting to MongoDB with URI:', MONGODB_URI.replace(/\/\/[^:]+:[^@]+@/, '//****:****@'));
+    console.log('Connecting to MongoDB...');
     client = new MongoClient(MONGODB_URI, options);
     
     try {
       await client.connect();
       console.log('Successfully connected to MongoDB');
+      
+      // Test the connection
+      const db = client.db(MONGODB_DB);
+      await db.command({ ping: 1 });
+      console.log('Database ping successful');
+      
+      return db;
     } catch (error) {
       console.error('MongoDB connection error:', error);
       throw error;
