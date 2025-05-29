@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,6 +44,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "MMPM", href: "#approach", onClick: () => scrollToSection('approach') },
     { name: "About", href: "#about", onClick: () => scrollToSection('about') },
+    { name: "Blog", href: "/blog", onClick: () => window.location.href = '/blog' },
     { name: "Testimonials", href: "#testimonials", onClick: () => scrollToSection('testimonials') },
     { name: "Packages", href: "#packages", onClick: () => scrollToSection('packages') },
     { name: "FAQ", href: "#faq", onClick: () => scrollToSection('faq') },
