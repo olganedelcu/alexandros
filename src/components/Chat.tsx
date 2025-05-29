@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Card } from '@/components/ui/card';
-import { MessageCircle, X } from 'lucide-react';
+import { MessageCircle, X, Calendar } from 'lucide-react';
 
 interface Message {
   id: string;
@@ -17,6 +17,17 @@ export function Chat() {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [showCTA, setShowCTA] = useState(false);
+  const [ctaEmail, setCtaEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  // Auto-scroll to bottom when messages change
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
+  }, [messages]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -54,6 +65,11 @@ export function Chat() {
       };
 
       setMessages(prev => [...prev, assistantMessage]);
+      
+      // Show CTA after 3 messages
+      if (messages.length >= 2) {
+        setShowCTA(true);
+      }
     } catch (error) {
       console.error('Chat error:', error);
       setMessages(prev => [...prev, {
@@ -64,6 +80,34 @@ export function Chat() {
       }]);
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const handleCTASubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!ctaEmail.trim() || isSubmitting) return;
+
+    setIsSubmitting(true);
+    try {
+      // Here you would typically send the email to your backend
+      // For now, we'll just simulate a successful submission
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      setShowCTA(false);
+      setMessages(prev => [...prev, {
+        id: Date.now().toString(),
+        content: "Great! I'll redirect you to my calendar to schedule our call.",
+        role: 'assistant',
+        timestamp: new Date(),
+      }]);
+      
+      // Redirect to Calendly after a short delay
+      setTimeout(() => {
+        window.open('https://calendly.com/aktbusinesscoaching/', '_blank');
+      }, 1500);
+    } catch (error) {
+      console.error('CTA submission error:', error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -93,7 +137,7 @@ export function Chat() {
           </Button>
         </div>
         
-        <ScrollArea className="flex-1 p-3 bg-gradient-to-b from-blue-50/50 to-indigo-50/50">
+        <ScrollArea className="flex-1 p-3 bg-gradient-to-b from-blue-50/50 to-indigo-50/50" ref={scrollRef}>
           <div className="space-y-3">
             {messages.map((message) => (
               <div
@@ -114,6 +158,31 @@ export function Chat() {
               </div>
             ))}
           </div>
+          
+          {showCTA && (
+            <div className="mt-4 p-3 bg-white/90 rounded-lg shadow-sm">
+              <h4 className="font-medium text-sm mb-2">Ready to take the next step?</h4>
+              <form onSubmit={handleCTASubmit} className="space-y-2">
+                <Input
+                  type="email"
+                  value={ctaEmail}
+                  onChange={(e) => setCtaEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  className="h-8 text-sm bg-white/80"
+                  disabled={isSubmitting}
+                />
+                <Button 
+                  type="submit" 
+                  size="sm" 
+                  className="w-full bg-gradient-to-r from-violet-500 to-indigo-500 hover:from-violet-600 hover:to-indigo-600"
+                  disabled={isSubmitting}
+                >
+                  <Calendar className="h-4 w-4 mr-2" />
+                  {isSubmitting ? 'Sending...' : 'Book a Call'}
+                </Button>
+              </form>
+            </div>
+          )}
         </ScrollArea>
         
         <form onSubmit={handleSubmit} className="p-3 border-t bg-gradient-to-r from-blue-200/50 to-indigo-200/50 backdrop-blur-sm">
