@@ -48,7 +48,7 @@ const Footer = () => {
               whileHover={{ scale: 1.05 }}
               className="inline-block -ml-4"
           >
-              <img src="/assets/logo1.png" alt="AkT Logo" className="h-14 md:h-16 w-auto" />
+              <img src="/assets/logo1.png" alt="aKt Logo" className="h-14 md:h-16 w-auto" />
           </motion.div>
             <div className="mt-4 mb-6">
               <div className="relative inline-block">
@@ -132,7 +132,7 @@ const Footer = () => {
           className="pt-6 mt-6 border-t border-blue-200 flex flex-col md:flex-row justify-between items-center gap-4"
         >
           <p className="text-sm md:text-base text-gray-600">
-            © 2025 AkT. All rights reserved.
+            © 2025 aKt. All rights reserved.
           </p>
           <Button 
             className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-2 text-sm md:text-base font-medium shadow-sm relative overflow-hidden group"
