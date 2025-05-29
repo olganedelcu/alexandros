@@ -8,7 +8,15 @@ let client: MongoClient | null = null;
 
 async function connectToDatabase() {
   if (!client) {
-    client = new MongoClient(MONGODB_URI);
+    const options = {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      maxPoolSize: 10,
+      serverSelectionTimeoutMS: 5000,
+      socketTimeoutMS: 45000,
+    };
+
+    client = new MongoClient(MONGODB_URI, options);
     await client.connect();
   }
   return client.db(MONGODB_DB);
