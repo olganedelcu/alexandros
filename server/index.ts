@@ -115,6 +115,35 @@ app.post('/api/subscribe', (async (req, res) => {
 // Default welcome message
 const welcomeMessage = "Hi! I'm your AI coach. Ask me anything about your goals, challenges, or anything you'd like to discuss. I'm here to help you grow and achieve your potential.";
 
+// Training endpoint
+app.post('/api/train', (async (req, res) => {
+  try {
+    const { question, response } = req.body as { question: string; response: string };
+    
+    if (!question || !response) {
+      return res.status(400).json({ error: 'Question and response are required' });
+    }
+
+    const db = await connectToDatabase();
+    
+    // Store the training data
+    await db.collection('training_data').insertOne({
+      question: question.toLowerCase(),
+      response,
+      timestamp: new Date(),
+      usageCount: 0
+    });
+
+    res.status(200).json({ message: 'Training data added successfully' });
+  } catch (error) {
+    console.error('Training error:', error);
+    res.status(500).json({ 
+      error: 'Internal server error',
+      details: error instanceof Error ? error.message : 'Unknown error'
+    });
+  }
+}) as RequestHandler);
+
 // Chat endpoint
 app.post('/api/chat', (async (req, res) => {
   try {
@@ -134,11 +163,10 @@ app.post('/api/chat', (async (req, res) => {
       expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
     });
 
-    // If it's the first message, return welcome message
+    // If it's a greeting, return welcome message
     if (message.toLowerCase().includes('hi') || message.toLowerCase().includes('hello') || message.toLowerCase().includes('hey')) {
       const response = welcomeMessage;
       
-      // Store the assistant's response
       await db.collection('chat_messages').insertOne({
         message: response,
         role: 'assistant',
@@ -152,8 +180,40 @@ app.post('/api/chat', (async (req, res) => {
       return res.status(200).json({ response });
     }
 
-    // Get a random response for other messages
-    const response = coachingResponses[Math.floor(Math.random() * coachingResponses.length)];
+    // Try to find a matching trained response
+    const trainedResponse = await db.collection('training_data').findOne({
+      question: { $regex: new RegExp(message.toLowerCase(), 'i') }
+    });
+
+    let response;
+    if (trainedResponse) {
+      response = trainedResponse.response;
+      // Update usage count
+      await db.collection('training_data').updateOne(
+        { _id: trainedResponse._id },
+        { $inc: { usageCount: 1 } }
+      );
+    } else {
+      // Fallback to default coaching responses
+      const defaultResponses = [
+        "What's your main goal right now?",
+        "How can I help you achieve that?",
+        "What's the first step you'd like to take?",
+        "What's holding you back?",
+        "What would success look like for you?",
+        "How do you feel about this situation?",
+        "What have you tried so far?",
+        "What resources do you need?",
+        "What's your timeline for this?",
+        "How can we break this down into smaller steps?",
+        "What's most important to you?",
+        "What would you like to focus on first?",
+        "How can I support you in this?",
+        "What's your ideal outcome?",
+        "What's one thing you could do today?"
+      ];
+      response = defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
+    }
 
     // Store the assistant's response
     await db.collection('chat_messages').insertOne({
