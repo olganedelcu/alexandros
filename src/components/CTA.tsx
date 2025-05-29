@@ -27,21 +27,38 @@ const CTA = () => {
     }
 
     try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbxJJoKnu1VEddMQcPSMJkJzgKe3wN6BhHZNm47jd_Phx6XmN8T2oCLdn1md_FOZAPB61w/exec', {
+      console.log('Submitting email:', email);
+      const response = await fetch('http://localhost:3001/api/subscribe', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
         body: JSON.stringify({ email }),
-        mode: 'no-cors'
       });
+
+      console.log('Response status:', response.status);
+      const text = await response.text();
+      console.log('Raw response:', text);
+
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (e) {
+        console.error('Failed to parse response:', e);
+        throw new Error('Server returned invalid response');
+      }
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to subscribe');
+      }
 
       setStatus("success");
       setEmail("");
     } catch (error) {
-      console.error('Submission error:', error);
+      console.error('Subscription error:', error);
       setStatus("error");
-      setErrorMessage("Failed to submit. Please try again later.");
+      setErrorMessage(error instanceof Error ? error.message : "Failed to subscribe. Please try again later.");
     }
   };
 
