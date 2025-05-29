@@ -6,6 +6,8 @@ import harvestHarmonicsLogo from '@/assets/harvest.png';
 import hegemonicLogo from '@/assets/hegemonic_logo.jpeg';
 import masterMillerLogo from '@/assets/mastermiller.png';
 import oliveguyLogo from '@/assets/oliveguy.png';
+import imcLogo from '@/assets/imclogo.png';
+import mentoringClubLogo from '@/assets/mentoringclub.png';
 
 const Logos = () => {
   return (
@@ -114,6 +116,22 @@ const Logos = () => {
                     className="object-contain w-full h-full filter grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 ease-in-out"
                   />
                 </div>
+
+                <div className="relative w-32 sm:w-36 md:w-40 lg:w-48 h-8 sm:h-10 md:h-12 group">
+                  <img
+                    src={imcLogo}
+                    alt="IMC Logo"
+                    className="object-contain w-full h-full filter grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 ease-in-out"
+                  />
+                </div>
+
+                <div className="relative w-32 sm:w-36 md:w-40 lg:w-48 h-8 sm:h-10 md:h-12 group">
+                  <img
+                    src={mentoringClubLogo}
+                    alt="Mentoring Club Logo"
+                    className="object-contain w-full h-full filter grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 ease-in-out"
+                  />
+                </div>
               </div>
 
               {/* Duplicate set for seamless loop */}
@@ -170,6 +188,22 @@ const Logos = () => {
                   <img
                     src={oliveguyLogo}
                     alt="Olive Guy Logo"
+                    className="object-contain w-full h-full filter grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 ease-in-out"
+                  />
+                </div>
+
+                <div className="relative w-32 sm:w-36 md:w-40 lg:w-48 h-8 sm:h-10 md:h-12 group">
+                  <img
+                    src={imcLogo}
+                    alt="IMC Logo"
+                    className="object-contain w-full h-full filter grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 ease-in-out"
+                  />
+                </div>
+
+                <div className="relative w-32 sm:w-36 md:w-40 lg:w-48 h-8 sm:h-10 md:h-12 group">
+                  <img
+                    src={mentoringClubLogo}
+                    alt="Mentoring Club Logo"
                     className="object-contain w-full h-full filter grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 ease-in-out"
                   />
                 </div>
