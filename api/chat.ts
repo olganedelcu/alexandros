@@ -17,9 +17,12 @@ async function connectToDatabase() {
 const defaultWelcomeMessage = "Hi! I'm your AI coach. Ask me anything about your goals, challenges, or anything you'd like to discuss. I'm here to help you grow and achieve your potential.";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  // Set CORS headers
+  // Get the origin from the request headers
+  const origin = req.headers.origin;
+  
+  // Set CORS headers with specific origin
   res.setHeader('Access-Control-Allow-Credentials', 'true');
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Origin', origin || 'https://aktbusinesscoach.com');
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
   res.setHeader(
     'Access-Control-Allow-Headers',
