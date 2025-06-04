@@ -106,7 +106,7 @@ const About = () => {
                       </h3>
                       <p className="text-sm md:text-base text-gray-600">{level.description}</p>
                     </div>
-                    <div className="text-blue-600 text-xl md:text-2xl font-bold flex-shrink-0">
+                    <div className="text-gray-600 text-xl md:text-2xl font-bold flex-shrink-0">
                       {level.level}
                     </div>
                   </div>

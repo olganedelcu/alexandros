@@ -11,7 +11,7 @@ import mentoringClubLogo from '@/assets/mentoringclub.png';
 
 const Logos = () => {
   return (
-    <section className="py-6 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-80 relative overflow-hidden">
+    <section className="py-6 bg-gradient-to-br from-blue-50 via-grey-50 to-blue-80 relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
@@ -65,7 +65,7 @@ const Logos = () => {
                   <img
                     src={anotherLogo}
                     alt="Another Logo"
-                    className="object-contain w-full h-full filter grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 ease-in-out"
+                    className="object-contain w-full h-full opacity-70 group-hover:opacity-100 transition-all duration-500 ease-in-out"
                   />
                 </div>
 
@@ -73,7 +73,7 @@ const Logos = () => {
                   <img
                     src={jobstiesLogo}
                     alt="Jobsties Logo"
-                    className="object-contain w-full h-full filter grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 ease-in-out"
+                    className="object-contain w-full h-full opacity-70 group-hover:opacity-100 transition-all duration-500 ease-in-out"
                   />
                 </div>
 
@@ -81,7 +81,7 @@ const Logos = () => {
                   <img
                     src={rolandLogo}
                     alt="Roland Logo"
-                    className="object-contain w-full h-full filter grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 ease-in-out"
+                    className="object-contain w-full h-full opacity-70 group-hover:opacity-100 transition-all duration-500 ease-in-out"
                   />
                 </div>
 
@@ -89,7 +89,7 @@ const Logos = () => {
                   <img
                     src={harvestHarmonicsLogo}
                     alt="Harvest Harmonics Logo"
-                    className="object-contain w-full h-full filter grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 ease-in-out"
+                    className="object-contain w-full h-full opacity-70 group-hover:opacity-100 transition-all duration-500 ease-in-out"
                   />
                 </div>
 
@@ -97,7 +97,7 @@ const Logos = () => {
                   <img
                     src={hegemonicLogo}
                     alt="Hegemonic Logo"
-                    className="object-contain w-full h-full filter grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 ease-in-out"
+                    className="object-contain w-full h-full opacity-70 group-hover:opacity-100 transition-all duration-500 ease-in-out"
                   />
                 </div>
 
@@ -105,7 +105,7 @@ const Logos = () => {
                   <img
                     src={masterMillerLogo}
                     alt="The Master Miller Logo"
-                    className="object-contain w-full h-full filter grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 ease-in-out"
+                    className="object-contain w-full h-full opacity-70 group-hover:opacity-100 transition-all duration-500 ease-in-out"
                   />
                 </div>
 
@@ -113,7 +113,7 @@ const Logos = () => {
                   <img
                     src={oliveguyLogo}
                     alt="Olive Guy Logo"
-                    className="object-contain w-full h-full filter grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 ease-in-out"
+                    className="object-contain w-full h-full opacity-70 group-hover:opacity-100 transition-all duration-500 ease-in-out"
                   />
                 </div>
 
@@ -121,7 +121,7 @@ const Logos = () => {
                   <img
                     src={imcLogo}
                     alt="IMC Logo"
-                    className="object-contain w-full h-full filter grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 ease-in-out"
+                    className="object-contain w-full h-full opacity-70 group-hover:opacity-100 transition-all duration-500 ease-in-out"
                   />
                 </div>
 
@@ -129,7 +129,7 @@ const Logos = () => {
                   <img
                     src={mentoringClubLogo}
                     alt="Mentoring Club Logo"
-                    className="object-contain w-full h-full filter grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 ease-in-out"
+                    className="object-contain w-full h-full opacity-70 group-hover:opacity-100 transition-all duration-500 ease-in-out"
                   />
                 </div>
               </div>
@@ -140,7 +140,7 @@ const Logos = () => {
                   <img
                     src={anotherLogo}
                     alt="Another Logo"
-                    className="object-contain w-full h-full filter grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 ease-in-out"
+                    className="object-contain w-full h-full opacity-70 group-hover:opacity-100 transition-all duration-500 ease-in-out"
                   />
                 </div>
 
@@ -148,7 +148,7 @@ const Logos = () => {
                   <img
                     src={jobstiesLogo}
                     alt="Jobsties Logo"
-                    className="object-contain w-full h-full filter grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 ease-in-out"
+                    className="object-contain w-full h-full opacity-70 group-hover:opacity-100 transition-all duration-500 ease-in-out"
                   />
                 </div>
 
@@ -156,7 +156,7 @@ const Logos = () => {
                   <img
                     src={rolandLogo}
                     alt="Roland Logo"
-                    className="object-contain w-full h-full filter grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 ease-in-out"
+                    className="object-contain w-full h-full opacity-70 group-hover:opacity-100 transition-all duration-500 ease-in-out"
                   />
                 </div>
 
@@ -164,7 +164,7 @@ const Logos = () => {
                   <img
                     src={harvestHarmonicsLogo}
                     alt="Harvest Harmonics Logo"
-                    className="object-contain w-full h-full filter grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 ease-in-out"
+                    className="object-contain w-full h-full opacity-70 group-hover:opacity-100 transition-all duration-500 ease-in-out"
                   />
                 </div>
 
@@ -172,7 +172,7 @@ const Logos = () => {
                   <img
                     src={hegemonicLogo}
                     alt="Hegemonic Logo"
-                    className="object-contain w-full h-full filter grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 ease-in-out"
+                    className="object-contain w-full h-full opacity-70 group-hover:opacity-100 transition-all duration-500 ease-in-out"
                   />
                 </div>
 
@@ -180,7 +180,7 @@ const Logos = () => {
                   <img
                     src={masterMillerLogo}
                     alt="The Master Miller Logo"
-                    className="object-contain w-full h-full filter grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 ease-in-out"
+                    className="object-contain w-full h-full opacity-70 group-hover:opacity-100 transition-all duration-500 ease-in-out"
                   />
                 </div>
 
@@ -188,7 +188,7 @@ const Logos = () => {
                   <img
                     src={oliveguyLogo}
                     alt="Olive Guy Logo"
-                    className="object-contain w-full h-full filter grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 ease-in-out"
+                    className="object-contain w-full h-full opacity-70 group-hover:opacity-100 transition-all duration-500 ease-in-out"
                   />
                 </div>
 
@@ -196,7 +196,7 @@ const Logos = () => {
                   <img
                     src={imcLogo}
                     alt="IMC Logo"
-                    className="object-contain w-full h-full filter grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 ease-in-out"
+                    className="object-contain w-full h-full opacity-70 group-hover:opacity-100 transition-all duration-500 ease-in-out"
                   />
                 </div>
 
@@ -204,7 +204,7 @@ const Logos = () => {
                   <img
                     src={mentoringClubLogo}
                     alt="Mentoring Club Logo"
-                    className="object-contain w-full h-full filter grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 ease-in-out"
+                    className="object-contain w-full h-full opacity-70 group-hover:opacity-100 transition-all duration-500 ease-in-out"
                   />
                 </div>
               </div>
