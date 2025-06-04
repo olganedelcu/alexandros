@@ -1,109 +1,45 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { ScrollArea } from '@/components/ui/scroll-area';
 import { Card } from '@/components/ui/card';
-import { MessageCircle, X, Calendar } from 'lucide-react';
-import { API_URL } from '@/config';
-
-interface Message {
-  id: string;
-  content: string;
-  role: 'user' | 'assistant';
-  timestamp: Date;
-}
+import { MessageCircle, X, Mail } from 'lucide-react';
+import { Textarea } from '@/components/ui/textarea';
+import { toast } from 'sonner';
 
 export function Chat() {
-  const [messages, setMessages] = useState<Message[]>([]);
-  const [input, setInput] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [showCTA, setShowCTA] = useState(false);
-  const [ctaEmail, setCtaEmail] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  // Auto-scroll to bottom when messages change
-  useEffect(() => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
-    }
-  }, [messages]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!input.trim() || isLoading) return;
+    if (!email.trim() || !message.trim() || isSubmitting) return;
 
-    const userMessage: Message = {
-      id: Date.now().toString(),
-      content: input.trim(),
-      role: 'user',
-      timestamp: new Date(),
-    };
-
-    setMessages(prev => [...prev, userMessage]);
-    setInput('');
-    setIsLoading(true);
-
+    setIsSubmitting(true);
     try {
-      const response = await fetch(`${API_URL}/api/chat`, {
+      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ message: userMessage.content }),
+        body: JSON.stringify({
+          email: email,
+          message: message,
+        }),
       });
 
-      if (!response.ok) throw new Error('Failed to send message');
-
-      const data = await response.json();
-      
-      const assistantMessage: Message = {
-        id: Date.now().toString(),
-        content: data.response,
-        role: 'assistant',
-        timestamp: new Date(),
-      };
-
-      setMessages(prev => [...prev, assistantMessage]);
-      
-      // Show CTA after 3 messages
-      if (messages.length >= 2) {
-        setShowCTA(true);
+      if (!response.ok) {
+        throw new Error('Failed to send email');
       }
-    } catch (error) {
-      console.error('Chat error:', error);
-      setMessages(prev => [...prev, {
-        id: Date.now().toString(),
-        content: 'Sorry, I encountered an error. Please try again.',
-        role: 'assistant',
-        timestamp: new Date(),
-      }]);
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
-  const handleCTASubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!ctaEmail.trim() || isSubmitting) return;
-
-    setIsSubmitting(true);
-    try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      setShowCTA(false);
-      setMessages(prev => [...prev, {
-        id: Date.now().toString(),
-        content: "Great! I'll redirect you to my calendar to schedule our call.",
-        role: 'assistant',
-        timestamp: new Date(),
-      }]);
-      
-      setTimeout(() => {
-        window.open('https://calendly.com/aktbusinesscoaching/', '_blank');
-      }, 1500);
+      toast.success('Email sent successfully!');
+      setIsOpen(false);
+      setEmail('');
+      setMessage('');
     } catch (error) {
-      console.error('CTA submission error:', error);
+      console.error('Email submission error:', error);
+      toast.error('Failed to send email. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -121,10 +57,10 @@ export function Chat() {
   }
 
   return (
-    <Card className="fixed inset-0 sm:inset-auto sm:bottom-4 sm:right-4 sm:w-80 sm:max-w-[400px] sm:h-[500px] shadow-xl bg-gradient-to-br from-blue-100 via-blue-50 to-indigo-50 z-50">
+    <Card className="fixed inset-0 sm:inset-auto sm:bottom-4 sm:right-4 sm:w-80 sm:max-w-[400px] shadow-xl bg-gradient-to-br from-blue-100 via-blue-50 to-indigo-50 z-50">
       <div className="flex flex-col h-full">
         <div className="flex items-center justify-between p-3 border-b bg-gradient-to-r from-blue-200/50 to-indigo-200/50 backdrop-blur-sm">
-          <h3 className="font-semibold text-base">Ask Me Anything</h3>
+          <h3 className="font-semibold text-base">Contact Me</h3>
           <Button
             variant="ghost"
             size="icon"
@@ -135,68 +71,40 @@ export function Chat() {
           </Button>
         </div>
         
-        <ScrollArea className="flex-1 p-3 bg-gradient-to-b from-blue-50/50 to-indigo-50/50" ref={scrollRef}>
-          <div className="space-y-3">
-            {messages.map((message) => (
-              <div
-                key={message.id}
-                className={`flex ${
-                  message.role === 'user' ? 'justify-end' : 'justify-start'
-                }`}
-              >
-                <div
-                  className={`max-w-[85%] rounded-lg p-3 text-sm ${
-                    message.role === 'user'
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-white/80 backdrop-blur-sm'
-                  }`}
-                >
-                  {message.content}
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="p-4 space-y-4">
+          <p className="text-sm text-gray-600">
+            Want to chat more in depth? Send me an email and I'll get back to you as soon as possible.
+          </p>
           
-          {showCTA && (
-            <div className="mt-4 p-3 bg-white/90 rounded-lg shadow-sm">
-              <h4 className="font-medium text-sm mb-2">Ready to take the next step?</h4>
-              <form onSubmit={handleCTASubmit} className="space-y-2">
-                <Input
-                  type="email"
-                  value={ctaEmail}
-                  onChange={(e) => setCtaEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="h-9 text-sm bg-white/80"
-                  disabled={isSubmitting}
-                />
-                <Button 
-                  type="submit" 
-                  size="sm" 
-                  className="w-full h-9 text-sm bg-gradient-to-r from-violet-500 to-indigo-500 hover:from-violet-600 hover:to-indigo-600"
-                  disabled={isSubmitting}
-                >
-                  <Calendar className="h-4 w-4 mr-2" />
-                  {isSubmitting ? 'Sending...' : 'Book a Call'}
-                </Button>
-              </form>
-            </div>
-          )}
-        </ScrollArea>
-        
-        <form onSubmit={handleSubmit} className="p-3 border-t bg-gradient-to-r from-blue-200/50 to-indigo-200/50 backdrop-blur-sm">
-          <div className="flex gap-2">
+          <form onSubmit={handleSubmit} className="space-y-3">
             <Input
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="Type your message..."
-              disabled={isLoading}
-              className="flex-1 h-9 text-sm bg-white/80"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email address"
+              className="h-9 text-sm bg-white/80"
+              disabled={isSubmitting}
+              required
             />
-            <Button type="submit" disabled={isLoading} size="sm" className="h-9 text-sm">
-              {isLoading ? '...' : 'Send'}
+            <Textarea
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="Type your message here..."
+              className="min-h-[100px] text-sm bg-white/80 resize-none"
+              disabled={isSubmitting}
+              required
+            />
+            <Button 
+              type="submit" 
+              size="sm" 
+              className="w-full h-9 text-sm bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700"
+              disabled={isSubmitting}
+            >
+              <Mail className="h-4 w-4 mr-2" />
+              {isSubmitting ? 'Sending...' : 'Send Email'}
             </Button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </Card>
   );
