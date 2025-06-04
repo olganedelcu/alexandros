@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
+import { getNavLinks } from "./navLinks";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,50 +30,6 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const navLinks = isAboutPage || isBlogPage ? [
-    { 
-      name: "Home", 
-      href: "/", 
-      onClick: () => window.location.href = '/' 
-    },
-    { 
-      name: "About", 
-      href: "/about", 
-      onClick: () => window.location.href = '/about' 
-    },
-    { 
-      name: "Blog", 
-      href: "/blog", 
-      onClick: () => window.location.href = '/blog' 
-    },
-  ] : [
-    { 
-      name: "Testimonials", 
-      href: isBlogPage ? "/#testimonials" : "#testimonials", 
-      onClick: () => scrollToSection('testimonials') 
-    },
-    { 
-      name: "Packages", 
-      href: isBlogPage ? "/#packages" : "#packages", 
-      onClick: () => scrollToSection('packages') 
-    },
-    { 
-      name: "FAQ", 
-      href: isBlogPage ? "/#faq" : "#faq", 
-      onClick: () => scrollToSection('faq') 
-    },   
-    { 
-      name: "About", 
-      href: "/about", 
-      onClick: () => window.location.href = '/about' 
-    },
-    { 
-      name: "Blog", 
-      href: "/blog", 
-      onClick: () => window.location.href = '/blog' 
-    },
-  ];
-
   const scrollToSection = (sectionId: string) => {
     if (isBlogPage) {
       window.location.href = `/#${sectionId}`;
@@ -92,6 +49,8 @@ const Navbar = () => {
       setIsMenuOpen(false);
     }
   };
+
+  const navLinks = getNavLinks(isAboutPage, isBlogPage, scrollToSection);
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
