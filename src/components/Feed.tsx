@@ -11,6 +11,15 @@ interface MediumPost {
   description: string;
 }
 
+// Add this interface for the Medium API items
+type MediumFeedItem = {
+  title: string;
+  link: string;
+  pubDate: string;
+  content: string;
+  description: string;
+};
+
 export function Feed() {
   const [posts, setPosts] = useState<MediumPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -23,7 +32,7 @@ export function Feed() {
         const data = await response.json();
         
         if (data.status === 'ok') {
-          setPosts(data.items.map((item: any) => {
+          setPosts(data.items.map((item: MediumFeedItem) => {
             // Extract first image from content
             const imgMatch = item.content.match(/<img[^>]+src="([^">]+)"/);
             const thumbnail = imgMatch ? imgMatch[1] : '/blog-placeholder.jpg';
