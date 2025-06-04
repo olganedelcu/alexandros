@@ -18,7 +18,7 @@ export function Chat() {
 
     setIsSubmitting(true);
     try {
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      const response = await fetch('https://formspree.io/f/xqabapor', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -33,13 +33,13 @@ export function Chat() {
         throw new Error('Failed to send email');
       }
 
-      toast.success('Email sent successfully!');
+      toast.success('Message sent successfully!');
       setIsOpen(false);
       setEmail('');
       setMessage('');
     } catch (error) {
       console.error('Email submission error:', error);
-      toast.error('Failed to send email. Please try again.');
+      toast.error('Failed to send message. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
