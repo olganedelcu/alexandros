@@ -154,7 +154,7 @@ const CTA = () => {
                   />
                   <Button 
                     type="submit"
-                    className="bg-gradient-to-r from-violet-400/90 to-indigo-400/90 hover:from-violet-500/90 hover:to-indigo-500/90 text-white px-8 py-3 text-base font-semibold shadow-lg relative overflow-hidden group whitespace-nowrap"
+                    className="bg-gradient-to-r from-blue-400/90 to-blue-600/90 hover:from-blue-500/90 hover:to-blue-700/90 text-white px-8 py-3 text-base font-semibold shadow-lg relative overflow-hidden group whitespace-nowrap"
                     disabled={status === "loading"}
                   >
                     {status === "loading" ? (
