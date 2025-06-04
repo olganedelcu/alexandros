@@ -56,7 +56,7 @@ const CTA = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div 
-            className="bg-gradient-to-br from-blue-500 via-indigo-600 to-violet-700 rounded-2xl p-12 shadow-[0_0_30px_rgba(59,130,246,0.3)] relative overflow-hidden backdrop-blur-sm"
+            className="bg-gradient-to-br from-blue-500 via-blue-600 to-indigo-700 rounded-2xl p-12 shadow-[0_0_30px_rgba(59,130,246,0.3)] relative overflow-hidden backdrop-blur-sm"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -89,7 +89,7 @@ const CTA = () => {
                   delay: 2,
                   ease: "easeInOut"
                 }}
-                className="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-indigo-300 opacity-20 blur-3xl"
+                className="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-blue-400 opacity-20 blur-3xl"
               />
 
               <motion.div 
@@ -104,7 +104,7 @@ const CTA = () => {
                   delay: 1,
                   ease: "easeInOut"
                 }}
-                className="absolute left-1/3 top-1/3 w-60 h-60 rounded-full bg-violet-300 opacity-20 blur-3xl"
+                className="absolute left-1/3 top-1/3 w-60 h-60 rounded-full bg-indigo-300 opacity-20 blur-3xl"
               />
             </div>
 
