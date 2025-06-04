@@ -170,17 +170,20 @@ const Navbar = () => {
               >
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                   {navLinks.map((link) => (
-                    <a
+                    <motion.a
                       key={link.name}
                       href={link.href}
                       onClick={(e) => {
                         e.preventDefault();
                         link.onClick();
+                        setIsMenuOpen(false);
                       }}
                       className="block px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-muted cursor-pointer"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
                     >
                       {link.name}
-                    </a>
+                    </motion.a>
                   ))}
                   <Button
                     asChild
