@@ -19,7 +19,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-start justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 overflow-hidden pt-4 sm:pt-8">
+    <section className="relative min-h-screen flex items-start justify-center bg-gradient-to-br from-blue-50 via-blue-50 to-blue-100 overflow-hidden pt-4 sm:pt-8">
       {/* Enhanced animated path elements in background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
         <motion.div 
@@ -32,7 +32,7 @@ const Hero = () => {
             duration: 12,
             ease: "easeInOut"
           }}
-          className="absolute top-[85%] left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-300 to-transparent opacity-30"
+          className="absolute top-[85%] left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent opacity-30"
         ></motion.div>
         
         <motion.div 
@@ -46,7 +46,7 @@ const Hero = () => {
             delay: 1,
             ease: "easeInOut"
           }}
-          className="absolute top-[90%] left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent opacity-30"
+          className="absolute top-[90%] left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-30"
         ></motion.div>
         
         <motion.div 
@@ -60,7 +60,7 @@ const Hero = () => {
             delay: 2,
             ease: "easeInOut"
           }}
-          className="absolute top-[95%] left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-300 to-transparent opacity-30"
+          className="absolute top-[95%] left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent opacity-30"
         ></motion.div>
         
         {/* Floating elements with more dynamic animations */}
@@ -75,7 +75,7 @@ const Hero = () => {
             duration: 20,
             ease: "easeInOut"
           }}
-          className="absolute -left-10 top-1/4 w-40 h-40 rounded-full bg-blue-300 opacity-10 blur-2xl"
+          className="absolute -left-10 top-1/4 w-40 h-40 rounded-full bg-blue-400 opacity-10 blur-2xl"
         ></motion.div>
         
         <motion.div 
@@ -90,7 +90,7 @@ const Hero = () => {
             delay: 2,
             ease: "easeInOut"
           }}
-          className="absolute right-1/4 top-1/2 w-56 h-56 rounded-full bg-indigo-300 opacity-10 blur-2xl"
+          className="absolute right-1/4 top-1/2 w-56 h-56 rounded-full bg-blue-500 opacity-10 blur-2xl"
         ></motion.div>
         
         <motion.div 
@@ -105,7 +105,7 @@ const Hero = () => {
             delay: 1,
             ease: "easeInOut"
           }}
-          className="absolute left-1/3 bottom-1/3 w-48 h-48 rounded-full bg-blue-400 opacity-10 blur-2xl"
+          className="absolute left-1/3 bottom-1/3 w-48 h-48 rounded-full bg-blue-300 opacity-10 blur-2xl"
         ></motion.div>
       </div>
       
@@ -131,15 +131,19 @@ const Hero = () => {
           >
             <div className="mb-4 sm:mb-8">
               I help{" "}
-              <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent filter blur-[0.3px]">founders</span>
+              <span className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">founders</span>
               {" "}reconnect {" "}
             </div>
             <div>
               with{" "}
               <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-indigo-400 via-blue-600 to-indigo-700 bg-clip-text text-transparent filter blur-[0.3px]">their greatness</span>
+                <span className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px] relative">
+                  their greatness
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shine"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent blur-sm"></div>
+                </span>
                 <motion.div 
-                  className="absolute -bottom-2 left-0 w-full h-2 bg-gradient-to-r from-blue-400 via-indigo-500 to-violet-500 rounded"
+                  className="absolute -bottom-2 left-0 w-full h-2 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 rounded"
                   initial={{ width: 0 }}
                   animate={{ width: "100%" }}
                   transition={{ delay: 1.2, duration: 0.8 }}
@@ -182,7 +186,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <Button 
-              className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg shadow-lg relative overflow-hidden"
+              className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg shadow-lg relative overflow-hidden"
               onClick={() => window.open('https://calendly.com/aktbusinesscoaching/', '_blank')}
             >
               <span className="relative z-10">Book a Call</span>

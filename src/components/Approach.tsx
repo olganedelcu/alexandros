@@ -1,8 +1,46 @@
 import { motion } from "framer-motion";
 
+const approachSteps = [
+  {
+    step: 1,
+    title: "Defining the Problem",
+    description: "Break down overwhelming challenges into manageable, actionable steps."
+  },
+  {
+    step: 2,
+    title: "Identifying Available Resources",
+    description: "Create meaningful changes that transform your business and mindset."
+  },
+  {
+    step: 3,
+    title: "Sizing the Chunks",
+    description: "Develop strategies for sustainable business success."
+  },
+  {
+    step: 4,
+    title: "Allocating suitable Resources",
+    description: "Strengthen your ability to adapt and overcome challenges."
+  },
+  {
+    step: 5,
+    title: "Looking at the Timeline",
+    description: "Create an environment that nurtures continuous improvement."
+  },
+  {
+    step: 6,
+    title: "Exploring the MultiModal Perspective Matrix",
+    description: "Discover new approaches and creative solutions."
+  },
+  {
+    step: 7,
+    title: "Future Pacing your Growth Path",
+    description: "Find harmony between business success and personal fulfillment."
+  }
+];
+
 const Approach = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 relative">
+    <section className="py-20 bg-gradient-to-br from-blue-50 via-blue-50 to-blue-100 relative">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -16,7 +54,7 @@ const Approach = () => {
             duration: 15,
             ease: "easeInOut",
           }}
-          className="absolute -left-10 top-1/3 w-40 h-40 rounded-full bg-violet-300 opacity-10 blur-2xl"
+          className="absolute -left-10 top-1/3 w-40 h-40 rounded-full bg-blue-400 opacity-10 blur-2xl"
         />
         <motion.div
           animate={{
@@ -29,7 +67,7 @@ const Approach = () => {
             duration: 12,
             ease: "easeInOut",
           }}
-          className="absolute -right-10 top-2/3 w-40 h-40 rounded-full bg-indigo-300 opacity-10 blur-2xl"
+          className="absolute -right-10 top-2/3 w-40 h-40 rounded-full bg-blue-400 opacity-10 blur-2xl"
         />
         <motion.div
           animate={{
@@ -42,7 +80,7 @@ const Approach = () => {
             duration: 10,
             ease: "easeInOut",
           }}
-          className="absolute left-1/3 top-1/4 w-40 h-40 rounded-full bg-blue-200 opacity-10 blur-2xl"
+          className="absolute left-1/3 top-1/4 w-40 h-40 rounded-full bg-blue-300 opacity-10 blur-2xl"
         />
       </div>
       
@@ -58,16 +96,16 @@ const Approach = () => {
           >
             <motion.div 
               whileHover={{ scale: 1.05 }}
-              className="inline-block px-4 py-2.5 bg-gradient-to-r from-violet-50 to-indigo-50 rounded-full text-violet-600 font-medium text-xs shadow-sm mb-8 border border-violet-200 min-w-[200px]"
+              className="inline-block px-4 py-2.5 bg-gradient-to-r from-blue-100 to-blue-200 rounded-full text-blue-700 font-medium text-xs shadow-sm mb-8 border border-blue-300 min-w-[200px]"
             >
               <span className="mr-2">💡</span>Your Journey Matters
             </motion.div>
 
             <h2 className="text-4xl md:text-5xl font-bold text-gray-600 mb-8">
               The {" "}
-              <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Multi-Modal Perspective Matrix</span>
+              <span className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Multi-Modal Perspective Matrix</span>
             </h2>
-                
+
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -82,21 +120,21 @@ const Approach = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {/* Card 1 */}
             <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(79,70,229,0.3)] relative overflow-hidden backdrop-blur-sm"
-                >
+              className="bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(37,99,235,0.4)] relative overflow-hidden backdrop-blur-sm"
+            >
               <div className="relative z-10">
                 <motion.div 
                   whileHover={{ scale: 1.1 }}
-                  className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 rounded-full w-12 h-12 flex items-center justify-center shadow-md mx-auto mb-4"
+                  className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 rounded-full w-12 h-12 flex items-center justify-center shadow-md mx-auto mb-4"
                 >
                   <span className="text-xl font-bold text-white">1</span>
                 </motion.div>
                 <h3 className="font-bold text-lg text-gray-800 mb-3 text-center">
-                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Defining the Problem</span>
+                  <span className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Defining the Problem</span>
                 </h3>
                 <p className="text-gray-600 text-center text-sm">
                   Break down overwhelming challenges into manageable, actionable steps.
@@ -110,23 +148,23 @@ const Approach = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.05 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(79,70,229,0.3)] relative overflow-hidden backdrop-blur-sm"
+              className="bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(37,99,235,0.4)] relative overflow-hidden backdrop-blur-sm"
             >
               <div className="relative z-10">
-              <motion.div
+                <motion.div 
                   whileHover={{ scale: 1.1 }}
-                  className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 rounded-full w-12 h-12 flex items-center justify-center shadow-md mx-auto mb-4"
+                  className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 rounded-full w-12 h-12 flex items-center justify-center shadow-md mx-auto mb-4"
                 >
                   <span className="text-xl font-bold text-white">2</span>
                 </motion.div>
                 <h3 className="font-bold text-lg text-gray-800 mb-3 text-center">
-                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Identifying Available Resources</span>
+                  <span className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Identifying Available Resources</span>
                 </h3>
                 <p className="text-gray-600 text-center text-sm">
                   Create meaningful changes that transform your business and mindset.
                 </p>
-                </div>
-              </motion.div>
+              </div>
+            </motion.div>
 
             {/* Card 3 */}
             <motion.div 
@@ -134,65 +172,65 @@ const Approach = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.1 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(79,70,229,0.3)] relative overflow-hidden backdrop-blur-sm"
+              className="bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(37,99,235,0.4)] relative overflow-hidden backdrop-blur-sm"
             >
               <div className="relative z-10">
-              <motion.div 
+                <motion.div 
                   whileHover={{ scale: 1.1 }}
-                  className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 rounded-full w-12 h-12 flex items-center justify-center shadow-md mx-auto mb-4"
+                  className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 rounded-full w-12 h-12 flex items-center justify-center shadow-md mx-auto mb-4"
                 >
                   <span className="text-xl font-bold text-white">3</span>
                 </motion.div>
                 <h3 className="font-bold text-lg text-gray-800 mb-3 text-center">
-                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Sizing the Chunks</span>
+                  <span className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Sizing the Chunks</span>
                 </h3>
                 <p className="text-gray-600 text-center text-sm">
                   Develop strategies for sustainable business success.
                 </p>
               </div>
             </motion.div>
-            
+
             {/* Card 4 */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.15 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(79,70,229,0.3)] relative overflow-hidden backdrop-blur-sm"
+              className="bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(37,99,235,0.4)] relative overflow-hidden backdrop-blur-sm"
             >
               <div className="relative z-10">
                 <motion.div 
                   whileHover={{ scale: 1.1 }}
-                  className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 rounded-full w-12 h-12 flex items-center justify-center shadow-md mx-auto mb-4"
+                  className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 rounded-full w-12 h-12 flex items-center justify-center shadow-md mx-auto mb-4"
                 >
                   <span className="text-xl font-bold text-white">4</span>
                 </motion.div>
                 <h3 className="font-bold text-lg text-gray-800 mb-3 text-center">
-                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Allocating suitable Resources</span>
+                  <span className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Allocating suitable Resources</span>
                 </h3>
                 <p className="text-gray-600 text-center text-sm">
                   Strengthen your ability to adapt and overcome challenges.
                 </p>
               </div>
             </motion.div>
-            
+
             {/* Card 5 */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.2 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(79,70,229,0.3)] relative overflow-hidden backdrop-blur-sm"
+              className="bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(37,99,235,0.4)] relative overflow-hidden backdrop-blur-sm"
             >
               <div className="relative z-10">
                 <motion.div 
                   whileHover={{ scale: 1.1 }}
-                  className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 rounded-full w-12 h-12 flex items-center justify-center shadow-md mx-auto mb-4"
+                  className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 rounded-full w-12 h-12 flex items-center justify-center shadow-md mx-auto mb-4"
                 >
                   <span className="text-xl font-bold text-white">5</span>
                 </motion.div>
                 <h3 className="font-bold text-lg text-gray-800 mb-3 text-center">
-                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Looking at the Timeline</span>
+                  <span className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Looking at the Timeline</span>
                 </h3>
                 <p className="text-gray-600 text-center text-sm">
                   Create an environment that nurtures continuous improvement.
@@ -206,17 +244,17 @@ const Approach = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.25 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(79,70,229,0.3)] relative overflow-hidden backdrop-blur-sm"
+              className="bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(37,99,235,0.4)] relative overflow-hidden backdrop-blur-sm"
             >
               <div className="relative z-10">
                 <motion.div 
                   whileHover={{ scale: 1.1 }}
-                  className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 rounded-full w-12 h-12 flex items-center justify-center shadow-md mx-auto mb-4"
+                  className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 rounded-full w-12 h-12 flex items-center justify-center shadow-md mx-auto mb-4"
                 >
                   <span className="text-xl font-bold text-white">6</span>
                 </motion.div>
                 <h3 className="font-bold text-lg text-gray-800 mb-3 text-center">
-                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Exploring the MultiModal Perspective Matrix</span>
+                  <span className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Exploring the MultiModal Perspective Matrix</span>
                 </h3>
                 <p className="text-gray-600 text-center text-sm">
                   Discover new approaches and creative solutions.
@@ -230,17 +268,17 @@ const Approach = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.3 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(79,70,229,0.3)] relative overflow-hidden backdrop-blur-sm"
+              className="bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(37,99,235,0.4)] relative overflow-hidden backdrop-blur-sm"
             >
               <div className="relative z-10">
                 <motion.div 
                   whileHover={{ scale: 1.1 }}
-                  className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 rounded-full w-12 h-12 flex items-center justify-center shadow-md mx-auto mb-4"
+                  className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 rounded-full w-12 h-12 flex items-center justify-center shadow-md mx-auto mb-4"
                 >
                   <span className="text-xl font-bold text-white">7</span>
                 </motion.div>
                 <h3 className="font-bold text-lg text-gray-800 mb-3 text-center">
-                  <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Future Pacing your Growth Path</span>
+                  <span className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Future Pacing your Growth Path</span>
                 </h3>
                 <p className="text-gray-600 text-center text-sm">
                   Find harmony between business success and personal fulfillment.

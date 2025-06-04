@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 text-gray-600 py-12 md:py-16 px-4 md:px-6 relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-blue-50 via-blue-50 to-blue-100 text-gray-600 py-12 md:py-16 px-4 md:px-6 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
@@ -18,7 +18,7 @@ const Footer = () => {
             duration: 15,
             ease: "easeInOut",
           }}
-          className="absolute -left-10 top-1/3 w-20 md:w-40 h-20 md:h-40 rounded-full bg-blue-300 opacity-10 blur-2xl"
+          className="absolute -left-10 top-1/3 w-20 md:w-40 h-20 md:h-40 rounded-full bg-blue-400 opacity-10 blur-2xl"
         />
         <motion.div
           animate={{
@@ -31,7 +31,7 @@ const Footer = () => {
             duration: 12,
             ease: "easeInOut",
           }}
-          className="absolute -right-10 top-2/3 w-20 md:w-40 h-20 md:h-40 rounded-full bg-indigo-300 opacity-10 blur-2xl"
+          className="absolute -right-10 top-2/3 w-20 md:w-40 h-20 md:h-40 rounded-full bg-blue-500 opacity-10 blur-2xl"
         />
       </div>
 
@@ -134,12 +134,14 @@ const Footer = () => {
           <p className="text-sm md:text-base text-gray-600">
             © 2025 aKt. All rights reserved.
           </p>
-          <Button 
-            className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-2 text-sm md:text-base font-medium shadow-sm relative overflow-hidden group"
-            onClick={() => window.open('https://calendly.com/aktbusinesscoaching/', '_blank')}
+          <Button
+            asChild
+            className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 sm:px-8 py-2.5 sm:py-3 rounded-md font-bold text-sm sm:text-base shadow-lg transform transition duration-300 hover:scale-105 relative overflow-hidden"
           >
-            <span className="relative z-10">Book A Call</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shine"></div>
+            <a href="https://calendly.com/aktbusinesscoaching/" target="_blank" rel="noopener noreferrer" className="relative z-10">
+              Book a Call
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shine"></div>
+            </a>
           </Button>
         </motion.div>
       </div>

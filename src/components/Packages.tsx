@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const Packages = () => {
   return (
-    <section id="packages" className="py-12 md:py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 relative overflow-hidden">
+    <section id="packages" className="py-12 md:py-20 bg-gradient-to-br from-blue-50 via-blue-50 to-blue-100 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
@@ -18,7 +18,7 @@ const Packages = () => {
             duration: 15,
             ease: "easeInOut",
           }}
-          className="absolute -left-10 top-1/3 w-20 md:w-40 h-20 md:h-40 rounded-full bg-violet-300 opacity-10 blur-2xl"
+          className="absolute -left-10 top-1/3 w-20 md:w-40 h-20 md:h-40 rounded-full bg-blue-400 opacity-10 blur-2xl"
         />
         <motion.div
           animate={{
@@ -31,7 +31,7 @@ const Packages = () => {
             duration: 12,
             ease: "easeInOut",
           }}
-          className="absolute -right-10 top-2/3 w-20 md:w-40 h-20 md:h-40 rounded-full bg-indigo-300 opacity-10 blur-2xl"
+          className="absolute -right-10 top-2/3 w-20 md:w-40 h-20 md:h-40 rounded-full bg-blue-500 opacity-10 blur-2xl"
         />
       </div>
 
@@ -46,7 +46,7 @@ const Packages = () => {
           >
             <motion.div 
               whileHover={{ scale: 1.05 }}
-              className="inline-block px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-full text-blue-600 font-medium text-sm shadow-sm mb-6 border border-blue-200 min-w-[200px]"
+              className="inline-block px-4 py-2 bg-gradient-to-r from-blue-50 to-blue-100 rounded-full text-blue-600 font-medium text-sm shadow-sm mb-6 border border-blue-200 min-w-[200px]"
             >
               <span className="mr-2">✨</span>Choose Your Path
             </motion.div>
@@ -134,11 +134,11 @@ const Packages = () => {
                 className="bg-white rounded-2xl p-10 shadow-sm border border-blue-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-105 relative overflow-hidden group flex flex-col h-full"
               >
                 {/* Decorative background element */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-full -mr-16 -mt-16 opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-50 to-blue-100 rounded-full -mr-16 -mt-16 opacity-50 group-hover:opacity-70 transition-opacity"></div>
                 
                 <div className="relative flex flex-col flex-grow">
                   {/* Icon */}
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-xl flex items-center justify-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center mb-6">
                     <package_.icon className="w-6 h-6 text-blue-600" />
                   </div>
 
@@ -171,7 +171,7 @@ const Packages = () => {
                       </div>
                     )}
                     <Button 
-                      className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white py-6 text-base font-medium shadow-sm relative overflow-hidden group mb-4"
+                      className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white py-6 text-base font-medium shadow-sm relative overflow-hidden group mb-4"
                       onClick={() => window.open('https://calendly.com/aktbusinesscoaching/', '_blank')}
                     >
                       <span className="relative z-10">{package_.buttonText}</span>
