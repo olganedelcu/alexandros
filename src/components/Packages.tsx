@@ -64,20 +64,6 @@ const Packages = () => {
             {/* Package Card Template */}
             {[
               {
-                icon: Heart,
-                title: "Flexible Arrangement",
-                description: "For founders with exceptional potential but limited resources.",
-                features: [
-                  "Custom arrangement based on your needs",
-                  "Focus on high-impact outcomes",
-                  "Money is not the goal here, transformation is"
-                ],
-                price: null,
-                priceText: null,
-                buttonText: "Make an Offer",
-                subtext: "Tell me your story and vision"
-              },
-              {
                 icon: Rocket,
                 title: "The Tactical Hit",
                 description: "Perfect for: Founders who are stuck, scaling, or spiraling and need a direct hit of clarity and options.",
@@ -123,6 +109,20 @@ const Packages = () => {
                 priceText: "/ month",
                 buttonText: "Get Started",
                 subtext: "Bonus: Includes full access to proprietary tools, deck/offer reviews, and on-demand perspective when stakes are high."
+              },
+              {
+                icon: Heart,
+                title: "Flexible Arrangement",
+                description: "For founders with exceptional potential but limited resources.",
+                features: [
+                  "Custom arrangement based on your needs",
+                  "Focus on high-impact outcomes",
+                  "Money is not the goal here, transformation is"
+                ],
+                price: null,
+                priceText: null,
+                buttonText: "Make an Offer",
+                subtext: "Tell me your story and vision"
               }
             ].map((package_, index) => (
               <motion.div 
