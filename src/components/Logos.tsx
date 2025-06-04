@@ -43,12 +43,12 @@ const Logos = () => {
       </div>
 
       <div className="container mx-auto px-4">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="relative overflow-hidden px-16 md:px-32">
+        <div className="max-w-[1800px] mx-auto">
+          <div className="relative overflow-hidden px-8 md:px-16">
             <motion.div 
-              className="flex items-center gap-1"
+              className="flex items-center gap-4"
               animate={{
-                x: [0, -1000],
+                x: [0, -1200],
               }}
               transition={{
                 x: {
@@ -60,8 +60,8 @@ const Logos = () => {
               }}
             >
               {/* First set of logos */}
-              <div className="flex items-center gap-1">
-                <div className="relative w-32 sm:w-36 md:w-40 lg:w-48 h-8 sm:h-10 md:h-12 group">
+              <div className="flex items-center gap-4">
+                <div className="relative w-40 sm:w-48 md:w-56 lg:w-64 h-12 sm:h-14 md:h-16 group">
                   <img
                     src={anotherLogo}
                     alt="Another Logo"
@@ -69,7 +69,7 @@ const Logos = () => {
                   />
                 </div>
 
-                <div className="relative w-32 sm:w-36 md:w-40 lg:w-48 h-8 sm:h-10 md:h-12 group">
+                <div className="relative w-40 sm:w-48 md:w-56 lg:w-64 h-12 sm:h-14 md:h-16 group">
                   <img
                     src={jobstiesLogo}
                     alt="Jobsties Logo"
@@ -77,7 +77,7 @@ const Logos = () => {
                   />
                 </div>
 
-                <div className="relative w-32 sm:w-36 md:w-40 lg:w-48 h-8 sm:h-10 md:h-12 group">
+                <div className="relative w-40 sm:w-48 md:w-56 lg:w-64 h-12 sm:h-14 md:h-16 group">
                   <img
                     src={rolandLogo}
                     alt="Roland Logo"
@@ -85,7 +85,7 @@ const Logos = () => {
                   />
                 </div>
 
-                <div className="relative w-32 sm:w-36 md:w-40 lg:w-48 h-8 sm:h-10 md:h-12 group">
+                <div className="relative w-40 sm:w-48 md:w-56 lg:w-64 h-12 sm:h-14 md:h-16 group">
                   <img
                     src={harvestHarmonicsLogo}
                     alt="Harvest Harmonics Logo"
@@ -93,7 +93,7 @@ const Logos = () => {
                   />
                 </div>
 
-                <div className="relative w-32 sm:w-36 md:w-40 lg:w-48 h-8 sm:h-10 md:h-12 group">
+                <div className="relative w-40 sm:w-48 md:w-56 lg:w-64 h-12 sm:h-14 md:h-16 group">
                   <img
                     src={hegemonicLogo}
                     alt="Hegemonic Logo"
@@ -101,7 +101,7 @@ const Logos = () => {
                   />
                 </div>
 
-                <div className="relative w-32 sm:w-36 md:w-40 lg:w-48 h-8 sm:h-10 md:h-12 group">
+                <div className="relative w-40 sm:w-48 md:w-56 lg:w-64 h-12 sm:h-14 md:h-16 group">
                   <img
                     src={masterMillerLogo}
                     alt="The Master Miller Logo"
@@ -109,7 +109,7 @@ const Logos = () => {
                   />
                 </div>
 
-                <div className="relative w-32 sm:w-36 md:w-40 lg:w-48 h-8 sm:h-10 md:h-12 group">
+                <div className="relative w-40 sm:w-48 md:w-56 lg:w-64 h-12 sm:h-14 md:h-16 group">
                   <img
                     src={oliveguyLogo}
                     alt="Olive Guy Logo"
@@ -117,7 +117,7 @@ const Logos = () => {
                   />
                 </div>
 
-                <div className="relative w-32 sm:w-36 md:w-40 lg:w-48 h-8 sm:h-10 md:h-12 group">
+                <div className="relative w-40 sm:w-48 md:w-56 lg:w-64 h-12 sm:h-14 md:h-16 group">
                   <img
                     src={imcLogo}
                     alt="IMC Logo"
@@ -125,7 +125,7 @@ const Logos = () => {
                   />
                 </div>
 
-                <div className="relative w-32 sm:w-36 md:w-40 lg:w-48 h-8 sm:h-10 md:h-12 group">
+                <div className="relative w-40 sm:w-48 md:w-56 lg:w-64 h-12 sm:h-14 md:h-16 group">
                   <img
                     src={mentoringClubLogo}
                     alt="Mentoring Club Logo"
@@ -135,8 +135,8 @@ const Logos = () => {
               </div>
 
               {/* Duplicate set for seamless loop */}
-              <div className="flex items-center gap-1">
-                <div className="relative w-32 sm:w-36 md:w-40 lg:w-48 h-8 sm:h-10 md:h-12 group">
+              <div className="flex items-center gap-4">
+                <div className="relative w-40 sm:w-48 md:w-56 lg:w-64 h-12 sm:h-14 md:h-16 group">
                   <img
                     src={anotherLogo}
                     alt="Another Logo"
@@ -144,7 +144,7 @@ const Logos = () => {
                   />
                 </div>
 
-                <div className="relative w-32 sm:w-36 md:w-40 lg:w-48 h-8 sm:h-10 md:h-12 group">
+                <div className="relative w-40 sm:w-48 md:w-56 lg:w-64 h-12 sm:h-14 md:h-16 group">
                   <img
                     src={jobstiesLogo}
                     alt="Jobsties Logo"
@@ -152,7 +152,7 @@ const Logos = () => {
                   />
                 </div>
 
-                <div className="relative w-32 sm:w-36 md:w-40 lg:w-48 h-8 sm:h-10 md:h-12 group">
+                <div className="relative w-40 sm:w-48 md:w-56 lg:w-64 h-12 sm:h-14 md:h-16 group">
                   <img
                     src={rolandLogo}
                     alt="Roland Logo"
@@ -160,7 +160,7 @@ const Logos = () => {
                   />
                 </div>
 
-                <div className="relative w-32 sm:w-36 md:w-40 lg:w-48 h-8 sm:h-10 md:h-12 group">
+                <div className="relative w-40 sm:w-48 md:w-56 lg:w-64 h-12 sm:h-14 md:h-16 group">
                   <img
                     src={harvestHarmonicsLogo}
                     alt="Harvest Harmonics Logo"
@@ -168,7 +168,7 @@ const Logos = () => {
                   />
                 </div>
 
-                <div className="relative w-32 sm:w-36 md:w-40 lg:w-48 h-8 sm:h-10 md:h-12 group">
+                <div className="relative w-40 sm:w-48 md:w-56 lg:w-64 h-12 sm:h-14 md:h-16 group">
                   <img
                     src={hegemonicLogo}
                     alt="Hegemonic Logo"
@@ -176,7 +176,7 @@ const Logos = () => {
                   />
                 </div>
 
-                <div className="relative w-32 sm:w-36 md:w-40 lg:w-48 h-8 sm:h-10 md:h-12 group">
+                <div className="relative w-40 sm:w-48 md:w-56 lg:w-64 h-12 sm:h-14 md:h-16 group">
                   <img
                     src={masterMillerLogo}
                     alt="The Master Miller Logo"
@@ -184,7 +184,7 @@ const Logos = () => {
                   />
                 </div>
 
-                <div className="relative w-32 sm:w-36 md:w-40 lg:w-48 h-8 sm:h-10 md:h-12 group">
+                <div className="relative w-40 sm:w-48 md:w-56 lg:w-64 h-12 sm:h-14 md:h-16 group">
                   <img
                     src={oliveguyLogo}
                     alt="Olive Guy Logo"
@@ -192,7 +192,7 @@ const Logos = () => {
                   />
                 </div>
 
-                <div className="relative w-32 sm:w-36 md:w-40 lg:w-48 h-8 sm:h-10 md:h-12 group">
+                <div className="relative w-40 sm:w-48 md:w-56 lg:w-64 h-12 sm:h-14 md:h-16 group">
                   <img
                     src={imcLogo}
                     alt="IMC Logo"
@@ -200,7 +200,7 @@ const Logos = () => {
                   />
                 </div>
 
-                <div className="relative w-32 sm:w-36 md:w-40 lg:w-48 h-8 sm:h-10 md:h-12 group">
+                <div className="relative w-40 sm:w-48 md:w-56 lg:w-64 h-12 sm:h-14 md:h-16 group">
                   <img
                     src={mentoringClubLogo}
                     alt="Mentoring Club Logo"

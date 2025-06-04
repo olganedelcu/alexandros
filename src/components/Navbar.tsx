@@ -49,11 +49,7 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { 
-      name: "About", 
-      href: isBlogPage ? "/#about" : "#about", 
-      onClick: () => scrollToSection('about') 
-    },
+ 
     { 
       name: "Testimonials", 
       href: isBlogPage ? "/#testimonials" : "#testimonials", 
@@ -68,6 +64,11 @@ const Navbar = () => {
       name: "FAQ", 
       href: isBlogPage ? "/#faq" : "#faq", 
       onClick: () => scrollToSection('faq') 
+    },   
+    { 
+      name: "About", 
+      href: "/about", 
+      onClick: () => window.location.href = '/about'
     },
     { 
       name: "Blog", 
