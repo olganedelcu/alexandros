@@ -11,14 +11,6 @@ interface MediumPost {
   description: string;
 }
 
-interface MediumFeedItem {
-  title: string;
-  link: string;
-  pubDate: string;
-  content: string;
-  description: string;
-}
-
 export function Feed() {
   const [posts, setPosts] = useState<MediumPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
