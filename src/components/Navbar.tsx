@@ -50,11 +50,6 @@ const Navbar = () => {
 
   const navLinks = [
     { 
-      name: "MMPM", 
-      href: isBlogPage ? "/#approach" : "#approach", 
-      onClick: () => scrollToSection('approach') 
-    },
-    { 
       name: "About", 
       href: isBlogPage ? "/#about" : "#about", 
       onClick: () => scrollToSection('about') 
