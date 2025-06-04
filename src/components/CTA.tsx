@@ -8,7 +8,7 @@ import ailyn from "../assets/ailyn.jpeg";
 import savvas from "../assets/savvas.jpg";
 import miruna from "../assets/miruna.jpeg";
 import { useState } from "react";
-import { API_URL } from "@/config";
+import { toast } from "sonner";
 
 const CTA = () => {
   const [email, setEmail] = useState("");
@@ -28,38 +28,26 @@ const CTA = () => {
     }
 
     try {
-      console.log('Submitting email:', email);
-      const response = await fetch(`${API_URL}/api/subscribe`, {
+      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json',
         },
         body: JSON.stringify({ email }),
       });
 
-      console.log('Response status:', response.status);
-      const text = await response.text();
-      console.log('Raw response:', text);
-
-      let data;
-      try {
-        data = JSON.parse(text);
-      } catch (e) {
-        console.error('Failed to parse response:', e);
-        throw new Error('Server returned invalid response');
-      }
-
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to subscribe');
+        throw new Error('Failed to subscribe');
       }
 
       setStatus("success");
       setEmail("");
+      toast.success("Thanks for subscribing! We'll keep you updated.");
     } catch (error) {
       console.error('Subscription error:', error);
       setStatus("error");
-      setErrorMessage(error instanceof Error ? error.message : "Failed to subscribe. Please try again later.");
+      setErrorMessage("Failed to subscribe. Please try again later.");
+      toast.error("Failed to subscribe. Please try again later.");
     }
   };
 
