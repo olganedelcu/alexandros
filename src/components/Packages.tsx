@@ -60,7 +60,7 @@ const Packages = () => {
           </motion.div>
 
           {/* Packages Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {/* Package Card Template */}
             {[
               {
@@ -131,7 +131,7 @@ const Packages = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 shadow-sm border border-blue-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-105 relative overflow-hidden group flex flex-col h-full"
+                className="bg-white rounded-2xl p-10 shadow-sm border border-blue-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-105 relative overflow-hidden group flex flex-col h-full"
               >
                 {/* Decorative background element */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-full -mr-16 -mt-16 opacity-50 group-hover:opacity-70 transition-opacity"></div>
