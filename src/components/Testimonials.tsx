@@ -203,7 +203,7 @@ const Testimonials = () => {
     },
     {
       name: "Savvas A.",
-      role: "CEO/Founder",
+      role: "CEO / Founder",
       quote: "All I can say about Alexandros is that he is brilliant. He has taken great interest in the project I have taken on. I highly recommend him for any coaching.",
       imageUrl: savvas,
     },
