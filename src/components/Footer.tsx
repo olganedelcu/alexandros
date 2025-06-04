@@ -103,8 +103,8 @@ const Footer = () => {
                 <div className="w-8 h-8 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center mr-3">
                   <Mail className="text-blue-600" size={16} />
                 </div>
-                <a href="mailto:aktbusinesscoaching@gmail.com" className="text-sm md:text-base text-gray-600 hover:text-blue-600 transition-colors">
-                  aktbusinesscoaching@gmail.com
+                <a href="mailto:alex@aktbusinesscoach.com" className="text-sm md:text-base text-gray-600 hover:text-blue-600 transition-colors">
+                alex@aktbusinesscoach.com
               </a>
             </motion.li>
             <motion.li 
