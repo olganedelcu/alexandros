@@ -1,5 +1,6 @@
-import { Star } from "lucide-react";
+import { Star, User } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import ana from "../assets/ana.jpeg";
 import donald from "../assets/donald.jpg";
 import katerian from "../assets/katerian.jpg";
@@ -9,7 +10,16 @@ import whatsapp1 from "../assets/whatsapp1.jpg";
 import jobsties from "../assets/jobsties.png";
 import ailyn from "../assets/ailyn.jpeg";
 import olga from "../assets/olga.png";
+import ana2 from "../assets/ana.png";
 import whatolgitis from "../assets/whatolgitis.png";
+import olvie from "../assets/olvie.jpeg";
+import oliveguy from "../assets/oliveguy.png";
+import sub from "../assets/sub.jpeg";
+import talento_hub_logo from "../assets/talento_hub_logo.jpeg";
+import random from "../assets/randon.jpg";
+import anundi from "../assets/anundi.jpeg";
+import nuture from "../assets/nuture.jpeg";
+import dg from "../assets/dg.jpeg";
 
 
 interface TestimonialProps {
@@ -46,6 +56,9 @@ const TestimonialCard = ({
   whatsappScreenshot,
   type = "standard"
 }: TestimonialProps) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const shouldShowReadMore = quote && quote.split('\n').length > 2;
+
   if (type === "whatsapp") {
     return (
       <motion.div 
@@ -111,13 +124,17 @@ const TestimonialCard = ({
       whileHover={{ scale: 1.02 }}
     >
       <div className="flex items-center justify-between mb-6">
-        {imageUrl && (
+        {imageUrl ? (
           <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-blue-200 shadow-md">
             <img
               src={imageUrl}
               alt={name}
               className="w-full h-full object-cover"
             />
+          </div>
+        ) : (
+          <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-blue-200 shadow-md bg-blue-50 flex items-center justify-center">
+            <User className="w-8 h-8 text-blue-400" />
           </div>
         )}
         {companyLogo && (
@@ -136,9 +153,19 @@ const TestimonialCard = ({
         <p className="text-blue-600 text-sm mb-2">{role}</p>
       </div>
 
-      <p className="text-lg text-gray-700 mb-6 italic relative">
-        {quote}
-      </p>
+      <div className="relative">
+        <p className={`text-lg text-gray-700 mb-6 italic ${!isExpanded && shouldShowReadMore ? 'line-clamp-3' : ''}`}>
+          {quote}
+        </p>
+        {shouldShowReadMore && (
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="text-blue-600 hover:text-blue-700 text-sm font-medium transition-colors"
+          >
+            {isExpanded ? 'Show Less' : 'Read More'}
+          </button>
+        )}
+      </div>
 
       <div className="h-[1px] bg-gradient-to-r from-blue-400 via-blue-600 to-blue-700 opacity-50 mb-4"></div>
 
@@ -154,19 +181,10 @@ const TestimonialCard = ({
 const Testimonials = () => {
   const testimonials: TestimonialProps[] = [
     {
-      name: "Jilian",
-      role: "Trade Exporter",
-      quote: "You are a magician!"
-        },
-    {
-      name: "Alla",
-      role: "Food Industry Owner",
-      quote: "Your out-of-the-box thinking provided a fresh perspective on my challenges."
-    },
-    {
       name: "Ana N.",
       role: "Founder & Career Coach",
-      quote: "If I were a new entrepreneur and had this problem, with no idea how to solve it, I would contact you.",
+      type: "whatsapp",
+      whatsappScreenshot: ana2,
       imageUrl: ana,
       companyLogo: jobsties
     },
@@ -194,16 +212,59 @@ const Testimonials = () => {
       role: "Director Investor Relations",
       quote: "I love the methodology in your process. Trully brilliant!",
       imageUrl: ailyn
+    }, {
+      name: "Malang J.",
+      role: "Founder",
+      quote: "It was such a success and amazing to learn from him.. one thing from him is he wants to see everyone happy and successful in life such a kind and patient person.. much love to him",
+      imageUrl: random
     },
     {
-      quote: "",
-      type: "whatsapp",
-      whatsappScreenshot: whatsapp1
+      name: "Aachal W.",
+      role: "Founder",
+      quote: "Exceptional at marketing. I gained insights into new trends and interpersonal skills. He was a delight to converse with. His deep knowledge of the food industry made the session incredibly valuable.",
+      imageUrl: anundi,
+      companyLogo: nuture
+    },
+    {
+      name: "Pete A.",
+      role: "Vice President Real Estate & Development",
+      quote: "Exceeded my ecxpectations! Alexandros is a very good listener, uplifts my confidence and has gives valuable advice to action immediately. He was so knowledgeable about my industry and I value his input highly. Extremely helpful and agreed to stay connected with me. 10/10 I would highly recommended him!",
+      companyLogo: dg
+    },
+    {
+      name: "Alla",
+      role: "Food Industry Owner",
+      quote: "Your out-of-the-box thinking provided a fresh perspective on my challenges."
+    }, {
+      name: "Shubham P.",
+      role: "Founder",
+      quote: "We have been working with Alexandros for a few months now, and unlike other coaches he doesn't only comes in the meetings to answer your questions, he comes with the intention of actually helping you and even if you come in with the least preparation, you get the most out of it. He genuinely cares about you and your growth.\n\nBesides that, he has knowledge in many sectors of business i.e. strategies, legal consultation, lead generation, market expansion and many more.\n\nAs a young entrepreneur, sometimes I got stuck in many aspects and found Alexandros' guidance very insightful and motivating in those times.\n\nI highly recommend Alexandros as a business coach.",
+      imageUrl: sub,
+      companyLogo: talento_hub_logo
+    },
+    {
+      name: "Jilian",
+      role: "Trade Exporter",
+      quote: "You are a magician!"
     },
     {
       name: "Peter A.",
       role: "Business Owner",
       quote: "Totally exceeded my ecxpectations! Alexandros is a very good listener, uplifts my confidence and has gives valuable advice to action immediately. He was so knowledgeable about my industry and I value his input highly. Extremely helpful. 10/10!"    
+    },
+    {
+      quote: "",
+      type: "whatsapp",
+      whatsappScreenshot: whatsapp1,
+      name: "Gouri P.",
+      role: "Founder",
+    },
+    {
+      name: "Mazen A.",
+      role: "Founder & Head Sommelier",
+      quote: "Alexandros is so knowledgeable, patient, and kind. A highly experienced business leader, who has very kindly guided me when I needed help most. Thank you Alex for all that you do.",
+      imageUrl: olvie,
+      companyLogo: oliveguy
     },
     {
       name: "Olga",
@@ -212,7 +273,7 @@ const Testimonials = () => {
       whatsappScreenshot: whatolgitis,
       imageUrl: olga,
       companyLogo: jobsties
-    }
+    },
   ];
 
   return (

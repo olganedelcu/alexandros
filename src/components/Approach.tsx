@@ -52,7 +52,7 @@ const Approach = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             viewport={{ once: true }}
             className="max-w-4xl mx-auto text-center mb-16"
           >
@@ -68,14 +68,14 @@ const Approach = () => {
               <span className="bg-gradient-to-r from-violet-400 via-indigo-600 to-blue-700 bg-clip-text text-transparent filter blur-[0.3px]">Multi-Modal Perspective Matrix</span>
             </h2>
                 
-                <motion.p 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
               className="text-lg text-gray-600 mb-12"
-                >
+            >
               A 7 steps process that helps you tap into unknown resources, unlock hidden strengths, and see opportunities you didn't know were possible. For builders, dreamers, and explorers.
-                </motion.p>
+            </motion.p>
           </motion.div>
 
           {/* Cards Grid */}
@@ -84,7 +84,7 @@ const Approach = () => {
             <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.3 }}
               whileHover={{ scale: 1.02 }}
               className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(79,70,229,0.3)] relative overflow-hidden backdrop-blur-sm"
                 >
@@ -108,7 +108,7 @@ const Approach = () => {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              transition={{ duration: 0.3, delay: 0.05 }}
               whileHover={{ scale: 1.02 }}
               className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(79,70,229,0.3)] relative overflow-hidden backdrop-blur-sm"
             >
@@ -132,7 +132,7 @@ const Approach = () => {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
               whileHover={{ scale: 1.02 }}
               className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(79,70,229,0.3)] relative overflow-hidden backdrop-blur-sm"
             >
@@ -156,7 +156,7 @@ const Approach = () => {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.3, delay: 0.15 }}
               whileHover={{ scale: 1.02 }}
               className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(79,70,229,0.3)] relative overflow-hidden backdrop-blur-sm"
             >
@@ -180,7 +180,7 @@ const Approach = () => {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.3, delay: 0.2 }}
               whileHover={{ scale: 1.02 }}
               className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(79,70,229,0.3)] relative overflow-hidden backdrop-blur-sm"
             >
@@ -204,7 +204,7 @@ const Approach = () => {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ duration: 0.3, delay: 0.25 }}
               whileHover={{ scale: 1.02 }}
               className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(79,70,229,0.3)] relative overflow-hidden backdrop-blur-sm"
             >
@@ -228,7 +228,7 @@ const Approach = () => {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
+              transition={{ duration: 0.3, delay: 0.3 }}
               whileHover={{ scale: 1.02 }}
               className="bg-gradient-to-br from-violet-50 via-indigo-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(79,70,229,0.3)] relative overflow-hidden backdrop-blur-sm"
             >

@@ -138,7 +138,7 @@ const Footer = () => {
             className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-2 text-sm md:text-base font-medium shadow-sm relative overflow-hidden group"
             onClick={() => window.open('https://calendly.com/aktbusinesscoaching/', '_blank')}
           >
-            <span className="relative z-10">Book Now</span>
+            <span className="relative z-10">Book A Call</span>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shine"></div>
           </Button>
         </motion.div>
