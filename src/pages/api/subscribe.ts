@@ -1,4 +1,5 @@
 import { MongoClient } from 'mongodb';
+import type { Db } from 'mongodb';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 // Modify the connection string to use a different format
@@ -7,7 +8,7 @@ const MONGODB_DB = process.env.MONGODB_DB || 'newsletter';
 
 // Create a cached connection variable
 let cachedClient: MongoClient | null = null;
-let cachedDb: any = null;
+let cachedDb: Db | null = null;
 
 async function connectToDatabase() {
   // If the database connection is cached, use it instead of creating a new connection
