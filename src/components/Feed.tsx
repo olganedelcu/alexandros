@@ -11,43 +11,73 @@ interface MediumPost {
   description: string;
 }
 
-// Add this interface for the Medium API items
-type MediumFeedItem = {
+interface MediumFeedItem {
   title: string;
   link: string;
   pubDate: string;
   content: string;
   description: string;
-};
+}
 
 export function Feed() {
   const [posts, setPosts] = useState<MediumPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        // Fetch posts from @atziranis Medium feed
-        const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@atziranis');
-        const data = await response.json();
+        setIsLoading(true);
+        setError(null);
         
-        if (data.status === 'ok') {
-          setPosts(data.items.map((item: MediumFeedItem) => {
-            // Extract first image from content
-            const imgMatch = item.content.match(/<img[^>]+src="([^">]+)"/);
-            const thumbnail = imgMatch ? imgMatch[1] : '/blog-placeholder.jpg';
-            
-            return {
-              title: item.title,
-              link: item.link,
-              pubDate: new Date(item.pubDate).toLocaleDateString(),
-              thumbnail: thumbnail,
-              description: item.description.replace(/<[^>]*>/g, '').slice(0, 150) + '...'
-            };
-          }));
+        // Using a CORS proxy to fetch Medium's RSS feed
+        const response = await fetch('https://corsproxy.io/?https://medium.com/feed/@atziranis');
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
         }
+        
+        const text = await response.text();
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(text, "text/xml");
+        
+        const items = xmlDoc.getElementsByTagName("item");
+        const processedPosts: MediumPost[] = [];
+
+        for (let i = 0; i < items.length; i++) {
+          const item = items[i];
+          const title = item.getElementsByTagName("title")[0]?.textContent || "";
+          const link = item.getElementsByTagName("link")[0]?.textContent || "";
+          const pubDate = item.getElementsByTagName("pubDate")[0]?.textContent || "";
+          const content = item.getElementsByTagName("content:encoded")[0]?.textContent || "";
+          
+          // Extract first image from content
+          const imgMatch = content.match(/<img[^>]+src="([^">]+)"/);
+          const thumbnail = imgMatch ? imgMatch[1] : '/blog-placeholder.jpg';
+          
+          // Extract description
+          const description = item.getElementsByTagName("description")[0]?.textContent || "";
+          const cleanDescription = description.replace(/<[^>]*>/g, '').slice(0, 150) + '...';
+
+          processedPosts.push({
+            title,
+            link,
+            pubDate: new Date(pubDate).toLocaleDateString(),
+            thumbnail,
+            description: cleanDescription
+          });
+        }
+
+        // Sort by date (newest first)
+        processedPosts.sort((a, b) => 
+          new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime()
+        );
+
+        console.log('Processed Posts:', processedPosts); // Debug log
+        setPosts(processedPosts);
       } catch (error) {
         console.error('Error fetching Medium posts:', error);
+        setError(error instanceof Error ? error.message : 'Failed to load posts');
       } finally {
         setIsLoading(false);
       }
@@ -55,6 +85,15 @@ export function Feed() {
 
     fetchPosts();
   }, []);
+
+  if (error) {
+    return (
+      <div className="text-center p-8">
+        <p className="text-red-500">Error loading posts: {error}</p>
+        <p className="text-sm text-gray-500 mt-2">Please try refreshing the page</p>
+      </div>
+    );
+  }
 
   if (isLoading) {
     return (
@@ -68,6 +107,14 @@ export function Feed() {
             <div className="h-4 bg-gray-200 rounded w-2/3"></div>
           </Card>
         ))}
+      </div>
+    );
+  }
+
+  if (posts.length === 0) {
+    return (
+      <div className="text-center p-8">
+        <p className="text-gray-500">No posts found</p>
       </div>
     );
   }
