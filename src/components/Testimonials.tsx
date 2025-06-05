@@ -181,12 +181,11 @@ const TestimonialCard = ({
 const Testimonials = () => {
   const testimonials: TestimonialProps[] = [
     {
-      name: "Ana N.",
-      role: "Founder & Career Coach",
-      type: "whatsapp",
-      whatsappScreenshot: ana2,
-      imageUrl: ana,
-      companyLogo: jobsties
+      name: "Mazen A.",
+      role: "Founder & Head Sommelier",
+      quote: "Alexandros is so knowledgeable, patient, and kind. A highly experienced business leader, who has very kindly guided me when I needed help most. Thank you Alex for all that you do.",
+      imageUrl: olvie,
+      companyLogo: oliveguy
     },
     {
       name: "Κaterina B.",
@@ -217,6 +216,14 @@ const Testimonials = () => {
       role: "Founder",
       quote: "It was such a success and amazing to learn from him.. one thing from him is he wants to see everyone happy and successful in life such a kind and patient person.. much love to him",
       imageUrl: random
+    },
+    {
+      name: "Ana N.",
+      role: "Founder & Career Coach",
+      type: "whatsapp",
+      whatsappScreenshot: ana2,
+      imageUrl: ana,
+      companyLogo: jobsties
     },
     {
       name: "Aachal W.",
@@ -259,13 +266,7 @@ const Testimonials = () => {
       name: "Gouri P.",
       role: "Founder",
     },
-    {
-      name: "Mazen A.",
-      role: "Founder & Head Sommelier",
-      quote: "Alexandros is so knowledgeable, patient, and kind. A highly experienced business leader, who has very kindly guided me when I needed help most. Thank you Alex for all that you do.",
-      imageUrl: olvie,
-      companyLogo: oliveguy
-    },
+    
     {
       name: "Olga",
       role: "Co-Founder & Operations",
