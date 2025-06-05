@@ -86,12 +86,13 @@ const About = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.1 }}
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center mb-8 md:mb-16"
         >
           <motion.div 
             whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.1 }}
             className="inline-block px-3 md:px-4 py-2 md:py-2.5 bg-gradient-to-r from-blue-50 to-blue-100 rounded-full text-blue-600 font-medium text-xs shadow-sm mb-6 md:mb-8 border border-blue-200 min-w-[180px] md:min-w-[200px]"
           >
             <span className="mr-2">💡</span>Your Identity is the Secret
@@ -104,6 +105,7 @@ const About = () => {
 
           <motion.p 
             whileHover={{ x: 5 }}
+            transition={{ duration: 0.1 }}
             className="text-base md:text-lg leading-relaxed text-gray-600 mb-8 md:mb-12 px-2 md:px-0"
           >
             Purpose is what turns resilience into a habit, not a chore. It's what keeps you creative when the road ahead looks uncertain. When your purpose is crystal clear, everything begins to align:
@@ -149,7 +151,7 @@ const About = () => {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          transition={{ duration: 0.1, delay: 0.05 }}
           viewport={{ once: true }}
           className="text-center mt-16 md:mt-24"
         >
@@ -161,7 +163,7 @@ const About = () => {
               className="absolute -bottom-2 left-0 h-[2px] bg-gradient-to-r from-blue-200/50 via-blue-400 to-blue-600 rounded"
               initial={{ width: 0, opacity: 0 }}
               whileInView={{ width: "100%", opacity: 1 }}
-              transition={{ duration: 1, delay: 0.8 }}
+              transition={{ duration: 0.1, delay: 0.1 }}
               style={{ 
                 clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
                 transform: 'scaleX(1)',
