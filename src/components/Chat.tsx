@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
-import { MessageCircle, X, Mail } from 'lucide-react';
+import { MessageCircle, X, Mail, Rocket } from 'lucide-react';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
+import { motion } from 'framer-motion';
 
 export function Chat() {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,65 +48,82 @@ export function Chat() {
 
   if (!isOpen) {
     return (
-      <Button
-        onClick={() => setIsOpen(true)}
-        className="fixed bottom-4 right-4 h-12 w-12 rounded-full shadow-lg hover:shadow-xl transition-all z-50 sm:h-14 sm:w-14"
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+        className="fixed bottom-8 right-8 z-50"
       >
-        <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6" />
-      </Button>
+        <Button
+          onClick={() => setIsOpen(true)}
+          className="h-12 px-6 rounded-full shadow-lg hover:shadow-xl transition-all bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:from-blue-600 hover:via-blue-700 hover:to-blue-800 text-white flex items-center gap-2"
+        >
+          <Rocket className="h-5 w-5" />
+          <span className="text-sm font-medium">Get In Touch</span>
+        </Button>
+      </motion.div>
     );
   }
 
   return (
-    <Card className="fixed inset-0 sm:inset-auto sm:bottom-4 sm:right-4 sm:w-80 sm:max-w-[400px] shadow-xl bg-gradient-to-br from-blue-100 via-blue-50 to-indigo-50 z-50">
-      <div className="flex flex-col h-full">
-        <div className="flex items-center justify-between p-3 border-b bg-gradient-to-r from-blue-200/50 to-indigo-200/50 backdrop-blur-sm">
-          <h3 className="font-semibold text-base">Contact Me</h3>
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.95 }}
+      className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+    >
+      <Card className="w-full max-w-md bg-white p-6 rounded-xl shadow-xl">
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-xl font-semibold text-gray-800">Send me a message</h2>
           <Button
             variant="ghost"
             size="icon"
             onClick={() => setIsOpen(false)}
-            className="h-8 w-8"
+            className="hover:bg-gray-100"
           >
-            <X className="h-4 w-4" />
+            <X className="h-5 w-5" />
           </Button>
         </div>
-        
-        <div className="p-4 space-y-4">
-          <p className="text-sm text-gray-600">
-            Want to chat more in depth? Send me an email and I'll get back to you as soon as possible.
-          </p>
-          
-          <form onSubmit={handleSubmit} className="space-y-3">
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="space-y-2">
+            <label htmlFor="email" className="text-sm font-medium text-gray-700">
+              Email
+            </label>
             <Input
+              id="email"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email address"
-              className="h-9 text-sm bg-white/80"
-              disabled={isSubmitting}
+              placeholder="your@email.com"
               required
+              className="w-full"
             />
+          </div>
+
+          <div className="space-y-2">
+            <label htmlFor="message" className="text-sm font-medium text-gray-700">
+              Message
+            </label>
             <Textarea
+              id="message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              placeholder="Type your message here..."
-              className="min-h-[100px] text-sm bg-white/80 resize-none"
-              disabled={isSubmitting}
+              placeholder="What would you like to discuss?"
               required
+              className="w-full min-h-[100px]"
             />
-            <Button 
-              type="submit" 
-              size="sm" 
-              className="w-full h-9 text-sm bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700"
-              disabled={isSubmitting}
-            >
-              <Mail className="h-4 w-4 mr-2" />
-              {isSubmitting ? 'Sending...' : 'Send Email'}
-            </Button>
-          </form>
-        </div>
-      </div>
-    </Card>
+          </div>
+
+          <Button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:from-blue-600 hover:via-blue-700 hover:to-blue-800 text-white"
+          >
+            {isSubmitting ? 'Sending...' : 'Send Message'}
+          </Button>
+        </form>
+      </Card>
+    </motion.div>
   );
 } 

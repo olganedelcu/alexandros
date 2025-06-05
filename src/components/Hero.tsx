@@ -186,7 +186,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <Button 
-              className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg shadow-lg relative overflow-hidden"
+              className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg shadow-lg relative overflow-hidden rounded-full"
               onClick={() => window.open('https://calendly.com/aktbusinesscoaching/', '_blank')}
             >
               <span className="relative z-10">Book a Call</span>

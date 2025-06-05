@@ -171,7 +171,7 @@ const Packages = () => {
                       </div>
                     )}
                     <Button 
-                      className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white py-6 text-base font-medium shadow-sm relative overflow-hidden group mb-4"
+                      className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white py-6 text-base font-medium shadow-sm relative overflow-hidden group mb-4 rounded-full"
                       onClick={() => window.open('https://calendly.com/aktbusinesscoaching/', '_blank')}
                     >
                       <span className="relative z-10">{package_.buttonText}</span>

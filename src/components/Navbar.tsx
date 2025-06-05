@@ -97,7 +97,7 @@ const Navbar = () => {
               <div className="hidden md:block absolute right-16 sm:right-24">
                 <Button
                   asChild
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 sm:px-8 py-2.5 sm:py-3 rounded-md font-bold text-sm sm:text-base shadow-lg transform transition duration-300 hover:scale-105 relative overflow-hidden"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-bold text-sm sm:text-base shadow-lg transform transition duration-300 hover:scale-105 relative overflow-hidden"
                 >
                   <a href="https://calendly.com/aktbusinesscoaching/" target="_blank" rel="noopener noreferrer" className="relative z-10">
                     Book a Call
@@ -146,7 +146,7 @@ const Navbar = () => {
                   ))}
                   <Button
                     asChild
-                    className="w-full mt-4 bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2.5 rounded-md font-bold text-base shadow-lg transform transition duration-300 hover:scale-105 relative overflow-hidden"
+                    className="w-full mt-4 bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2.5 rounded-full font-bold text-base shadow-lg transform transition duration-300 hover:scale-105 relative overflow-hidden"
                   >
                     <a href="https://calendly.com/aktbusinesscoaching/" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)} className="relative z-10">
                       Book a Call
