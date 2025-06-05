@@ -51,7 +51,7 @@ const Approach = () => {
           }}
           transition={{
             repeat: Infinity,
-            duration: 15,
+            duration: 5,
             ease: "easeInOut",
           }}
           className="absolute -left-10 top-1/3 w-40 h-40 rounded-full bg-blue-400 opacity-10 blur-2xl"
@@ -64,7 +64,7 @@ const Approach = () => {
           }}
           transition={{
             repeat: Infinity,
-            duration: 12,
+            duration: 4,
             ease: "easeInOut",
           }}
           className="absolute -right-10 top-2/3 w-40 h-40 rounded-full bg-blue-400 opacity-10 blur-2xl"
@@ -77,7 +77,7 @@ const Approach = () => {
           }}
           transition={{
             repeat: Infinity,
-            duration: 10,
+            duration: 3,
             ease: "easeInOut",
           }}
           className="absolute left-1/3 top-1/4 w-40 h-40 rounded-full bg-blue-300 opacity-10 blur-2xl"
@@ -90,7 +90,7 @@ const Approach = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.1 }}
             viewport={{ once: true }}
             className="max-w-4xl mx-auto text-center mb-16"
           >
@@ -109,7 +109,7 @@ const Approach = () => {
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.1 }}
+              transition={{ duration: 0.1, delay: 0.05 }}
               className="text-lg text-gray-600 mb-12"
             >
               A 7 steps process that helps you tap into unknown resources, unlock hidden strengths, and see opportunities you didn't know were possible. For builders, dreamers, and explorers.
@@ -123,7 +123,7 @@ const Approach = () => {
                 key={step.step}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
+                transition={{ duration: 0.1, delay: index * 0.05 }}
                 whileHover={{ scale: 1.02 }}
                 className="bg-gradient-to-br from-blue-50 via-blue-50 to-blue-100 rounded-xl p-8 shadow-[0_0_20px_rgba(37,99,235,0.4)] relative overflow-hidden backdrop-blur-sm"
               >

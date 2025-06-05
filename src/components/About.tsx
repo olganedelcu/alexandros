@@ -49,10 +49,36 @@ const About = () => {
           }}
           transition={{
             repeat: Infinity,
-            duration: 15,
+            duration: 5,
             ease: "easeInOut",
           }}
-          className="absolute -left-10 top-1/3 w-32 md:w-40 h-32 md:h-40 rounded-full bg-blue-400 opacity-10 blur-2xl"
+          className="absolute -left-20 -top-20 w-80 h-80 rounded-full bg-blue-400 opacity-20 blur-3xl"
+        ></motion.div>
+        <motion.div
+          animate={{
+            x: [0, -40, 0],
+            y: [0, 30, 0],
+            opacity: [0.1, 0.15, 0.1],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 4,
+            ease: "easeInOut",
+          }}
+          className="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-blue-500 opacity-20 blur-3xl"
+        ></motion.div>
+        <motion.div
+          animate={{
+            x: [0, 20, 0],
+            y: [0, -30, 0],
+            opacity: [0.1, 0.15, 0.1],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 3,
+            ease: "easeInOut",
+          }}
+          className="absolute left-1/3 top-1/3 w-60 h-60 rounded-full bg-blue-300 opacity-20 blur-3xl"
         ></motion.div>
       </div>
 
@@ -92,7 +118,7 @@ const About = () => {
                 key={level.level}
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
+                transition={{ duration: 0.1, delay: index * 0.05 }}
                 viewport={{ once: true }}
                 className="relative"
               >
