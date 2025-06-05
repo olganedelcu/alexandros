@@ -54,8 +54,8 @@ const Navbar = () => {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
-      <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent blur-sm transition-opacity duration-2000 ${visible ? 'opacity-0' : 'opacity-100'}`}></div>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-2000 ease-in-out ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
+      <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent blur-sm transition-opacity duration-3000 ${visible ? 'opacity-0' : 'opacity-100'}`}></div>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-3000 ease-in-out ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
         {/* Main navbar content */}
         <div className="relative backdrop-blur-sm bg-blue-50/80">
           <div className="max-w-3xl mx-auto px-3 sm:px-4 lg:px-6">
@@ -64,7 +64,7 @@ const Navbar = () => {
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 1.5 }}
                 className="flex items-center absolute left-16 sm:left-24"
               >
                 <img 
@@ -125,6 +125,7 @@ const Navbar = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 1.5 }}
                 className="md:hidden"
               >
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
