@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
-import { MessageCircle, X, Mail, Rocket } from 'lucide-react';
+import { X, Rocket } from 'lucide-react';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
 import { motion } from 'framer-motion';
@@ -49,18 +49,29 @@ export function Chat() {
   if (!isOpen) {
     return (
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3 }}
+        initial={{ opacity: 0, y: 20, scale: 0.8 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ 
+          duration: 0.5,
+          type: "spring",
+          stiffness: 200,
+          damping: 15,
+          delay: 2.5
+        }}
         className="fixed bottom-8 right-8 z-50"
       >
-        <Button
-          onClick={() => setIsOpen(true)}
-          className="h-12 px-6 rounded-full shadow-lg hover:shadow-xl transition-all bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:from-blue-600 hover:via-blue-700 hover:to-blue-800 text-white flex items-center gap-2"
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
-          <Rocket className="h-5 w-5" />
-          <span className="text-sm font-medium">Get In Touch</span>
-        </Button>
+          <Button
+            onClick={() => setIsOpen(true)}
+            className="h-12 px-6 rounded-full shadow-lg hover:shadow-xl transition-all bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:from-blue-600 hover:via-blue-700 hover:to-blue-800 text-white flex items-center gap-2"
+          >
+            <Rocket className="h-5 w-5" />
+            <span className="text-sm font-medium">Get In Touch</span>
+          </Button>
+        </motion.div>
       </motion.div>
     );
   }
