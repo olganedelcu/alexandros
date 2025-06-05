@@ -149,12 +149,12 @@ const CTA = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
-                    className="flex-1 px-4 py-1 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/30"
+                    className="flex-1 px-4 py-1 rounded-full bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/30"
                     disabled={status === "loading"}
                   />
                   <Button 
                     type="submit"
-                    className="bg-gradient-to-r from-blue-400/90 to-blue-600/90 hover:from-blue-500/90 hover:to-blue-700/90 text-white px-8 py-3 text-base font-semibold shadow-lg relative overflow-hidden group whitespace-nowrap"
+                    className="bg-gradient-to-r from-blue-400/90 to-blue-600/90 hover:from-blue-500/90 hover:to-blue-700/90 text-white px-8 py-3 text-base font-semibold shadow-lg relative overflow-hidden group whitespace-nowrap rounded-full"
                     disabled={status === "loading"}
                   >
                     {status === "loading" ? (
