@@ -209,24 +209,24 @@ const Hero = () => {
 
           {/* Stats Section */}
           <motion.div 
-            className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8"
+            className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 mb-8 sm:mb-12"
             variants={itemVariants}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <div className="text-center px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-lg shadow-sm border border-blue-200 w-full sm:w-44 relative overflow-hidden group">
+            <div className="text-center px-3 sm:px-6 py-2 sm:py-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-lg shadow-sm border border-blue-200 w-[140px] sm:w-44 relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-              <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent mb-2">60+</div>
-              <div className="text-xs text-gray-500">Founders Helped</div>
+              <div className="text-xl sm:text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent mb-1 sm:mb-2">60+</div>
+              <div className="text-[10px] sm:text-xs text-gray-500">Founders Helped</div>
             </div>
-            <div className="text-center px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-lg shadow-sm border border-blue-200 w-full sm:w-44 relative overflow-hidden group">
+            <div className="text-center px-3 sm:px-6 py-2 sm:py-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-lg shadow-sm border border-blue-200 w-[140px] sm:w-44 relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-              <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent mb-2">20+</div>
-              <div className="text-xs text-gray-500">Countries Impacted</div>
+              <div className="text-xl sm:text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent mb-1 sm:mb-2">20+</div>
+              <div className="text-[10px] sm:text-xs text-gray-500">Countries Impacted</div>
             </div>
-            <div className="text-center px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-lg shadow-sm border border-blue-200 w-full sm:w-44 relative overflow-hidden group">
+            <div className="text-center px-3 sm:px-6 py-2 sm:py-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 rounded-lg shadow-sm border border-blue-200 w-[140px] sm:w-44 relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-              <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent mb-2">1,000+</div>
-              <div className="text-xs text-gray-500">Hours Coached</div>
+              <div className="text-xl sm:text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent mb-1 sm:mb-2">1,000+</div>
+              <div className="text-[10px] sm:text-xs text-gray-500">Hours Coached</div>
             </div>
           </motion.div>
         </motion.div>
