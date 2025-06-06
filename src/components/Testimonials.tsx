@@ -19,7 +19,7 @@ import talento_hub_logo from "../assets/talento_hub_logo.jpeg";
 import random from "../assets/randon.jpg";
 import anundi from "../assets/anundi.jpeg";
 import nuture from "../assets/nuture.jpeg";
-import dg from "../assets/dg.jpeg";
+import petelogo from "../assets/pete.png";
 
 
 interface TestimonialProps {
@@ -257,7 +257,8 @@ const Testimonials = () => {
     {
       name: "Peter A.",
       role: "Business Owner",
-      quote: "Totally exceeded my ecxpectations! Alexandros is a very good listener, uplifts my confidence and has gives valuable advice to action immediately. He was so knowledgeable about my industry and I value his input highly. Extremely helpful. 10/10!"    
+      quote: "Totally exceeded my ecxpectations! Alexandros is a very good listener, uplifts my confidence and has gives valuable advice to action immediately. He was so knowledgeable about my industry and I value his input highly. Extremely helpful. 10/10!",    
+      companyLogo: petelogo
     },
     {
       quote: "",
