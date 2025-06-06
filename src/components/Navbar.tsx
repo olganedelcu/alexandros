@@ -13,13 +13,15 @@ const Navbar = () => {
   const isBlogPage = location.pathname === '/blog';
   const isAboutPage = location.pathname === '/about';
 
+  // Only apply scroll behavior on desktop
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.scrollY;
-      const isScrollingDown = currentScrollPos > prevScrollPos;
-      
-      setVisible(!isScrollingDown);
-      setPrevScrollPos(currentScrollPos);
+      if (window.innerWidth >= 768) { // md breakpoint
+        const currentScrollPos = window.scrollY;
+        const isScrollingDown = currentScrollPos > prevScrollPos;
+        setVisible(!isScrollingDown);
+        setPrevScrollPos(currentScrollPos);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -54,8 +56,8 @@ const Navbar = () => {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
-      <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent blur-sm transition-opacity duration-3000 ${visible ? 'opacity-0' : 'opacity-100'}`}></div>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-3000 ease-in-out ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
+      <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent blur-sm transition-opacity duration-3000 ${visible ? 'opacity-0' : 'opacity-100'} hidden md:block`}></div>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-3000 ease-in-out ${window.innerWidth >= 768 ? (visible ? 'translate-y-0' : '-translate-y-full') : 'translate-y-0'}`}>
         {/* Main navbar content */}
         <div className="relative backdrop-blur-sm bg-blue-50/80">
           <div className="max-w-3xl mx-auto px-3 sm:px-4 lg:px-6">
@@ -121,16 +123,10 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             {isMenuOpen && (
-              <motion.div
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 1.5 }}
-                className="md:hidden"
-              >
+              <div className="md:hidden">
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                   {navLinks.map((link) => (
-                    <motion.a
+                    <a
                       key={link.name}
                       href={link.href}
                       onClick={(e) => {
@@ -139,11 +135,9 @@ const Navbar = () => {
                         setIsMenuOpen(false);
                       }}
                       className="block px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-muted cursor-pointer"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
                     >
                       {link.name}
-                    </motion.a>
+                    </a>
                   ))}
                   <Button
                     asChild
@@ -155,7 +149,7 @@ const Navbar = () => {
                     </a>
                   </Button>
                 </div>
-              </motion.div>
+              </div>
             )}
           </div>
         </div>

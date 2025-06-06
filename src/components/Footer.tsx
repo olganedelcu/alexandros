@@ -134,13 +134,13 @@ const Footer = () => {
           <p className="text-sm md:text-base text-gray-600">
             © 2025 aKt. All rights reserved.
           </p>
-          <Button
+          <Button 
             asChild
             className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-bold text-sm sm:text-base shadow-lg transform transition duration-300 hover:scale-105 relative overflow-hidden"
           >
             <a href="https://calendly.com/aktbusinesscoaching/" target="_blank" rel="noopener noreferrer" className="relative z-10">
               Book a Call
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shine"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shine"></div>
             </a>
           </Button>
         </motion.div>
