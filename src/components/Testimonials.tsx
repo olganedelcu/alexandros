@@ -233,16 +233,16 @@ const Testimonials = () => {
       companyLogo: nuture
     },
     {
-      name: "Pete A.",
-      role: "Vice President Real Estate & Development",
-      quote: "Exceeded my ecxpectations! Alexandros is a very good listener, uplifts my confidence and has gives valuable advice to action immediately. He was so knowledgeable about my industry and I value his input highly. Extremely helpful and agreed to stay connected with me. 10/10 I would highly recommended him!",
-      companyLogo: dg
+      name: "Gouri P",
+      role: "Founder & CEO, Gouri's",
+      quote: "Alexandros helped me transform my business strategy. His insights were invaluable in scaling my operations."
     },
     {
       name: "Alla",
       role: "Food Industry Owner",
       quote: "Your out-of-the-box thinking provided a fresh perspective on my challenges."
-    }, {
+    },
+    {
       name: "Shubham P.",
       role: "Founder",
       quote: "We have been working with Alexandros for a few months now, and unlike other coaches he doesn't only comes in the meetings to answer your questions, he comes with the intention of actually helping you and even if you come in with the least preparation, you get the most out of it. He genuinely cares about you and your growth.\n\nBesides that, he has knowledge in many sectors of business i.e. strategies, legal consultation, lead generation, market expansion and many more.\n\nAs a young entrepreneur, sometimes I got stuck in many aspects and found Alexandros' guidance very insightful and motivating in those times.\n\nI highly recommend Alexandros as a business coach.",
