@@ -9,6 +9,7 @@ import savvas from "../assets/savvas.jpg";
 import whatsapp1 from "../assets/whatsapp1.jpg";
 import jobsties from "../assets/jobsties.png";
 import ailyn from "../assets/ailyn.jpeg";
+import aylin1 from "../assets/aylin.png";
 import olga from "../assets/olga.png";
 import ana2 from "../assets/ana.png";
 import whatolgitis from "../assets/whatolgitis.png";
@@ -208,8 +209,9 @@ const Testimonials = () => {
     },
     {
       name: "Ailyn",
+      type: "whatsapp",
       role: "Director Investor Relations",
-      quote: "I love the methodology in your process. Trully brilliant!",
+      whatsappScreenshot: aylin1,
       imageUrl: ailyn
     }, {
       name: "Malang J.",
