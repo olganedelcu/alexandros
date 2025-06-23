@@ -172,7 +172,7 @@ const Packages = () => {
                     )}
                     <Button 
                       className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white py-6 text-base font-medium shadow-sm relative overflow-hidden group mb-4 rounded-full"
-                      onClick={() => window.open('https://calendly.com/aktbusinesscoaching/', '_blank')}
+                      onClick={() => window.open('https://calendly.com/aktbusinesscoaching/discovery-call?back=1', '_blank')}
                     >
                       <span className="relative z-10">{package_.buttonText}</span>
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shine"></div>
