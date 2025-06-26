@@ -121,10 +121,10 @@ const CTA = () => {
               </h2>
               
               <p className="text-xl mb-3 opacity-90">
-                Get early access to upcoming workshops, courses, and exclusive content.
+                Get early access to upcoming books, courses, and exclusive content.
               </p>
               <p className="text-xl mb-6 opacity-90">
-                Be the first to know about new opportunities.
+                Be the first to know about new updates.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -178,7 +178,7 @@ const CTA = () => {
               </form>
 
               <p className="text-sm text-white/80">
-                Get exclusive updates on upcoming workshops, courses, and events
+                Get exclusive updates on upcoming books, courses, and news
               </p>
             </div>
           </motion.div>
