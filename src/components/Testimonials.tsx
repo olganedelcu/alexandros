@@ -10,9 +10,7 @@ import whatsapp1 from "../assets/whatsapp1.jpg";
 import jobsties from "../assets/jobsties.png";
 import ailyn from "../assets/ailyn.jpeg";
 import aylin1 from "../assets/aylin.png";
-import olga from "../assets/olga.png";
 import ana2 from "../assets/ana.png";
-import whatolgitis from "../assets/whatolgitis.png";
 import olvie from "../assets/olvie.jpeg";
 import oliveguy from "../assets/oliveguy.png";
 import sub from "../assets/sub.jpeg";
@@ -102,7 +100,7 @@ const TestimonialCard = ({
         <img
           src={whatsappScreenshot}
           alt="WhatsApp testimonial"
-          className={`w-full h-auto rounded-lg shadow-md mb-4 ${name === "Olga" ? "max-w-[280px] mx-auto" : ""}`}
+          className="w-full h-auto rounded-lg shadow-md mb-4"
         />
 
         <div className="h-[1px] bg-gradient-to-r from-blue-400 via-blue-600 to-blue-700 opacity-50 mb-4"></div>
@@ -268,16 +266,7 @@ const Testimonials = () => {
       whatsappScreenshot: whatsapp1,
       name: "Gouri P.",
       role: "Founder",
-    },
-    
-    {
-      name: "Olga",
-      role: "Co-Founder & Operations",
-      type: "whatsapp",
-      whatsappScreenshot: whatolgitis,
-      imageUrl: olga,
-      companyLogo: jobsties
-    },
+    }
   ];
 
   return (
