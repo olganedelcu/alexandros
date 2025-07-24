@@ -7,10 +7,8 @@ import katerian from "../assets/katerian.jpg";
 import roland from "../assets/rolandlo.jpeg";
 import savvas from "../assets/savvas.jpg";
 import whatsapp1 from "../assets/whatsapp1.jpg";
-import jobsties from "../assets/jobsties.png";
 import ailyn from "../assets/ailyn.jpeg";
 import aylin1 from "../assets/aylin.png";
-import ana2 from "../assets/ana.png";
 import olvie from "../assets/olvie.jpeg";
 import oliveguy from "../assets/oliveguy.png";
 import sub from "../assets/sub.jpeg";
@@ -217,14 +215,7 @@ const Testimonials = () => {
       quote: "It was such a success and amazing to learn from him.. one thing from him is he wants to see everyone happy and successful in life such a kind and patient person.. much love to him",
       imageUrl: random
     },
-    {
-      name: "Ana N.",
-      role: "Founder & Career Coach",
-      type: "whatsapp",
-      whatsappScreenshot: ana2,
-      imageUrl: ana,
-      companyLogo: jobsties
-    },
+
     {
       name: "Aachal W.",
       role: "Founder",
